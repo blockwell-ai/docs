@@ -1,0 +1,21 @@
+@import './config';
+
+.search-box {
+  input {
+    border: 2px solid $primary;
+    background-color: $dark;
+    color: $light;
+
+    &:focus {
+      border: 2px solid $primary;
+    }
+  }
+
+  .suggestion.focused a {
+    color: $primary;
+  }
+}
+
+.code-copy {
+  height: 0;
+}

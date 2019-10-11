@@ -1,0 +1,37 @@
+$contentClass: '.theme-default-content';
+
+$white: #fff;
+
+$primary: #004FFF;
+$secondary: #686868;
+$success: #61C34B;
+$info: #004FFF;
+$warning: #FDCA40;
+$danger: #B80C09;
+$light: #FAFAFF;
+$dark: #020A1E;
+$metamask: #f7861d;
+$grey: #f2f4f6;
+
+$code-color: #13315C;
+
+// colors
+$accentColor: $primary;
+$textColor: $dark;
+$borderColor: #eaecef;
+$codeBgColor: #282c34;
+$arrowBgColor: #ccc;
+
+// layout
+$navbarHeight: 4rem;
+$sidebarWidth: 20rem;
+$contentWidth: 740px;
+
+// responsive breakpoints
+$MQNarrow: 959px;
+$MQMobile: 719px;
+$MQMobileNarrow: 419px;
+
+// code
+$lineNumbersWrapperWidth: 3.5rem;
+$codeLang: js, ts, html, md, vue, css, sass, scss, less, stylus, go, java, c, sh, yaml, py, docker, dockerfile, makefile;
