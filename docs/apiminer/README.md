@@ -21,3 +21,10 @@ Currently API Miner is focused on Ethereum-compatible blockchains.
 The Swagger specification and API documentation for API Miner is available here:
 
 [API Miner specification](https://apidocs.apiminer.com)
+
+
+## Rate Limiting
+
+All users are limited to 10 requests per second and 3600 requests per hour.
+
+Contact us if you need higher limits.

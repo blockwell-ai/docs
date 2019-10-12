@@ -27,7 +27,8 @@ module.exports = {
                         '',
                         ['quickstart', 'Quickstart'],
                         'conventions',
-                        'callbacks'
+                        'callbacks',
+                        'networks'
                     ]
                 },
                 {
@@ -36,6 +37,46 @@ module.exports = {
                     children: [
                         'curl-video',
                         'postman-video'
+                    ]
+                },
+                {
+                    title: 'Links',
+                    collapsable: false,
+                    children: [
+                        ['https://apidocs.apiminer.com', 'API Miner API Specification']
+                    ]
+                }
+            ],
+            '/bw/': [
+                {
+                    title: 'bw',
+                    collapsable: false,
+                    children: [
+                        '',
+                        'getting-started',
+                        'configuration'
+                    ]
+                },
+                {
+                    title: 'Commands',
+                    collapsable: false,
+                    children: [
+                        'global-options',
+                        'commands'
+                    ]
+                },
+                {
+                    title: 'Videos',
+                    collapsable: false,
+                    children: [
+                        'bw-access'
+                    ]
+                },
+                {
+                    title: 'Links',
+                    collapsable: false,
+                    children: [
+                        ['https://bw.blockwell.ai', 'bw Server Access']
                     ]
                 }
             ],
