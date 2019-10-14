@@ -17,9 +17,7 @@ node {
 
     stage ('Deploy') {
         sshagent(['jenkins_blockwell_web']) {
-            if (env.BRANCH_NAME == "master") {
-                sh 'make deploy-prod'
-            }
+            sh 'make deploy-prod'
         }
     }
 }
