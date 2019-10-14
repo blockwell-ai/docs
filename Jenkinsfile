@@ -12,7 +12,7 @@ node {
     }
 
     stage ('Artifacts') {
-        archiveArtifacts 'build/**/*'
+        archiveArtifacts 'docs/.vuepress/dist/**/*'
     }
 
     stage ('Deploy') {
