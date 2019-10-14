@@ -1,3 +1,6 @@
+// This file outputs the Webpack config used by VuePress for use with
+// IDEs like WebStorm
+
 const sp = require('synchronized-promise');
 
 const vp = require('@vuepress/core/lib');

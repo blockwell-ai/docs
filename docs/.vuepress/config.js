@@ -66,13 +66,6 @@ module.exports = {
                     ]
                 },
                 {
-                    title: 'Videos',
-                    collapsable: false,
-                    children: [
-                        'bw-access'
-                    ]
-                },
-                {
                     title: 'Links',
                     collapsable: false,
                     children: [

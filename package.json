@@ -24,7 +24,8 @@
     "vuepress-plugin-code-copy": "1.0.3-alpha",
     "vuepress-plugin-container": "2.0.2",
     "vuepress-plugin-smooth-scroll": "0.0.3",
-    "stylus-converter": "0.8.1"
+    "stylus-converter": "0.8.1",
+    "v-tooltip": "2.0.2"
   },
   "devDependencies": {
     "synchronized-promise": "0.2.0"
