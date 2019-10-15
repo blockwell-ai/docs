@@ -179,8 +179,12 @@ h2 {
   border-bottom: 1px solid $borderColor;
 }
 
-h3 {
+main.page #{$contentClass} > h3 {
   font-size: 1.35rem;
+}
+
+main.page #{$contentClass} hr {
+  margin: 3rem 0 1rem;
 }
 
 a.header-anchor {

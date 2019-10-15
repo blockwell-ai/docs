@@ -31,6 +31,8 @@ Example:
 ./bw -f keyfile send 0x632777aeb73f955a660817d5f1ab1a36365485aa 1.2
 ```
 
+---
+
 ### ether
 
 Sends Ether to another address.
@@ -45,6 +47,8 @@ Example:
 ```
 ./bw -f keyfile ether 0x632777aeb73f955a660817d5f1ab1a36365485aa 5
 ```
+
+---
 
 ### contract-deploy
 
@@ -72,6 +76,8 @@ Example:
 ```
 ./bw -f keyfile contract-deploy MyContract.json "First argument" 123
 ```
+
+---
 
 ### contract-send
 
