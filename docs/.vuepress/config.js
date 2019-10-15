@@ -54,7 +54,8 @@ module.exports = {
                     children: [
                         '',
                         'getting-started',
-                        'configuration'
+                        'configuration',
+                        'build-file'
                     ]
                 },
                 {

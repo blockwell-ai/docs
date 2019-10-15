@@ -94,8 +94,8 @@ Also sets [`--quiet`](#quiet).
 Sets the ABI file to use for contract interactions, overriding the default from
 `config.yaml`.
 
-This can be an ABI file directly, or a Truffle-style build file that's a JSON
-object with the key `abi` containing the ABI.
+This can be an ABI file directly, or a [Truffle-style build file](./build-file.md)
+that's a JSON object with the key `abi` containing the ABI.
 
 
 ## `--abiraw`
