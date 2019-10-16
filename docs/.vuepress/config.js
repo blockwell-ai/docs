@@ -67,9 +67,10 @@ module.exports = {
                     ]
                 },
                 {
-                    title: 'Links',
+                    title: 'bw Server',
                     collapsable: false,
                     children: [
+                        ['ssh-key', 'Creating SSH Keys'],
                         ['https://bw.blockwell.ai', 'bw Server Access']
                     ]
                 }
