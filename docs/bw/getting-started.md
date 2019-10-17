@@ -19,29 +19,15 @@ To see a list of global options and commands, you can run:
 ./bw
 ```
 
-### Command help
-
-To see more help for a specific command you can use the `-h` flag. For example:
-
-```bash
-./bw send -h
-```
-
-will show the help for the `send` command.
-
-### Show version
-
-To see bw's version, use:
-
-```bash
-./bw --version
-```
-
 ### Running a command
 
 To run a command, simply give the name of the command as the first argument. For
-example, to use the [private-key](private-key) command run:
+example, to use the [private-key](./commands.md#private-key) command run:
 
 ```bash
 ./bw private-key
 ```
+
+## Walkthrough
+
+[View a video walkthrough here](./demo.md).

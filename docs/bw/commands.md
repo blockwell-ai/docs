@@ -13,12 +13,12 @@ These commands create Ethereum accounts.
 
 Creates a new encrypted JSON-storage account.
 
-Arguments:
+**Arguments**:
 
 - `name` Name of the file to save the account to, `.json` will be added
   automatically.
 
-Example:
+**Example**:
 
 ```bash
 ./bw account myaccount
@@ -46,7 +46,7 @@ Accounts saved as plain private keys are not secure if someone gains access
 to your computer, so only use these for testing and low-value scenarios.
 :::
 
-Example:
+**Example**:
 
 ```bash
 ./bw private-key
@@ -76,6 +76,59 @@ to a file using the `-k` option:
 
 ---
 
+### vanity
+
+Generates an account with a customized address. For example, you could create
+an account that begins with `0xface`.
+
+Note that the more characters you include, the longer it takes to find an
+address that matches. Even on a high-end computer it can take days just to
+find 6-7 characters.
+
+The account itself is output the same way as with [private-key](#private-key).
+
+**Arguments**:
+
+- `type` The type of search. Can be `left` (beginning), `right` (end) or
+  `any`.
+- `text` The text to search for. This can only contain numbers (0-9) and
+  letters up to f (a-f).
+  
+**Options**:
+
+- `--contract` or `-c` Finds a contract address instead of an account address.
+  It will also display the nonce you need to use to get the found contract
+  address.
+- `--sensitive` or `-s` Makes the text search case-sensitive.
+
+::: warning
+Accounts saved as plain private keys are not secure if someone gains access
+to your computer, so only use these for testing and low-value scenarios.
+:::
+
+**Example**:
+
+Create an account that begins with `0xface`:
+
+```bash
+./bw vanity left face
+```
+
+Same as the first example, but save it to a file instead of displaying it:
+
+```bash
+./bw vanity left face --plain > 0xface.key
+```
+
+#### Account usage
+
+To use an account created this way with bw, save it to a file with the
+`--plain` output like above, and then provide it with the `-f` option:
+
+```bash
+./bw -f 0xface.key ...
+```
+
 ## Transaction commands
 
 These are commands that perform a transaction on the blockchain.
@@ -90,13 +143,13 @@ With all of these commands, you must provide exactly one of:
 
 Sends ERC-20 tokens from the configured account to the given address.
 
-Arguments:
+**Arguments**:
 
 - `recipient` Address of the recipient
 - `amount` Token amount to send, in whole units. The number of decimals
   is calculated and applied automatically.
 
-Example:
+**Example**:
 
 ```bash
 ./bw -f keyfile send 0x632777aeb73f955a660817d5f1ab1a36365485aa 1.2
@@ -108,12 +161,12 @@ Example:
 
 Sends Ether to another address.
 
-Arguments:
+**Arguments**:
 
 - `recipient` Address of the recipient
 - `amount` Amount of ETH to send, in whole units.
 
-Example:
+**Example**:
 
 ```bash
 ./bw -f keyfile ether 0x632777aeb73f955a660817d5f1ab1a36365485aa 5
@@ -125,7 +178,7 @@ Example:
 
 Deploys a smart contract on the blockchain.
 
-Arguments:
+**Arguments**:
 
 - `build-file` A [Truffle-style build file](./build-file.md) of the contract.
 - `arguments...` The remaining arguments will all be given to the smart
@@ -137,12 +190,12 @@ form. For example, if you're specifying a token amount with 18 decimals and want
 to specify 5 tokens, you would enter `5000000000000000000`.
 :::
 
-Options: 
+**Options**: 
 
 - `--dry` Prepares the deployment and calculates gas limit, but does not submit
   the transaction.
 
-Example:
+**Example**:
 
 ```bash
 ./bw -f keyfile contract-deploy MyContract.json "First argument" 123
@@ -154,7 +207,7 @@ Example:
 
 Send a transaction with a smart contract function call.
 
-Arguments:
+**Arguments**:
 
 - `method` The name of the method (aka. function) to be called with the transaction.
 - `arguments...` The remaining arguments will all be given to the function as its
@@ -166,11 +219,11 @@ form. For example, if you're specifying a token amount with 18 decimals and want
 to specify 5 tokens, you would enter `5000000000000000000`.
 :::
 
-Options: 
+**Options**: 
 
 - `--ether <value>` Send ETH with the transaction. Enter in whole ETH, not Wei.
 
-Examples:
+**Examples**:
 
 ```bash
 ./bw -f keyfile contract-send addAdmin 0x632777aeb73f955a660817d5f1ab1a36365485aa
@@ -192,13 +245,13 @@ These commands read data from the blockchain related to contracts.
 
 Makes a view (read-only) function call on a smart contract.
 
-Arguments:
+**Arguments**:
 
 - `method` The name of the method (aka. function) to be called.
 - `arguments...` The remaining arguments will all be given to the function as its
   arguments.
 
-Examples:
+**Examples**:
 
 ```bash
 ./bw contract-call balanceOf 0x632777aeb73f955a660817d5f1ab1a36365485aa
@@ -222,11 +275,11 @@ of tokens.
 This is basically the same as using `contract-call balanceOf`, except it performs
 decimal conversion automatically.
 
-Arguments:
+**Arguments**:
 
 - `account` Account address to get balance for
 
-Examples:
+**Examples**:
 
 ```bash
 ./bw balance 0x632777aeb73f955a660817d5f1ab1a36365485aa
@@ -239,17 +292,17 @@ Examples:
 A special multi-version of [`contract-call`](#contract-call) that calls the same
 function multiple times with different arguments.
 
-Arguments:
+**Arguments**:
 
 - `method` The name of the method (aka. function) to be called for each set of arguments.
 - `arguments...` The arguments to be passed to the function. Different function
   arguments should be separated by spaces, and multiple values separated by commas.
   
-options:
+**Options**:
 
 - `--decimals <value>` Converts output with a given number of decimals.
 
-Examples:
+**Examples**:
 
 Call `balanceOf` for both of the two addresses:
 
@@ -288,11 +341,11 @@ Reads all token transfers from a contract and outputs them in CSV format.
 This command uses the contract address from [`config.yaml`](./configuration.md),
 which you can override with [`--address`](./global-options.md#address-address)
 
-Arguments:
+**Arguments**:
 
 - `to` *Optional.* Only output transfers to this address.
 
-Examples:
+**Examples**:
 
 ```bash
 ./bw transfers
@@ -326,11 +379,11 @@ account that holds any of the tokens.
 The default output is a spreadsheet in CSV format. You can optionally get JSON output
 using the [`--json`](./global-options.md#json) flag.
 
-Arguments:
+**Arguments**:
 
 - `address` Token contract address to calculate for.
 
-Examples:
+**Examples**:
 
 ```bash
 ./bw token-balances 0xe8340FdfE79851e9E117b3033E147a654dbDb0Ae
@@ -348,13 +401,13 @@ Put the output into a file called `balances.csv`:
 
 Reads event logs from a smart contract and outputs them in JSON format.
 
-Arguments:
+**Arguments**:
 
 - `address` Token contract address to read logs from.
 - `topic0` *Optional.* Only show logs with this topic0 value. You can use the
   [topic0](#topic0) command to get the correct value.
 
-Examples:
+**Examples**:
 
 ```bash
 ./bw logs 0xe8340FdfE79851e9E117b3033E147a654dbDb0Ae
@@ -380,11 +433,11 @@ These commands deal with smart contracts, but don't read the contract directly.
 
 Reads the raw bytecode of a contract from the blockchain.
 
-Arguments:
+**Arguments**:
 
 - `address` Contract address to get the bytecode for.
 
-Example:
+**Example**:
 
 ```bash
 ./bw get-bytecode 0xe8340FdfE79851e9E117b3033E147a654dbDb0Ae
@@ -396,11 +449,11 @@ Example:
 
 Checks if the given addresses are smart contracts
 
-Arguments:
+**Arguments**:
 
 - `addresses...` One or more addresses separated by spaces
 
-Example:
+**Example**:
 
 ```bash
 ./bw is-contract 0xe8340FdfE79851e9E117b3033E147a654dbDb0Ae
@@ -425,7 +478,7 @@ be very rare, but due to the nature of how functions are stored in the bytecode 
 is practically impossible to have 100% certainty.
 :::
 
-Arguments:
+**Arguments**:
 
 - `address` Address of the contract to analyze.
 - `functions...` List of functions, separated by spaces, to look for. Each function
@@ -435,7 +488,7 @@ Alternatively, you can omit `functions...` and specify a contract ABI instead
 with [`--abi`](./global-options.md#abi) instead, in which case all functions from
 the ABI will be looked for.
 
-Examples:
+**Examples**:
 
 Functions can be specified using their signature:
 
@@ -468,7 +521,7 @@ Encodes a contract for deployment and then outputs the data to be deployed.
 This can be useful if you want to deploy a contract using an account that normally
 doesn't support deploying contracts.
 
-Arguments:
+**Arguments**:
 
 - `build-file` A [Truffle-style build file](./build-file.md) of the contract.
 - `arguments...` The remaining arguments will all be given to the smart
@@ -480,7 +533,7 @@ form. For example, if you're specifying a token amount with 18 decimals and want
 to specify 5 tokens, you would enter `5000000000000000000`.
 :::
 
-Example:
+**Example**:
 
 ```bash
 ./bw -f keyfile contract-bytecode MyContract.json "First argument" 123
@@ -493,11 +546,11 @@ Example:
 Displays all functions found in the given ABI file with the 4 byte hash for each
 function.
 
-Arguments:
+**Arguments**:
 
 - `abi-file` The ABI file for the contract.
 
-Example:
+**Example**:
 
 ```bash
 ./bw functions lib/erc20.abi
@@ -509,11 +562,11 @@ Example:
 
 Displays all events found in the given ABI file.
 
-Arguments:
+**Arguments**:
 
 - `abi-file` The ABI file for the contract.
 
-Example:
+**Example**:
 
 ```bash
 ./bw events lib/erc20.abi
@@ -525,12 +578,12 @@ Example:
 
 Calculates the 4 byte hash of a function given its signature.
 
-Arguments:
+**Arguments**:
 
 - `function-signature` The full signature of the function, including the name and each
   argument type.
 
-Example:
+**Example**:
 
 ```bash
 ./bw function-signature "transfer(address,uint256)"
@@ -542,12 +595,12 @@ Example:
 
 Calculates the topic0 value for a smart contract event.
 
-Arguments:
+**Arguments**:
 
 - `event-signature` The full signature of the event, including the name and each
   argument type.
 
-Example:
+**Example**:
 
 ```bash
 ./bw topic0 "AdminAdded(address)"
@@ -559,16 +612,140 @@ Example:
 
 Decodes the input data of a contract calling transaction.
 
-Arguments:
+**Arguments**:
 
 - `data` The input data from the transaction.
 
-Example:
+**Example**:
 
 ```bash
 ./bw decode-input 0xa9059cbb0000000000000000000000001344de20465e0d04ec3a6dfd80c6e02e40c3c5600000000000000000000000000000000000000000000000056bc75e2d63100000
 ```
 
+## Other commands
+
+### balance-eth
+
+Gets the ETH balance of an account.
+
+**Arguments**:
+
+- `address` Account address to get balance for.
+
+**Options**:
+
+- `--wei` or `-w` Outputs balance in Wei instead of whole ETH.
+
 ---
 
+### receipt
 
+Reads and outputs a transaction receipt from the blockchain.
+
+**Arguments**:
+
+- `hash` Transaction hash to get a receipt for.
+
+**Example**:
+
+```bash
+./bw receipt 0x84fffafbd68c42fc281cf1bb1ecef5460554b0d6b7a2734a2737f418a21bec70
+```
+
+---
+
+### gas
+
+Gets the current gas price from [ETH Gas Station](https://ethgasstation.info/).
+
+**Arguments**:
+
+- `type` *Optional.* Type of gas price from [ETH Gas Station](https://ethgasstation.info/).
+
+`type` can be one of:
+
+ - `block_time` Average block time
+ - `blockNum` Block number
+ - `speed` Speed
+ - `safeLow` Safe low gas price
+ - `average` Average gas price
+ - `fast` Fast gas price
+ - `fastest` Fastest gas price
+ - `default` Calculates the average of `average` and `safeLow`, and then adds 2 gwei
+
+If no `type` is provided, `default` is used.
+
+**Options**:
+
+- `--wei` or `-w` Output in Wei instead of Gwei.
+- `--raw` or `-r` Output ETH Gas Station's raw format.
+
+**Examples**:
+
+Get the default gas price:
+
+```bash
+./bw gas
+```
+
+Get the `safeLow` gas price in Wei:
+
+```bash
+./bw gas -w safeLow
+```
+
+---
+
+### wei
+
+Convert Ether to Wei.
+
+**Arguments**:
+
+- `value` The ETH amount to convert to Wei.
+
+**Options**:
+
+- `--decimals` or `-d` The number of decimals to use instead of Ether's 18.
+
+**Examples**:
+
+Convert 5 ETH to Wei:
+
+```bash
+./bw wei 5
+```
+
+Convert 5 tokens to its Wei equivalent when the token has 6 decimals:
+
+```bash
+./bw wei -d 6 5
+```
+
+---
+
+### from-wei
+
+Convert Wei to Ether.
+
+**Arguments**:
+
+- `value` The Wei amount to convert to ETH.
+
+**Options**:
+
+- `--decimals` or `-d` The number of decimals to use instead of Ether's 18.
+
+**Examples**:
+
+Convert Wei to ETH:
+
+```bash
+./bw from-wei 5000000000000000000
+```
+
+Convert 5 tokens with 6 decimals in its Wei format to whole tokens:
+
+```bash
+./bw from-wei -d 6 5000000
+```

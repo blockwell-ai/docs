@@ -73,6 +73,13 @@ module.exports = {
                         ['ssh-key', 'Creating SSH Keys'],
                         ['https://bw.blockwell.ai', 'bw Server Access']
                     ]
+                },
+                {
+                    title: 'Videos',
+                    collapsable: false,
+                    children: [
+                        ['demo', 'bw Demonstration']
+                    ]
                 }
             ],
             '/qr/': [
