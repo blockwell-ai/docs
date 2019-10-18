@@ -123,7 +123,8 @@ module.exports = {
                 text: 'Guides',
                 items: [
                     {text: 'API Miner Quickstart', link: '/apiminer/quickstart/'},
-                    {text: 'Getting Started with bw', link: '/bw/getting-started'}
+                    {text: 'Getting Started with bw', link: '/bw/getting-started'},
+                    {text: 'Using Daico', link: '/contracts/daico#using-daico'}
                 ]
             },
             {
