@@ -13,7 +13,7 @@ features:
     link: /apiminer/
   - title: bw
     details: Command-line interface to interact with and analyze the blockchain.
-    icon: /icons/wallet.svg
+    icon: /icons/bw.svg
     link: /bw/
   - title: BLOCKWELL PRIME
     details: Multi-functional ERC-20 token with support for voting, locking, cross-chain swaps and more.

@@ -377,8 +377,10 @@ Then edit the API Miner collection:
 
 ![edit](./img/edit.png)
 
+::: v-pre
 Go to the Authorization tab, change the TYPE to `Bearer Token`, and type in
 `{{token}}` into the Token field.
+:::
 
 ![edit auth](./img/edit-auth.png)
 
@@ -432,7 +434,9 @@ the quickstart steps.
 Next, use the "POST Contract send call" endpoint to call the token contract with
 the token minting function.
 
+::: v-pre
 Click "Params" and replace `{{method}}` with `mint`.
+:::
 
 Use the following Body with:
 

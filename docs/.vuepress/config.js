@@ -13,7 +13,8 @@ module.exports = {
     ],
     markdown: {
         extendMarkdown: md => {
-            md.use(require('../../plugins/markdown-it-responsive-video'))
+            md.use(require('../../plugins/markdown-it-responsive-video'));
+            md.use(require('markdown-it-katex'));
         }
     },
     themeConfig: {
@@ -93,7 +94,14 @@ module.exports = {
                 }
             ],
             '/contracts/': [
-                '/contracts/',
+                {
+                    title: 'Smart Contracts',
+                    collapsable: false,
+                    children: [
+                        '',
+                        'blockwell-contracts'
+                    ]
+                },
                 {
                     title: 'Tokens',
                     collapsable: false,
@@ -115,7 +123,7 @@ module.exports = {
                 text: 'Guides',
                 items: [
                     {text: 'API Miner Quickstart', link: '/apiminer/quickstart/'},
-                    {text: 'Using Daico', link: '/daico/'}
+                    {text: 'Getting Started with bw', link: '/bw/getting-started'}
                 ]
             },
             {
