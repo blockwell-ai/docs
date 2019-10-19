@@ -18,10 +18,10 @@ features:
   - title: BLOCKWELL PRIME
     details: Multi-functional ERC-20 token with support for voting, locking, cross-chain swaps and more.
     icon: /icons/token-creator.svg
-    link: /contracts/prime
+    link: /contracts/prime.html
   - title: DAICO
     details: Token funding and payments with consensus.
     icon: /icons/smart-license.svg
-    link: /contracts/daico
+    link: /contracts/daico.html
 ---
 
