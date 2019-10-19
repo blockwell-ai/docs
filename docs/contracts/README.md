@@ -28,4 +28,4 @@ You can learn more about smart contracts in the
 free ebook.
 
 You can [read more about Blockwell contracts](./blockwell-contracts.md), or
-select one from the left navigation.
+select one from the left navigation..
