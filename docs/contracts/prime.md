@@ -7,7 +7,7 @@ sidebarDepth: 2
 
 ## Introduction
 
-Blockwell Prime is a multi-functional ERC-20 compatible token. It has many
+Blockwell Prime is a multi-functional ERC20 compatible token. It has many
 advanced features, but Prime can also be used as just a basic token. You can
 always take advantage of the features later on.
 
