@@ -11,7 +11,7 @@
             <i class="material-icons tooltip-target">help</i>
             <template slot="popover">
                 <p>
-                    QR Codes are used with the <a href="/qr/">Blockwell-QR</a> system.
+                    QR Codes are used with the <a href="/qr/getting-started">Blockwell-QR</a> system.
                     <a href="/qr/getting-started.html">Click here</a> to learn how to use them.
                 </p>
             </template>

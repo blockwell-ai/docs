@@ -84,7 +84,24 @@ module.exports = {
                 }
             ],
             '/qr/': [
-                '',
+                {
+                    title: 'Blockwell-QR',
+                    collapsable: false,
+                    children: [
+                        '',
+                        'blockwell-wallet'
+                    ]
+                },
+                {
+                    title: 'Getting Started',
+                    collapsable: false,
+                    children: [
+                        'getting-started',
+                        'getting-started-android',
+                        'getting-started-web'
+                    ]
+                },
+                'creating-qr',
                 {
                     title: 'Videos',
                     collapsable: false,
@@ -122,6 +139,7 @@ module.exports = {
             {
                 text: 'Guides',
                 items: [
+                    {text: 'Blockwell-QR', link: '/qr/getting-started'},
                     {text: 'API Miner Quickstart', link: '/apiminer/quickstart/'},
                     {text: 'Getting Started with bw', link: '/bw/getting-started'},
                     {text: 'Using Daico', link: '/contracts/daico#using-daico'}

@@ -1,8 +1,10 @@
 ---
-title: Blockwell-QR
+title: Introduction
 ---
 
 # Blockwell-QR
+
+[https://qr.blockwell.ai](https://qr.blockwell.ai)
 
 ## Introduction
 
@@ -13,6 +15,14 @@ app let anyone make transactions with smart contracts in a few seconds.
 The QR Codes can be simple things like transferring tokens, or they can be complex
 multi-step actions that do several transactions in one.
 
-## WIP
+The QR Codes can be used on any system that has a web browser. On mobile devices
+you can just scan the QR and it'll load up the right transaction.
 
-WIP.
+## Blockwell-QR Apps
+
+Blockwell-QR is currently available as a native app for Android, and as a web app
+for other systems.
+
+[<img src="./img/download-android.png" width="200">](https://qr.blockwell.ai/public/dist/blockwell-qr.apk)
+
+Or you can [use the Web App here](https://qr.blockwell.ai/app).
