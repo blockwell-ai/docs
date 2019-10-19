@@ -16,7 +16,7 @@ The QR Codes can be simple things like transferring tokens, or they can be compl
 multi-step actions that do several transactions in one.
 
 The QR Codes can be used on any system that has a web browser. On mobile devices
-you can just scan the QR and it'll load up the right transaction.
+you can just scan the QR and it'll load up the right transaction..
 
 ## Blockwell-QR Apps
 
