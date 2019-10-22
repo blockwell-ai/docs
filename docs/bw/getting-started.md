@@ -122,9 +122,7 @@ Okay, we have the balance, but there's an awful lot of zeroes. That's because
 Ethereum doesn't support decimals, so instead it's just a really big number.
 To get the value with decimals, you divide it:
 
-$$
-\frac{7000000000000000000}{1000000000000000000} = 7
-$$
+$${\frac{7000000000000000000}{1000000000000000000}} = 7$$
 
 bw has a utility to do this for you as well:
 

@@ -365,24 +365,16 @@ As before, refer to step 3 to get the status of the transaction.
 You'll need [Postman](https://www.getpostman.com/) installed, follow their
 documentation for installation.
 
-Download the Swagger 2.0 specification for API Miner:
+Download the Postman collection for API Miner:
 
-[API Miner Spec](https://apidocs.apiminer.com/api.yaml)
+[API Miner collection](https://apidocs.apiminer.com/apiminer-collection.json)
 
-After installing, import the Spec:
+After installing, import the collection:
 
 ![import](./img/import.png)
 
-Then edit the API Miner collection:
-
-![edit](./img/edit.png)
-
-::: v-pre
-Go to the Authorization tab, change the TYPE to `Bearer Token`, and type in
-`{{token}}` into the Token field.
-:::
-
-![edit auth](./img/edit-auth.png)
+Under Import File click Choose Files and find the `apiminer-collection.json` 
+file you downloaded, or drag and drop it to where it says "Drop files here".
 
 Next, create a new Postman environment by clicking the gear icon:
 
@@ -393,11 +385,18 @@ as follows:
 
 ![environment](./img/environment.png)
 
-- host: `test.apiminer.com`
 - token: Your access token
 - contractId: `44740750-522f-46ae-a63c-fcd1a8f5e308`
 
+For the name you can enter anything you want, it's for your own reference.
+
 You can now use the API Miner collection to make calls to the API.
+
+::: tip
+If you want to use a different API Miner environment than the default
+`test.apiminer.com`, you can add another variable called `host` with
+the hostname of the environment to use.
+:::
 
 ### 1. List accounts
 
@@ -406,7 +405,8 @@ API Miner, but as the first step we'll go ahead and list all of our accounts.
 
 ![list accounts](./img/list-accounts.png)
 
-Find the "GET List accounts" endpoint, and click Send.
+Find the "GET List accounts" endpoint, and click Send 
+<img class="inline" src="./img/send.png" height="35">.
 
 You'll see a response like this:
 
@@ -414,9 +414,9 @@ You'll see a response like this:
 {
     "data": [
         {
-            "id": "9a5d68bd-84d7-4ec0-8b11-642de45b1d5d",
-            "address": "0x897a705d4ae51e66f9e64a0ff446e65b55c47385",
-            "owner": "df9dd7fc-9007-49f2-b92a-e7952d4d9ca3",
+            "id": "3d48d487-de83-49ab-b5de-4bf8fcab3dbc",
+            "address": "0x8769a34484b038e96edb82a3f72e47a13d543459",
+            "owner": "89f6b915-71c8-4980-8650-c8d29d1791d0",
             "defaultAccount": true
         }
     ]
@@ -427,16 +427,22 @@ The `id` is the globally unique identifier of this account, and the `address`
 is the Ethereum address of the account. You'll need the `address` for some of
 the quickstart steps.
 
+::: detail
+The `owner` value shows the ID of the user that owns the account, so it will
+show your user ID. `defaultAccount` indicates if the account will be the one
+used by default when submitting transactions without specifying an account.
+:::
+
 ### 2. Getting Pump tokens
 
-![contract send](./img/contract-send.png)
+![contract send picture](./img/contract-send.png)
 
 Next, use the "POST Contract send call" endpoint to call the token contract with
 the token minting function.
 
-::: v-pre
-Click "Params" and replace `{{method}}` with `mint`.
-:::
+Under *Params* find the `method` Path Variable, and give it the value `mint`.
+
+![method mint picture](./img/method-mint.png)
 
 Use the following Body with:
 
@@ -445,24 +451,32 @@ Use the following Body with:
 ```json
 {
     "arg": [
-    "<address>",
-    "100000000000000000000"
+        "<address>",
+        "100000000000000000000"
     ]
 }
 ```
 
-Like this:
-
-![mint parameters](./img/mint-params.png)
+Then click Send 
+<img class="inline" src="./img/send.png" height="35">.
 
 The response will look like this:
 
 ```json
 {
     "data": {
-        "id": "fffc6603-490f-4797-aa1f-394a696fe4be",
+        "id": "aac997c4-1fe0-4d24-9d3a-430968dfa238",
+        "type": "contract-method",
+        "contractId": "44740750-522f-46ae-a63c-fcd1a8f5e308",
+        "from": "0x8769a34484b038e96edb82a3f72e47a13d543459",
+        "method": "mint",
+        "parameters": [
+            "0x8769a34484b038e96edb82a3f72e47a13d543459",
+            "1000000000000000000"
+        ],
         "status": "new",
-        "created": "2018-08-14T21:42:55.968Z"
+        "created": "2019-10-22T20:10:21.120Z",
+        "network": "libra"
     }
 }
 ```
@@ -470,13 +484,20 @@ The response will look like this:
 Since transactions on the blockchain take some time, the API doesn't wait for
 it to finish, it just gives you an ID that you can use to refer to it later.
 
+::: detail
+In addition to the `id`, there are several fields as part of the response.
+You can read more about each field in the 
+[API Spec](https://apidocs.apiminer.com/#operation/ContractSend), just scroll
+down to the Responses and click `data` to show the fields.
+:::
+
 ### 3. Getting the status of a transaction
 
 ![get a transaction](./img/get-transaction.png)
 
 To see what happened to the transaction from the previous step, use the
-"POST Get a transaction" endpoint. Simply change the `id` in Params to match
-the ID from the response in the previous step.
+"POST Get a transaction" endpoint. Under Params, Path Variables, set the value
+of `id` to the `id` from the mint response.
 
 The transfer should be completed within 15 seconds, after which you'll see
 the following response:
@@ -484,12 +505,41 @@ the following response:
 ```json
 {
     "data": {
-        "id": "fffc6603-490f-4797-aa1f-394a696fe4be",
+        "id": "aac997c4-1fe0-4d24-9d3a-430968dfa238",
+        "type": "contract-method",
+        "contractId": "44740750-522f-46ae-a63c-fcd1a8f5e308",
+        "from": "0x8769a34484b038e96edb82a3f72e47a13d543459",
+        "method": "mint",
+        "parameters": [
+            "0x8769a34484b038e96edb82a3f72e47a13d543459",
+            "1000000000000000000"
+        ],
         "status": "completed",
-        "created": "2018-08-14T21:42:55.968Z",
-        "submitted": "2018-08-14T21:42:56.598Z",
-        "ended": "2018-08-14T21:43:07.613Z",
-        "transactionHash": "0x8d9fb9f1e21ea30ab04e2ab17009e2b6af0e9498ed488ae974d7d4d59ee9f781"
+        "created": "2019-10-22T20:10:21.120Z",
+        "submitted": "2019-10-22T20:10:26.157Z",
+        "ended": "2019-10-22T20:10:30.254Z",
+        "transactionHash": "0x5501d9565b75a5918ce6cbcf25eedf0b1f1ca71d14cb09acc07c331bae031666",
+        "blockNumber": 4178518,
+        "events": [
+            {
+                "event": "Mint",
+                "address": "0x4CfC7bF1e8eB43d27DE0a4e648D9Cf3b6198D0EC",
+                "returnValues": {
+                    "account": "0x8769a34484b038e96edb82a3f72e47a13d543459",
+                    "value": "1000000000000000000"
+                }
+            },
+            {
+                "event": "Transfer",
+                "address": "0x4CfC7bF1e8eB43d27DE0a4e648D9Cf3b6198D0EC",
+                "returnValues": {
+                    "from": "0x0000000000000000000000000000000000000000",
+                    "to": "0x8769a34484b038e96edb82a3f72e47a13d543459",
+                    "value": "1000000000000000000"
+                }
+            }
+        ],
+        "network": "libra"
     }
 }
 ```
@@ -503,7 +553,8 @@ account balance" endpoint.
 
 ![default account balance](./img/default-account-balance.png)
 
-No parameter changes are needed, just hit Send.
+No parameter changes are needed, just hit Send 
+<img class="inline" src="./img/send.png" height="35">.
 
 The response is as follows:
 
@@ -511,14 +562,29 @@ The response is as follows:
 {"data":"100000000000000000000"}
 ```
 
+::: tip
+Ethereum doesn't support decimals, so instead it's just a really big number.
+To get the value with decimals, you divide it:
+
+$${100000000000000000000 \over 1000000000000000000} = 100$$
+
+The divisor is `1e18`, or in other words 1 followed by eighteen 0's. The 18
+is arbitrary, but it's what ETH and most tokens use. If you're dealing with
+a token using a different number of decimals, just use that number instead
+of 18. The raw value is often also called "Wei".
+
+That means we just minted 100 tokens to ourselves.
+:::
+
 ### 5. Creating an Ethereum account
 
 ![create account](./img/create-account.png)
 
 To create a second Ethereum account, use the "POST Create account" endpoint.
 
-No parameter changes are needed, just hit Send, and you'll see a response
-like this:
+No parameter changes are needed, just hit Send
+<img class="inline" src="./img/send.png" height="35"> , and you'll see a 
+response like this:
 
 ```json
 {
@@ -536,30 +602,44 @@ if you specify it in the API calls. We'll look at how to do that below.
 
 ### 6. Transferring tokens
 
-![transfer tokens](./img/transfer-tokens.png)
-
 To transfer 2 PMP tokens from your default account to the newly created one, use
 the "POST Transfer tokens" endpoint.
+
+![transfer tokens](./img/transfer-tokens.png)
 
 In Body, change the `to` address to match the second account's address you
 created in the previous step:
 
 ![transfer body](./img/transfer-body.png)
 
+Then change `value` to `2000000000000000000`:
+
+![change value](./img/change-value.png)
+
 Then hit Send. The response is as follows:
 
 ```json
 {
     "data": {
-        "id": "1be96ada-4b5c-4edc-8d3b-f79ee222e586",
+        "id": "024c9ea7-a8a8-42ca-8e4b-c233f6f4f4e1",
+        "type": "contract-method",
+        "contractId": "44740750-522f-46ae-a63c-fcd1a8f5e308",
+        "from": "0x8769a34484b038e96edb82a3f72e47a13d543459",
+        "method": "transfer",
+        "parameters": [
+            "0x632777aeb73f955a660817d5f1ab1a36365485aa",
+            "2000000000000000000"
+        ],
         "status": "new",
-        "created": "2018-08-15T19:20:46.576Z"
+        "created": "2019-10-22T21:07:27.916Z",
+        "network": "libra"
     }
 }
 ```
 
 As before, the response refers to a transaction, rather than the result of the
-transfer. Refer to Step 3 to check on the status of the transaction.
+transfer. Refer to [Step 3](#_3-getting-the-status-of-a-transaction-2) to check 
+on the status of the transaction.
 
 ### 7. Get the token balance of another account
 
@@ -571,7 +651,7 @@ endpoint.
 
 ![token balance](./img/token-balance.png)
 
-In Params, change the `address` value to match your second account's address.
+In Params, set the `address` value to match your second account's address.
 
 Hit Send. The response is as follows:
 
@@ -617,4 +697,5 @@ Hit Send. The response is as follows:
 }
 ```
 
-As before, refer to step 3 to get the status of the transaction.
+As before, refer to [Step 3](#_3-getting-the-status-of-a-transaction-2) 
+to get the status of the transaction.

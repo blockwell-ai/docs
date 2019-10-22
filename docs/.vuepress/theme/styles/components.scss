@@ -19,3 +19,7 @@
 .code-copy {
   height: 0;
 }
+
+#{$contentClass} img.inline {
+  vertical-align: middle;
+}

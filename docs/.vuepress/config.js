@@ -9,12 +9,24 @@ module.exports = {
     plugins: [
         ['vuepress-plugin-code-copy', {
             color: '#eeeeee'
-        }]
+        }],
+        ['vuepress-plugin-container', {
+            type: 'detail',
+            defaultTitle: {
+                '/': "IF YOU'RE CURIOUS",
+                '/zh/': '提示'
+            }
+        }],
+        [
+            'vuepress-plugin-mathjax',
+            {
+                target: 'svg'
+            }
+        ]
     ],
     markdown: {
         extendMarkdown: md => {
             md.use(require('../../plugins/markdown-it-responsive-video'));
-            md.use(require('markdown-it-katex'));
         }
     },
     themeConfig: {
