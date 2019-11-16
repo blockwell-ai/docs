@@ -142,7 +142,8 @@ module.exports = {
                     title: 'Others',
                     collapsable: false,
                     children: [
-                        'daico'
+                        'daico',
+                        'suggestions'
                     ]
                 }
             ]
@@ -175,7 +176,8 @@ module.exports = {
                     },
                     {
                         text: 'Other Contracts', items: [
-                            {text: 'Daico', link: '/contracts/daico'}
+                            {text: 'Daico', link: '/contracts/daico'},
+                            {text: 'Suggestions', link: '/contracts/suggestions'}
                         ]
                     }
                 ]

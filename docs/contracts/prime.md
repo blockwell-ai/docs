@@ -174,59 +174,7 @@ contains the sender, recipient, and the amount of tokens.
 
 ### Suggestions and Voting
 
-This feature allows adding suggestions to the contract and users voting on them.
-
-Suggestions are simply a short text describing the suggestion, and can be
-anything you want your users to vote on.
-
-#### Casting votes
-
-There are two functions for casting votes:
-
-- `vote(uint256 suggestionId, string comment)` casts one vote on the suggestion
-  with the given ID. The comment is optional and can be left blank.
-- `multiVote(uint256 suggestionId, uint256 votes, string comment)` casts multiple
-  votes on the issue with the given ID. This can only be used if the contract is
-  configured to allow multiple votes (see [Configuration](#configuration)).
-
-#### Configuration
-
-The voting system can be configured to behave in different ways:
-
-- `setSuggestionsRestricted(bool restricted)` If this is set to true, only
-  users with the Delegate role can create suggestions. Defaults to true.
-- `setRequireBalanceForVote(bool required)` If this is set to true, users must
-  have a non-zero balance of tokens to cast votes. Defaults to true.
-- `setRequireBalanceForCreateSuggestion(bool required)` If suggestions are NOT
-  restricted to Delegates, and this is set to true, users must have a non-zero
-  balance of tokens to create suggestions. Defaults to true.
-- `setVoteCost(uint256 cost)` If this is set to non-zero, a payment of this
-  amount will be deducted from users per vote they cast. If they don't have
-  enough tokens to pay, the vote will fail. Defaults to 0.
-- `setOneVotePerAccount(bool oneVote)` If this is set to true, users can only
-  vote once per suggestion. Defaults to true.
-  
-Here are a couple of example configurations.
-
-##### Unlimited voting with each vote costing 1 token
-
-You would call:
-
-- `setOneVotePerAccount(false)` to allow multiple votes to be cast.
-- `setVoteCost(1000000000000000000)` to set the cost of a vote to one token 
-  (18 decimals).
-
-##### Anyone can create suggestions and vote once without any tokens
-
-You would call:
-
-- `setRequireBalanceForVote(false)` to allow voting without having tokens.
-- `setSuggestionsRestricted(false)` to allow anyone to create suggestions.
-- `setRequireBalanceForCreateSuggestion(false)` to allow anyone to create
-  suggestions without having tokens.
-
-Now anyone can create suggestions and vote once per suggestion without
-needing to have a balance of tokens.
+Prime includes the [Suggestions feature](./suggestions.md).
 
 ### Cross-chain swapping
 
