@@ -113,6 +113,7 @@ module.exports = {
                         'getting-started-web'
                     ]
                 },
+                'voting',
                 'creating-qr',
                 {
                     title: 'Videos',
@@ -135,7 +136,8 @@ module.exports = {
                     title: 'Tokens',
                     collapsable: false,
                     children: [
-                        'prime'
+                        'prime',
+                        'community'
                     ]
                 },
                 {
@@ -143,7 +145,8 @@ module.exports = {
                     collapsable: false,
                     children: [
                         'daico',
-                        'suggestions'
+                        'suggestions',
+                        'blockwell-roar'
                     ]
                 }
             ]
@@ -171,13 +174,15 @@ module.exports = {
                     {text: "Introduction", link: '/contracts/'},
                     {
                         text: 'ERC-20 Tokens', items: [
-                            {text: 'Prime', link: '/contracts/prime'}
+                            {text: 'Prime', link: '/contracts/prime'},
+                            {text: 'Community Token', link: '/contracts/community'},
                         ]
                     },
                     {
                         text: 'Other Contracts', items: [
                             {text: 'Daico', link: '/contracts/daico'},
-                            {text: 'Suggestions', link: '/contracts/suggestions'}
+                            {text: 'Suggestions', link: '/contracts/suggestions'},
+                            {text: 'Blockwell Roar', link: '/contracts/blockwell-roar'},
                         ]
                     }
                 ]

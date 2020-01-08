@@ -5,39 +5,34 @@ sidebarDepth: 2
 
 # Suggestions
 
-## Suggestions and Voting
+## Suggestions
 
 This feature allows adding suggestions to the contract and users voting on them.
 
-Suggestions are simply a short text describing the suggestion, and can be
-anything you want your users to vote on.
+Suggestions are short pieces of text that token holders can create, as well as 
+vote on. All data on suggestions are stored on the blockchain in a transparent manner.
 
-## Blockwell Roar
+A suggestion can be a communication or some action you’d like to bring 
+attention to, and have users vote on which ones the community cares the most about.
 
-Blockwell Roar is a contract that lets the community suggest and vote for new
-features or other improvements for Blockwell.
+There is also an advanced form of suggestions in [Community Token](./community.md)
+with more features.
 
-Use the following QR Code to create a new suggestion for Blockwell Roar:
+## Voting
 
-<Qr code="i5e0b9">Blockwell Roar Create Suggestion</Qr>
+By default, each token holder can keep voting for as many different suggestions
+as they want, but only once per each suggestion.
 
-This one is for voting on Blockwell Roar suggestions:
-
-<Qr code="0mxqal">Blockwell Roar Vote</Qr>
-
-You can also use the Web Suggestion Viewer to see all existing suggestions
-in Blockwell Roar:
-
-> [Blockwell Roar Suggestion Viewer](https://qr.blockwell.ai/suggestions?contract=0xE595564689D6E0206b095915C219a8c7a130cF7B&net=rinkeby)
+For different voting configurations, see [Configuration](#configuration). With
+Community Tokens, you can also configure [advanced Allocated Votes](community.md).
 
 ## Viewing Suggestions
 
 There are three ways to view suggestions and their votes on a contract:
 
 1. Read the data directly from the contract on the blockchain.
-2. Use a [QR Code](../qr) for voting on a contract. The app will display
-   all suggestions you can vote on.
-3. Use the [Web Suggestion Viewer](https://qr.blockwell.ai/suggestions).
+2. Use the [Web Suggestion Viewer](https://qr.blockwell.ai/suggestions).
+3. Use the Android Suggestion Viewer in the top-right menu of the Android app.
 
 ## Tagging
 
