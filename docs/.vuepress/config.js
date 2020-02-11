@@ -56,7 +56,7 @@ module.exports = {
                     title: 'Links',
                     collapsable: false,
                     children: [
-                        ['https://apidocs.apiminer.com', 'API Miner API Specification']
+                        ['https://docs.blockwell.ai/apiminer/api', 'API Miner API Specification']
                     ]
                 }
             ],
@@ -198,5 +198,9 @@ module.exports = {
                 link: 'https://blockwell.ai'
             }
         ]
-    }
+    },
+    head: [
+        ['script', {async: 'async', src: 'https://www.googletagmanager.com/gtag/js?id=UA-125261381-4'}],
+        ['script', {}, `window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-125261381-4');`]
+    ]
 };

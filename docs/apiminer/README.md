@@ -20,7 +20,7 @@ Currently API Miner is focused on Ethereum-compatible blockchains.
 
 The Swagger specification and API documentation for API Miner is available here:
 
-[API Miner specification](https://apidocs.apiminer.com)
+[API Miner specification](https://docs.blockwell.ai/apiminer/api)
 
 
 ## Rate Limiting

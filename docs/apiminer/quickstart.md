@@ -367,7 +367,7 @@ documentation for installation.
 
 Download the Postman collection for API Miner:
 
-[API Miner collection](https://apidocs.apiminer.com/apiminer-collection.json)
+[API Miner collection](https://docs.blockwell.ai/apiminer/api/apiminer-collection.json)
 
 After installing, import the collection:
 
@@ -487,7 +487,7 @@ it to finish, it just gives you an ID that you can use to refer to it later.
 ::: detail
 In addition to the `id`, there are several fields as part of the response.
 You can read more about each field in the 
-[API Spec](https://apidocs.apiminer.com/#operation/ContractSend), just scroll
+[API Spec](https://docs.blockwell.ai/apiminer/api/#operation/ContractSend), just scroll
 down to the Responses and click `data` to show the fields.
 :::
 
