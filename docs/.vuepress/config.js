@@ -137,7 +137,8 @@ module.exports = {
                     collapsable: false,
                     children: [
                         'prime',
-                        'community'
+                        'community',
+                        'forum'
                     ]
                 },
                 {
@@ -177,6 +178,7 @@ module.exports = {
                         text: 'ERC-20 Tokens', items: [
                             {text: 'Prime', link: '/contracts/prime'},
                             {text: 'Community Token', link: '/contracts/community'},
+                            {text: 'Forum Token', link: '/contracts/forum'},
                         ]
                     },
                     {
