@@ -15,7 +15,22 @@ attention to, and have users vote on which ones the community cares the most abo
 This page will tell you how to view suggestions and cast votes. To find more about
 the technical details behind them, [read more here](../contracts/suggestions.md).
 
-### Creating Suggestions And Casting Votes
+## Proposals
+
+Proposals are a special upgrade to a suggestion. Proposals can have different meanings 
+for different tokens, but they typically represent suggestions that the community 
+has approved of, and will receive added attention.
+
+Proposals cannot be created directly. Instead, once a suggestion reaches a certain 
+number of votes, it will be promoted into a Proposal automatically. Proposals have 
+a second round of voting that works differently from voting on suggestions.
+
+Voting on a Proposal can only be done once per week by everyone, and you can never 
+vote twice on the same Proposal. However, instead of your vote counting for a single 
+vote, the Proposal will get votes equal to your total token balance. For example, if 
+you have 200,000 tokens, when you vote for a Proposal, it will receive 200,000 votes.
+
+# Creating Suggestions And Casting Votes
 
 Both creating suggestions and voting on them is straight-forward, and can be done 
 using either the web app or the Android app.
