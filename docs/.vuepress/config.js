@@ -138,7 +138,8 @@ module.exports = {
                     children: [
                         'prime',
                         'community',
-                        'forum'
+                        'forum',
+                        'ego'
                     ]
                 },
                 {
@@ -179,6 +180,7 @@ module.exports = {
                             {text: 'Prime', link: '/contracts/prime'},
                             {text: 'Community Token', link: '/contracts/community'},
                             {text: 'Forum Token', link: '/contracts/forum'},
+                            {text: 'Ego Coin', link: '/contracts/ego'},
                         ]
                     },
                     {
