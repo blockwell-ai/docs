@@ -147,6 +147,7 @@ module.exports = {
                     collapsable: false,
                     children: [
                         'daico',
+                        'itemdrops',
                         'suggestions',
                         'data-strings',
                         'blockwell-roar'
@@ -186,6 +187,7 @@ module.exports = {
                     {
                         text: 'Other Contracts', items: [
                             {text: 'Daico', link: '/contracts/daico'},
+                            {text: 'Item Drops / Lotto', link: '/contracts/itemdrops'},
                             {text: 'Suggestions', link: '/contracts/suggestions'},
                             {text: 'Data Strings', link: '/contracts/data-strings'},
                             {text: 'Blockwell Roar', link: '/contracts/blockwell-roar'},
