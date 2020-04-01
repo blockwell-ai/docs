@@ -83,8 +83,7 @@ module.exports = {
                     title: 'bw Server',
                     collapsable: false,
                     children: [
-                        ['ssh-key', 'Creating SSH Keys'],
-                        ['https://bw.blockwell.ai', 'bw Server Access']
+                        ['ssh-key', 'Creating SSH Keys']
                     ]
                 },
                 {
@@ -161,7 +160,7 @@ module.exports = {
                 text: 'Guides',
                 items: [
                     {text: 'Blockwell-QR', link: '/qr/getting-started'},
-                    {text: 'API Miner Quickstart', link: '/apiminer/quickstart/'},
+                    {text: 'API Miner Quickstart', link: '/apiminer/quickstart'},
                     {text: 'Getting Started with bw', link: '/bw/getting-started'},
                     {text: 'Using Daico', link: '/contracts/daico#using-daico'}
                 ]

@@ -8,9 +8,7 @@ sidebarDepth: 2
 bw is a command-line application, so you'll first need the files to run it. We have
 not released the tool openly at this point.
 
-You can sign up for SSH access to a bw server that has everything setup for you:
-
-[bw Server](https://bw.blockwell.ai)
+If you'd like access to the tool, contact us at blockwell@blockwell.ai.
 
 ## Basic Usage
 
