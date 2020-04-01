@@ -149,6 +149,7 @@ module.exports = {
                         'daico',
                         'itemdrops',
                         'suggestions',
+                        'quill',
                         'data-strings',
                         'blockwell-roar'
                     ]
@@ -189,6 +190,7 @@ module.exports = {
                             {text: 'Daico', link: '/contracts/daico'},
                             {text: 'Item Drops / Lotto', link: '/contracts/itemdrops'},
                             {text: 'Suggestions', link: '/contracts/suggestions'},
+                            {text: 'Quill', link: '/contracts/quill'},
                             {text: 'Data Strings', link: '/contracts/data-strings'},
                             {text: 'Blockwell Roar', link: '/contracts/blockwell-roar'},
                         ]

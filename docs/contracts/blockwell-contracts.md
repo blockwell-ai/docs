@@ -17,6 +17,14 @@ freezing, Blockwell Quill and more.
 The Daico contract lets you manage payments of an ERC-20 token by requiring
 approval by votes to clear each payment.
 
+[**Community**](./community.md)  
+An ERC-20 token with advanced voting functionality.
+
+[**Forum**](./forum.md)  
+An ERC-721 token with advanced voting functionality.
+
+See the menu links for a full list.
+
 ## What are Deployers?
 
 Most Blockwell contracts have a corresponding special Deployer contract that

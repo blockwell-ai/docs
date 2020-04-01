@@ -16,7 +16,6 @@ Here are QR Codes for deploying a Community Token on the Rinkeby Test Network
 
 <Qr code="ro9nd9">Deploy Community Token (Rinkeby)</Qr>
 
-
 ## Allocated Voting
 
 Community Tokens can use Allocated Votes with [Suggestions](./suggestions.md).

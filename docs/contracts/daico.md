@@ -47,8 +47,7 @@ using a delegate account.
 
 ## Deployer
 
-Here are QR Codes for deploying a Daico contract on both the Main Ethereum
-Network and the Rinkeby Test Network 
+Here are QR Codes for deploying a Daico contract on the Rinkeby Test Network 
 ([what are deployers?](./blockwell-contracts.md#what-are-deployers)).
 
 If you want to test the Daico contract but you don't have any tokens on
@@ -57,9 +56,7 @@ Rinkeby, [use our Prime Token Deployer to create one](./prime.md#deployer).
 After you deploy the Daico contract, you will receive an email the necessary
 QR Codes to finish setting it up. For a more detailed walkthrough, see below.
 
-<Qr code="v662it">Deploy Daico (Main)</Qr>
-
-<Qr code="811d1x">Deploy Daico (Rinkeby)</Qr>
+<Qr code="m0jxgn">Deploy Daico (Rinkeby)</Qr>
 
 ## Using Daico
 
@@ -136,7 +133,7 @@ Press **ACCEPT** and wait for the transaction to succeed.
 
 ::: tip
 You can create as many suggestions as you want, and each one will send 
-the payment for the amount of tokens you configured in Step 6 when 
+the payment for the amount of tokens you configured in Step 1 when 
 the threshold is met.
 :::
 

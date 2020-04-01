@@ -11,6 +11,7 @@ based on ERC721. In addition to all standard controls, it has various features f
 
 - [Allocated voting](./community.md#allocated-voting)
 - [Proposals](./community.md#proposals)
+- [Quill](./quill.md)
 - [Freeze](./prime.md#freeze)
 - [Pause](./prime.md#pause)
 - [User roles](./prime.md#user-roles)
