@@ -22,6 +22,26 @@ winning a voucher for a free pizza.
 The Item Drops and Lotto are independent, a contract can use only one of them, or
 both at the same time.
 
+## Play
+
+You can try playing a sample Lotto for Food Coins. All Blockwell Wallets receive
+Food Coins at signup, so all Blockwell users can play it for free:
+
+<Qr code="4beui3">Play Food Coin Lotto</Qr>
+
+You can see how the Food Coin Lotto is configured on the 
+[Lotto hybrid app](https://qr.blockwell.ai/lotto?contract=0x52683A6789b294Da993FD48636707047cc104485&net=4).
+
+## Deployer
+
+Here's a QR Code for deploying one on the Rinkeby Test Network 
+([what are deployers?](./blockwell-contracts.md#what-are-deployers)).
+
+The deployment automatically uses Food Coin, which all Blockwell Wallets receive
+on signup.
+
+<Qr code="fg6vws">Deploy Food Coin Lotto (Rinkeby)</Qr>
+
 ## Configuration
 
 There are several configuration options that the contract has. You can use the
