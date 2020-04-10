@@ -23,7 +23,7 @@ be given to the wallet you used to deploy the token.
 
 <Qr code="y6sxqs">Deploy Prime Token (Main)</Qr>
 
-<Qr code="ev2r9u">Deploy Prime Token (Rinkeby)</Qr>
+<Qr code="rks1rq">Deploy Prime Token (Rinkeby)</Qr>
 
 ## Features
 
