@@ -5,6 +5,10 @@ sidebarDepth: 2
 
 # Item Drops / Lotto
 
+<Deployer code="fg6vws">Lotto Contract</Deployer>
+
+## Introduction
+
 Item Drops, also known as Lotto, is a contract that lets users play games of
 chance to win tokens.
 
@@ -31,16 +35,6 @@ Food Coins at signup, so all Blockwell users can play it for free:
 
 You can see how the Food Coin Lotto is configured on the 
 [Lotto hybrid app](https://qr.blockwell.ai/lotto?contract=0x52683A6789b294Da993FD48636707047cc104485&net=4).
-
-## Deployer
-
-Here's a QR Code for deploying one on the Rinkeby Test Network 
-([what are deployers?](./blockwell-contracts.md#what-are-deployers)).
-
-The deployment automatically uses Food Coin, which all Blockwell Wallets receive
-on signup.
-
-<Qr code="fg6vws">Deploy Food Coin Lotto (Rinkeby)</Qr>
 
 ## Configuration
 

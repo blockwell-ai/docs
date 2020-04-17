@@ -5,25 +5,13 @@ sidebarDepth: 2
 
 # Prime
 
+<Deployer code="rks1rq">Prime Token</Deployer>
+
 ## Introduction
 
 Blockwell Prime is a multi-functional ERC20 compatible token. It has many
 advanced features, but Prime can also be used as just a basic token. You can
 always take advantage of the features later on.
-
-
-## Deployer
-
-Here are QR Codes for deploying a Prime Token on both the Main Ethereum
-Network and the Rinkeby Test Network 
-([what are deployers?](./blockwell-contracts.md#what-are-deployers)).
-
-When you deploy a Prime contract using either QR Code, the main supply will
-be given to the wallet you used to deploy the token.
-
-<Qr code="y6sxqs">Deploy Prime Token (Main)</Qr>
-
-<Qr code="rks1rq">Deploy Prime Token (Rinkeby)</Qr>
 
 ## Features
 

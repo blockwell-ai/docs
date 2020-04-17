@@ -5,16 +5,13 @@ sidebarDepth: 2
 
 # Community Token
 
+<Deployer code="ro9nd9">Community Token</Deployer>
+
+## Introduction
+
 A Community Token is similar to [Prime](./prime.md) and has mostly the same features.
 
 In addition, Community Token has more advanced [Suggestions](./suggestions.md) and voting.
-
-## Deployer
-
-Here are QR Codes for deploying a Community Token on the Rinkeby Test Network 
-([what are deployers?](./blockwell-contracts.md#what-are-deployers)).
-
-<Qr code="ro9nd9">Deploy Community Token (Rinkeby)</Qr>
 
 ## Allocated Voting
 
