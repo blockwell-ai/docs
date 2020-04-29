@@ -75,7 +75,6 @@ module.exports = {
                     title: 'Commands',
                     collapsable: false,
                     children: [
-                        'global-options',
                         'commands'
                     ]
                 },
