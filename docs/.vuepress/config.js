@@ -41,7 +41,8 @@ module.exports = {
                         ['quickstart', 'Quickstart'],
                         'conventions',
                         'callbacks',
-                        'networks'
+                        'networks',
+                        'changelog'
                     ]
                 },
                 {
