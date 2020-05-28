@@ -1,14 +1,40 @@
 ---
-label: Test
+label: Pages
 hide_body: false
+display_field: title
 fields:
 - type: text
   name: title
-  label: title
+  label: Page Title
+  description: Title of the page shown in nav bars and the browser title.
 - type: field_group
   name: autonav
-  label: autonav
+  label: Navigation Settings
   fields:
   - type: number
     name: order
-    label: order
+    label: Order
+    description: The sorting order for this page in navigation. The higher this number
+      is, the lower in order the page will appear.
+    config:
+      step: 1
+  - name: group
+    type: text
+    config:
+      required: false
+    label: Group
+    description: Under which group should this page appear in navigation. Leave empty
+      for no group.
+  - name: groupOrder
+    type: number
+    label: Group Order
+    description: The ordering of the group this page belongs to. Try to make sure
+      to only set this on a single page, different values for the same group will
+      cause an error.
+    default: 0
+    required: true
+    config:
+      min: 
+      max: 
+      step: 
+  description: Settings for how this page appears in navigation.
