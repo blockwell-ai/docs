@@ -1,0 +1,14 @@
+---
+label: Test
+hide_body: false
+fields:
+- type: text
+  name: title
+  label: title
+- type: field_group
+  name: autonav
+  label: autonav
+  fields:
+  - type: number
+    name: order
+    label: order
