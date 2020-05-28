@@ -3,7 +3,12 @@ new_page_extension: md
 auto_deploy: false
 admin_path: 
 webhook_url: 
-sections: 
+sections:
+- type: directory
+  path: docs/tools
+  label: Tools
+  create: all
+  match: "**/*"
 upload_dir: docs/.vuepress/public
 public_path: ''
 front_matter_path: ''
