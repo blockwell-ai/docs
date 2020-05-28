@@ -1,15 +1,31 @@
 ---
 title: bw
+landing: true
+logo: /icons/bw.svg
+heroText: bw
+tagline: Ethereum command-line interface
 ---
 
-# bw
+<div class="home-section">
+<div class="home-section-inner">
 
-## Introduction
+<div class="features">
 
-bw is a command-line tool for Ethereum that can be used to interact with the blockchain,
-as well as get data for analysis.
+- ![Your Own Wallet](/icons/wallet.svg) **Your Process** With bw you are in control - no external
+    services - using your own wallet
+- ![Smart Contracts](/icons/iblockwell.svg) **Ethereum Unlocked** Do anything with Ethereum, from
+    transactions and smart contracts to analysis
+- ![REST API](/icons/embed-code.svg) **Unix Philosophy** Call it manually or as part of a process,
+    bw doesn't care
+    
+</div>
+    
+<div class="buttons">
 
-bw supports any Ethereum chain that you can connect to a node for. You can use your own
-node, or services like Infura also work.
+- Want to get started? *Coming Soon*
+- Want to learn more? [Read Documentation](./getting-started.md)
 
-![bw screenshot](./img/screenshot.png)
+</div>
+
+</div></div>
+

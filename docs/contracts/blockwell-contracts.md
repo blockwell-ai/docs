@@ -9,21 +9,29 @@ title: Blockwell Contracts
 Blockwell has written many different types of contracts with novel features.
 Here's a quick overview of some of them.
 
+### ERC-20 Tokens
+
 [**Prime**](./prime.md)  
 Multi-functional ERC-20 token with support for voting, locking, cross-chain swaps, 
 freezing, Blockwell Quill and more.
 
-[**Daico**](./daico.md)  
-The Daico contract lets you manage payments of an ERC-20 token by requiring
-approval by votes to clear each payment.
-
 [**Community**](./community.md)  
 An ERC-20 token with advanced voting functionality.
 
-[**Forum**](./forum.md)  
-An ERC-721 token with advanced voting functionality.
+### ERC-721 Tokens
 
-See the menu links for a full list.
+[**Forum**](./forum.md)  
+A Non-Fungible Token with Community Token's advanced voting.
+
+### Governance
+
+[**Daico**](./daico.md)  
+The Daico contract lets you govern funds and their use.
+
+[**Community**](./community.md)  
+Community Token's advanced [Suggestions](./suggestions.md) and 
+[Proposals](./community.md#proposals) allow for group governance.
+
 
 ## What are Deployers?
 

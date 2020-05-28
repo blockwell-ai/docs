@@ -1,6 +1,7 @@
 ---
 title: Getting Started
-sidebarDepth: 2
+autonav:
+    order: -2
 ---
 
 # Getting Started

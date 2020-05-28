@@ -1,0 +1,67 @@
+
+@mixin btn {
+  font-size: 14px;
+  padding: 12px 20px;
+  margin-bottom: 0;
+  border-radius: 1px;
+  font-weight: 600;
+
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:focus,
+  &:active:focus {
+    outline: thin dotted;
+    outline-offset: -2px;
+  }
+  &:hover,
+  &:focus {
+    color: #333;
+    text-decoration: none;
+  }
+  &:active {
+    background-image: none;
+    outline: 0;
+    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+  }
+}
+
+@mixin btn-color($color, $text) {
+
+    color: $text;
+    background-color: $color;
+    border-color: transparent;
+
+  &:focus {
+    color: $text;
+    background-color: $color;
+    border-color: $color;
+    text-decoration: none;
+  }
+  &:hover {
+    background-color: lighten($color, 10%);
+    color: $text;
+    text-decoration: none;
+  }
+  &:active {
+    background-color: darken($color, 10%);
+    color: $text;
+    text-decoration: none;
+  }
+}

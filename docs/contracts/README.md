@@ -1,31 +1,30 @@
 ---
 title: Smart Contracts
+landing: true
+logo: /icons/smart-license.svg
+heroText: Blockwell Smart Contracts
+tagline: Blockwell has a large library of Smart Contracts for various use cases
 ---
 
-# Smart Contracts
+<div class="home-section">
+<div class="home-section-inner">
 
-## Introduction
+<div class="features">
 
-Ethereum has what's called "smart contracts" that perform operations on
-the blockchain according to their programming. However, compared to normal
-websites or applications they have some unique advantages:
+- ![Tokens](/icons/token-creator.svg) **Tokens** ERC-20 and ERC-721 compatible tokens
+- ![Deployers](/icons/embed-code.svg) **Deployers** Deploy your own contracts in seconds 
+- ![Governance](/icons/smart-license.svg) **Governance** Contracts for governing organizations and funds
+    
+</div>
+    
+<div class="buttons">
 
-- Once a smart contract exists, it can't be changed, even by its creators.
-- The result of the operation is guaranteed by the blockchain to be consistent.
-  In other words, the entire blockchain agrees on a single result.
-- Once the operation is done, it can never be altered or erased.
+- Want to get started? [Deploy a Token](https://qr.blockwell.ai/rks1rq)
+- Want to learn more? [Read Documentation](./blockwell-contracts.md)
+- Interested in governance? [Shopin Governance](https://vote.blockwell.ai/shopin)
+    *Shopin Token holders are using Suggestions and Voting to decide the project's future*
 
-What this means in practice is that if you can verify the source code of
-the contract, you don't have to trust the creator or anyone else to be
-able to use it safely.
+</div>
 
-The most common type of smart contract on Ethereum is the
-[ERC20 Token](https://docs.ethhub.io/built-on-ethereum/erc-token-standards/erc20/)
-that specifies a fungible asset that can be sent between accounts.
+</div></div>
 
-You can learn more about smart contracts in the
-[Mastering Ethereum](https://github.com/ethereumbook/ethereumbook/blob/develop/07smart-contracts-solidity.asciidoc)
-free ebook.
-
-You can [read more about Blockwell contracts](./blockwell-contracts.md), or
-select one from the left navigation.

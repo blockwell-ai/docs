@@ -1,30 +1,31 @@
 ---
 title: API Miner
+landing: true
+logo: /icons/apiminer.svg
+heroText: API Miner
+tagline: Simple to use API for the blockchain
 ---
 
-# API Miner
+<div class="home-section">
+<div class="home-section-inner">
 
-## Introduction
+<div class="features">
 
-API Miner is a set of REST APIs for using the blockchain. Some of its features include:
+- ![Custodial Wallets](/icons/wallet.svg) **Custodial Wallets** Manages your wallets for you securely
+- ![Smart Contracts](/icons/smart-license.svg) **Smart Contracts** Works with any smart contract -
+    you can add existing contracts or deploy new ones
+- ![REST API](/icons/embed-code.svg) **REST API** Takes care of all the heavy lifting, do anything
+    on the blockchain with simple REST calls 
+    
+</div>
+    
+<div class="buttons">
 
-- Create and manage blockchain wallets.
-- Create and manage separate users from your own system.
-- Deploy standard smart contracts like [Blockwell Prime](../../contracts/prime.md) or basic ERC-20 tokens.
-- Interact with any smart contract on the blockchain using a simple API.
-- Send arbitrary transactions on the blockchain.
+- Want to get started? [Get API Key](https://qr.blockwell.ai/app/account/apiminer)
+- Want to learn more? [Read Documentation](./introduction.md)
+- Want the API details? [OpenAPI 3.0 Spec](https://docs.blockwell.ai/apiminer/api)
 
-Currently API Miner is focused on Ethereum-compatible blockchains.
+</div>
 
-## API documentation
+</div></div>
 
-The Swagger specification and API documentation for API Miner is available here:
-
-[API Miner specification](https://docs.blockwell.ai/apiminer/api)
-
-
-## Rate Limiting
-
-All users are limited to 10 requests per second and 3600 requests per hour.
-
-Contact us if you need higher limits.

@@ -80,6 +80,7 @@ function sort_items(items) {
  */
 PLUGIN.get_auto_nav_items = async (pages, plugin_options) => {
     const items = [];
+    console.log(pages);
     for (const page of pages) {
         const page_options = PLUGIN.get_page_options(page, plugin_options);
 

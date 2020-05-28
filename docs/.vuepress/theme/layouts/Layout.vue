@@ -17,7 +17,7 @@
                   #bottom/>
         </Sidebar>
 
-        <Home v-if="$page.frontmatter.home"/>
+        <Home v-if="$page.frontmatter.home || $page.frontmatter.landing"/>
 
         <Page v-else
               :sidebar-items="sidebarItems">
@@ -67,6 +67,7 @@
                 const {frontmatter} = this.$page;
                 return (
                     !frontmatter.home
+                    && !frontmatter.landing
                     && frontmatter.sidebar !== false
                     && this.sidebarItems.length
                 )

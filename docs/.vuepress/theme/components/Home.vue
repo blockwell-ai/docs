@@ -1,15 +1,20 @@
 <template>
     <div>
-        <main class="home" aria-labelledby="main-title">
+        <main :class="classes" aria-labelledby="main-title">
             <header class="hero">
                 <img v-if="data.heroImage"
                      :src="$withBase(data.heroImage)"
                      :alt="data.heroAlt || 'hero'">
 
+                <img v-if="data.logo"
+                     class="logo-image"
+                     :src="$withBase(data.logo)"
+                     :alt="data.logoAlt || 'logo'">
+
                 <h1 v-if="data.heroText !== null" id="main-title">{{ data.heroText || $title || 'Hello' }}</h1>
 
-                <p class="description">
-                    {{ data.tagline || $description || 'Welcome to your VuePress site' }}
+                <p v-if="data.tagline" class="description">
+                    {{ data.tagline }}
                 </p>
 
                 <p class="action"
@@ -19,28 +24,9 @@
                 </p>
             </header>
 
-            <p class="features-description">
-                Select one of the systems below to learn more about each one, or use the main navigation.
+            <p v-if="data.featuresText" class="features-description">
+                {{ data.featuresText }}
             </p>
-
-            <div class="features" v-if="data.features && data.features.length">
-                <div class="feature"
-                     v-for="(feature, index) in data.features"
-                     :key="index">
-
-                    <a :href="feature.link">
-                        <div class="feature-icon-wrap">
-                            <img v-if="feature.icon" :src="feature.icon">
-                        </div>
-                        <div class="heading-wrap">
-                            <h4>{{ feature.title }}</h4>
-                        </div>
-                        <p>
-                            {{ feature.details }}
-                        </p>
-                    </a>
-                </div>
-            </div>
 
             <Content class="theme-default-content custom"/>
         </main>
@@ -60,6 +46,17 @@
                 return this.$page.frontmatter
             },
 
+            classes() {
+                let val = ["home"];
+                if (this.$page.frontmatter.wide) {
+                    val.push('wide');
+                }
+                if (this.$page.frontmatter.landing) {
+                    val.push('landing');
+                }
+                return val.join(' ');
+            },
+
             actionLink() {
                 return {
                     link: this.data.actionLink,
@@ -72,15 +69,22 @@
 
 <style lang="scss">
     @import '../styles/config';
+    @import '../styles/mixins';
     @import "~@material/elevation/mdc-elevation";
 
     .home {
-        padding: $navbarHeight 2rem 0;
+        padding: $navbarHeight 0 0;
+        display: block;
         max-width: 960px;
         margin: 0 auto;
-        display: block;
+
+        &.wide {
+            max-width: none;
+            margin: 0;
+        }
 
         .hero {
+            padding: 0 16px;
             text-align: center;
 
             img {
@@ -88,6 +92,10 @@
                 max-height: 280px;
                 display: block;
                 margin: 3rem auto 1.5rem;
+            }
+
+            .logo-image {
+                max-height: 140px;
             }
 
             h1 {
@@ -122,68 +130,87 @@
         }
 
         .features-description {
+            padding: 0 16px;
             font-size: 18px;
             text-align: center;
         }
 
-        .features {
-            border-top: 1px solid $borderColor;
-            padding: 30px 0;
-            margin-top: 2.5rem;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: flex-start;
-            align-content: stretch;
-            justify-content: space-around;
+        &.wide .home-section:nth-child(odd) {
+            background: $dark url("/bg2.png") top center;
+            color: $white;
         }
 
-        .feature {
-            flex-grow: 1;
-            flex-basis: 30%;
-            max-width: 30%;
-            margin-bottom: 16px;
+        .home-section-inner {
+            padding: 40px 16px;
+            max-width: 960px;
+            margin: 0 auto;
+            text-align: center;
 
-            a {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
+            .screenshot {
+                max-width: 640px;
+                margin: 0 auto;
+            }
+
+            .header-anchor {
+                display: none;
+            }
+            h1 {
                 text-align: center;
-                text-decoration: none;
-                color: $dark;
-                padding: 10px;
-                transition: all 0.4s ease;
+            }
 
-                &:hover {
-                    @include mdc-elevation(4, #666);
-                    background: #fdfdff;
-                }
-
-                .feature-icon-wrap {
-                    width: 52px;
-                    height: 52px;
-                    margin: 24px 0;
+            .features {
+                ul {
                     display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-around;
+                    list-style: none;
+                    padding: 0;
 
-                    img {
-                        display: block;
-                        vertical-align: center;
-                        max-width: 100%;
-                        max-height: 100%;
+                    li {
+                        flex: 0 0 220px;
+                        margin: 0 0 20px;
+                        padding: 0;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        text-align: center;
+                        font-size: 15px;
+                    }
+
+                    @media (max-width: $MQMobile) {
+                        grid-auto-flow: row;
+                        grid-auto-columns: 90%;
+
+                        li {
+                            margin: 0 0 40px;
+                        }
                     }
                 }
+            }
 
-                .heading-wrap {
-                    min-height: 72px;
+            .features {
+                ul {
+                    margin: 80px 0 20px;
                 }
+                li {
+                    strong {
+                        font-size: 24px;
+                        margin-bottom: 8px;
+                    }
+                    img {
+                        display: block;
+                        width: 72px;
+                        height: 72px;
+                        object-fit: contain;
+                        margin-bottom: 16px;
+                    }
+                }
+            }
+        }
 
-                h4 {
-                    font-size: 28px;
-                    margin: 16px 0 8px;
-                }
-
-                p {
-                    margin-top: 0;
-                }
+        &.landing {
+            .home-section-inner .features ul {
+                margin-top: 0;
             }
         }
 

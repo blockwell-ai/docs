@@ -1,5 +1,7 @@
 ---
 title: Build File Format
+autonav:
+    order: 1
 ---
 
 # Build File Format
