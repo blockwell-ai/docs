@@ -1,10 +1,12 @@
 ---
 title: Web
+autonav:
+    group: Getting Started
 ---
 
-# Getting Started with Blockwell-QR Web
+# Getting Started with Blockwell Wallet Web
 
-This guide will get you started using the Blockwell-QR Web App.
+This guide will get you started using the Blockwell Wallet Web App.
 
 ## 1. Register for an account
 
@@ -29,14 +31,14 @@ Note that the Food Coin balance in the Web App does not update automatically
 currently, you'll need to refresh the page to see the balance updated.
 
 ::: tip
-Your account is the same for all Blockwell-QR apps, so you can also log in
+Your account is the same for all Blockwell Wallet apps, so you can also log in
 to the [Android App](./getting-started-android.md) with the same email and 
 password.
 :::
 
 ## 2. Scan a QR Code
 
-You can now start using the Blockwell-QR Codes. Let's start with a simple one,
+You can now start using the Blockwell Wallet Codes. Let's start with a simple one,
 here's a QR Code that lets you transfer Food Coins:
 
 <Qr code="o53qvm">Send Food Coins</Qr>
@@ -107,6 +109,6 @@ This screen will update as the status of the transaction changes.
 
 ## 6. What's next
 
-Now you can use Blockwell-QR with other QR Codes. For example, you
+Now you can use Blockwell Wallet with other QR Codes. For example, you
 can [deploy your own ERC20 token](../contracts/prime.md), or you can
 read about [creating QR Codes](./creating-qr.md).

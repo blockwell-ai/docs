@@ -1,6 +1,7 @@
 <template>
   <nav
     class="nav-links"
+    :class="extraClass"
     v-if="userLinks.length || repoLink"
   >
     <!-- user links -->
@@ -10,8 +11,9 @@
       :key="item.link"
     >
       <DropdownLink
-        v-if="item.type === 'links'"
+        v-if="item.items"
         :item="item"
+        :no-collapse="noCollapse"
       />
       <NavLink
         v-else
@@ -35,11 +37,26 @@
 
 <script>
 import DropdownLink from '@theme/components/DropdownLink.vue'
-import { resolveNavLinkItem } from '../util'
+import { findSubNav } from '../util'
 import NavLink from '@theme/components/NavLink.vue'
 
 export default {
   components: { NavLink, DropdownLink },
+
+  props: {
+    extraClass: {
+      type: String,
+      default: ""
+    },
+    noCollapse: {
+      type: Boolean,
+      default: false
+    },
+    mobile: {
+      type: Boolean,
+      default: false
+    }
+  },
 
   computed: {
     userNav () {
@@ -79,11 +96,39 @@ export default {
     },
 
     userLinks () {
-      return (this.nav || []).map(link => {
-        return Object.assign(resolveNavLinkItem(link), {
-          items: (link.items || []).map(resolveNavLinkItem)
-        })
-      })
+      let list = JSON.parse(JSON.stringify(this.nav || []));
+      console.log('path', this.$page.path);
+
+      // Mobile sidebar
+      if (this.mobile) {
+        for (let item of list) {
+          if (item.items) {
+            for (let subitem of item.items) {
+              if (subitem.items && !subitem.grouping && !this.$page.path.startsWith(subitem.link)) {
+                subitem.items = null;
+              }
+            }
+          }
+        }
+      } else if (this.noCollapse) {
+        // Desktop sidebar
+        list = findSubNav(list, this.$page);
+      } else {
+        // Desktop topnav
+        for (let item of list) {
+          if (item.items) {
+            for (let subitem of item.items) {
+              if (subitem.items && !subitem.grouping) {
+                subitem.items = null;
+              }
+            }
+          }
+        }
+      }
+
+      console.log('userLinks', this.mobile, this.noCollapse, list);
+
+      return list;
     },
 
     repoLink () {
@@ -127,7 +172,7 @@ export default {
       line-height: 1.4rem;
       color: inherit;
       font-weight: 600;
-      &:hover, &.router-link-active {
+      &:hover, &.router-link-exact-active {
         color: $primary;
       }
     }
@@ -136,9 +181,6 @@ export default {
       display: inline-block;
       margin-left: 1.5rem;
       line-height: 2rem;
-      &:first-child {
-        margin-left: 0;
-      }
     }
     .repo-link {
       margin-left: 1.5rem;
@@ -151,6 +193,10 @@ export default {
         color: #888888;
       }
     }
+  }
+
+  .sidebar .nav-links {
+
   }
 
   @media (max-width: $MQMobile) {
@@ -168,12 +214,12 @@ export default {
 
   @media (min-width: $MQMobile) {
     .nav-links a {
-      &:hover, &.router-link-active {
+      &:hover, &.router-link-exact-active {
         color: inherit;
       }
     }
     .nav-item > a:not(.external) {
-      &:hover, &.router-link-active {
+      &:hover, &.router-link-exact-active {
         margin-bottom: -2px;
         border-bottom: 2px solid $primary
       }

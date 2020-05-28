@@ -1,6 +1,8 @@
 ---
 title: Blockwell Roar
 sidebarDepth: 2
+autonav:
+  group: Other Contracts
 ---
 
 # Blockwell Roar

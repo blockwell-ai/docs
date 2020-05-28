@@ -1,6 +1,8 @@
 ---
 title: Forum Token
 sidebarDepth: 2
+autonav:
+  group: ERC-721 Tokens
 ---
 
 # Forum Token

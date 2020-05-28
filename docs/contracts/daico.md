@@ -1,6 +1,8 @@
 ---
 title: Daico
 sidebarDepth: 2
+autonav:
+  group: Other Contracts
 ---
 
 # Daico

@@ -73,12 +73,14 @@
             },
 
             sidebarItems() {
-                return resolveSidebarItems(
+                let items = resolveSidebarItems(
                     this.$page,
                     this.$page.regularPath,
                     this.$site,
                     this.$localePath
-                )
+                );
+                console.log(items);
+                return items;
             },
 
             pageClasses() {

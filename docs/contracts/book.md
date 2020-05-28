@@ -1,6 +1,8 @@
 ---
 title: Book
 sidebarDepth: 2
+autonav:
+  group: Other Contracts
 ---
 
 # Book

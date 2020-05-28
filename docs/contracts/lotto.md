@@ -1,15 +1,17 @@
 ---
-title: Item Drops / Lotto
+title: Lotto
 sidebarDepth: 2
+autonav:
+  group: Other Contracts
 ---
 
-# Item Drops / Lotto
+# Lotto
 
 <Deployer code="fg6vws">Lotto Contract</Deployer>
 
 ## Introduction
 
-Item Drops, also known as Lotto, is a contract that lets users play games of
+Lotto, also known as Item Drops, is a contract that lets users play games of
 chance to win tokens.
 
 It can provide the basis for any game where the result is determined by a single

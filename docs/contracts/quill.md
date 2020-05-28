@@ -1,6 +1,8 @@
 ---
 title: Quill
 sidebarDepth: 2
+autonav:
+  group: Contract Features
 ---
 
 # Quill

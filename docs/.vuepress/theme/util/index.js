@@ -43,6 +43,9 @@ export function ensureExt(path) {
 }
 
 export function isActive(route, path) {
+    if (!path) {
+        return false;
+    }
     const routeHash = route.hash;
     const linkHash = getHash(path);
     if (linkHash && routeHash !== linkHash) {
@@ -123,6 +126,26 @@ function resolvePath(relative, base, append) {
  */
 export function resolveSidebarItems(page, regularPath, site, localePath) {
     const {pages, themeConfig} = site;
+    const nav = themeConfig.nav;
+
+    if (!nav) {
+        return [];
+    }
+
+    return nav.map(item => {
+        return {
+            type: 'group',
+            title: item.text,
+            path: item.link,
+            children: (item.items || []).map(subitem => {
+                return {
+                    type: 'link',
+                    title: subitem.text,
+                    path: subitem.link
+                }
+            })
+        }
+    });
 
     const localeConfig = localePath && themeConfig.locales
         ? themeConfig.locales[localePath] || themeConfig
@@ -181,8 +204,39 @@ export function groupHeaders(headers) {
 
 export function resolveNavLinkItem(linkItem) {
     return Object.assign(linkItem, {
-        type: linkItem.items && linkItem.items.length ? 'links' : 'link'
+        type: linkItem.items && (linkItem.level < 2 || linkItem.grouping) && linkItem.items.length ? 'links' : 'link'
     })
+}
+
+export function findSubNav(nav, page) {
+    // Desktop sidebar
+    for (let navitem of nav) {
+        if (navitem.link === page.path) {
+            return [navitem];
+        }
+        if (navitem.items) {
+            for (let subitem of navitem.items) {
+                if (subitem.link === page.path) {
+                    if (subitem.grouping || !subitem.items) {
+                        return [navitem];
+                    }
+                    return [subitem];
+                }
+                if (subitem.items) {
+                    for (let item of subitem.items) {
+                        if (item.link === page.path) {
+                            if (subitem.grouping) {
+                                return [navitem];
+                            }
+                            return [subitem];
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    return [];
 }
 
 /**

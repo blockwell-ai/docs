@@ -1,15 +1,17 @@
 ---
-title: Blockwell Wallet
+title: Using Blockwell Wallet
+autonav:
+    group: Guides
 ---
 
-# Blockwell Wallet
+# Using Blockwell Wallet
 
-The Blockwell-QR system is built on top of [API Miner](../apiminer), and each
-user has their own wallet managed by Blockwell and the [API Miner](../apiminer) 
+The Blockwell Wallet system is built on top of [API Miner](../products/apiminer), and each
+user has their own wallet managed by Blockwell and the [API Miner](../products/apiminer) 
 system. We call this your **Blockwell Wallet**.
 
 When you first [register an account](https://register.blockwell.ai), a new wallet
-will be created for you that you can use through the Blockwell-QR apps. You will
+will be created for you that you can use through the Blockwell Wallet apps. You will
 receive an email with your wallet address and some tips for using it.
 
 You can use your wallet on any Ethereum chain that's connected to our system,

@@ -180,7 +180,7 @@ Deploys a smart contract on the blockchain.
 
 **Arguments**:
 
-- `build-file` A [Truffle-style build file](./build-file.md) of the contract.
+- `build-file` A [Truffle-style build file](build-file.md) of the contract.
 - `arguments...` The remaining arguments will all be given to the smart
   contract's constructor as arguments.
   
@@ -338,7 +338,7 @@ allowance(0x5e3A41Ea023F84F6A75C2b2Db9eE3440c9B81d9F, 0x612d80530A47086e349F4A28
 
 Reads all token transfers from a contract and outputs them in CSV format.
 
-This command uses the contract address from [`config.yaml`](./configuration.md),
+This command uses the contract address from [`config.yaml`](configuration.md),
 which you can override with [`--address`](./global-options.md#address-address)
 
 **Arguments**:
@@ -523,7 +523,7 @@ doesn't support deploying contracts.
 
 **Arguments**:
 
-- `build-file` A [Truffle-style build file](./build-file.md) of the contract.
+- `build-file` A [Truffle-style build file](build-file.md) of the contract.
 - `arguments...` The remaining arguments will all be given to the smart
   contract's constructor as arguments.
   
@@ -844,7 +844,7 @@ Also sets [`--quiet`](#quiet).
 Sets the ABI file to use for contract interactions, overriding the default from
 `config.yaml`.
 
-This can be an ABI file directly, or a [Truffle-style build file](./build-file.md)
+This can be an ABI file directly, or a [Truffle-style build file](build-file.md)
 that's a JSON object with the key `abi` containing the ABI.
 
 

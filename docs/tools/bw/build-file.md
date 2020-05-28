@@ -40,7 +40,7 @@ It's simply a JSON file with an object that has at least these two keys:
 
 With this file, you can both deploy and interact with contracts. It can be used
 with the [`--abi`](./global-options.md#abi) option as well as with 
-[`contract-deploy`](./commands.md#contract-deploy).
+[`contract-deploy`](commands.md#contract-deploy).
 
 ## Creating a build file
 

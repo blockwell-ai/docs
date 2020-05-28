@@ -1,16 +1,18 @@
 ---
 title: Android
+autonav:
+    group: Getting Started
 ---
 
-# Getting Started with Blockwell-QR Android
+# Getting Started with Blockwell Wallet Android
 
-This guide will get you started using the Blockwell-QR Android app.
+This guide will get you started using the Blockwell Wallet Android app.
 
 ## 1. Install Android App
 
-First, you'll need to install the Blockwell-QR Android app.
+First, you'll need to install the Blockwell Wallet Android app.
 
-At this time the Blockwell-QR app is not yet on the Google Play Store, so
+At this time the Blockwell Wallet app is not yet on the Google Play Store, so
 you will need to install it manually.
 
 ### Enable external apps
@@ -41,7 +43,7 @@ or unknown apps on your phone.
 2. Go to **Security**.
 3. Under **Device administration** find and enable **Unknown Sources**.
 
-### Download the Blockwell-QR app
+### Download the Blockwell Wallet app
 
 You can download the app by clicking the following on your phone:
 
@@ -54,7 +56,7 @@ After the download finishes, click to Open the file, and tap "Install".
 
 ## 2. Register for an account
 
-Open the installed Blockwell-QR app, and you'll first see the login screen.
+Open the installed Blockwell Wallet app, and you'll first see the login screen.
 Tap the text **No Account? Register here**.
 
 Fill in your email address and a password and tap **REGISTER**.
@@ -74,18 +76,18 @@ You will see the Food Coin balance on the wallet screen change to 100 within
 a minute of signing up.
 
 ::: tip
-Your account is the same for all Blockwell-QR apps, so you can also log in
+Your account is the same for all Blockwell Wallet apps, so you can also log in
 to the [Web App](https://qr.blockwell.ai/app) with the same email and password.
 :::
 
 ## 3. Scan a QR Code
 
-You can now start using the Blockwell-QR Codes. Let's start with a simple one,
+You can now start using the Blockwell Wallet Codes. Let's start with a simple one,
 here's a QR Code that lets you transfer Food Coins:
 
 <Qr code="o53qvm">Send Food Coins</Qr>
 
-On the wallet screen in the Blockwell-QR app, tap the QR icon 
+On the wallet screen in the Blockwell Wallet app, tap the QR icon 
 ![QR Icon](./img/android-qr-button.png) in the bottom-right corner of the
 screen. This will open the QR Code Scanner. Point the phone's camera towards
 the QR Code so that it's framed inside the square:
@@ -121,7 +123,7 @@ You'll notice that the To Wallet field has a small QR icon on the right.
 You can tap that icon to scan a wallet address from someone else's phone,
 as well as other wallet software like Ledger, Trezor, MetaMask and so on.
 
-The Blockwell-QR app can display a QR of your Blockwell Wallet as well.
+The Blockwell Wallet app can display a QR of your Blockwell Wallet as well.
 Tap the three dots to the right of your wallet address on the main screen
 and select *Display Wallet QR*.
 
@@ -157,6 +159,6 @@ This screen will update as the status of the transaction changes.
 
 ## 6. What's next
 
-Now you can use Blockwell-QR with other QR Codes. For example, you
+Now you can use Blockwell Wallet with other QR Codes. For example, you
 can [deploy your own ERC20 token](../contracts/prime.md), or you can
 read about [creating QR Codes](./creating-qr.md).

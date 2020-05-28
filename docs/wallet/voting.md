@@ -1,6 +1,9 @@
 ---
 title: Suggestions and Voting
 sidebarDepth: 2
+autonav:
+    group: Guides
+    order: 4
 ---
 
 # Suggestions and Voting

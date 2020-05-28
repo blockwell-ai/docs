@@ -2,6 +2,8 @@
 home: true
 heroImage: /logo-banner.png
 heroText: Blockwell Docs
+autonav:
+  enable: false
 features:
   - title: BLOCKWELL-QR
     details: Create and use QR Codes for blockchain transactions

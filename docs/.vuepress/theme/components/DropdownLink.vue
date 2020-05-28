@@ -1,258 +1,262 @@
 <template>
-  <div
-    class="dropdown-wrapper"
-    :class="{ open }"
-  >
-    <button
-      class="dropdown-title"
-      type="button"
-      :aria-label="dropdownAriaLabel"
-      @click="toggle"
-    >
-      <span class="title">{{ item.text }}</span>
-      <span
-        class="arrow"
-        :class="open ? 'down' : 'right'"
-      ></span>
-    </button>
+    <div
+        class="dropdown-wrapper"
+        :class="{ isOpen }">
+        <div class="dropdown-title"
+             :aria-label="dropdownAriaLabel">
 
-    <DropdownTransition>
-      <ul
-        class="nav-dropdown"
-        v-show="open"
-      >
-        <li
-          class="dropdown-item"
-          :key="subItem.link || index"
-          v-for="(subItem, index) in item.items"
-        >
-          <h4 v-if="subItem.type === 'links'">{{ subItem.text }}</h4>
+            <NavLink :item="item"/>
+            <span v-if="!noCollapse"
+                  class="arrow"
+                  :class="isOpen ? 'down' : 'right'"
+                  @click="setOpen(!open)"
+            ></span>
+        </div>
 
-          <ul
-            class="dropdown-subitem-wrapper"
-            v-if="subItem.type === 'links'"
-          >
-            <li
-              class="dropdown-subitem"
-              :key="childSubItem.link"
-              v-for="childSubItem in subItem.items"
-            >
-              <NavLink
-                @focusout="
-                  isLastItemOfArray(childSubItem, subItem.items) &&
-                  isLastItemOfArray(subItem, item.items) &&
-                  toggle()
-                "
-                :item="childSubItem"/>
-            </li>
-          </ul>
+        <component :is="dropdownTag">
+            <ul class="nav-dropdown"
+                v-show="isOpen">
 
-          <NavLink
-            v-else
-            @focusout="isLastItemOfArray(subItem, item.items) && toggle()"
-            :item="subItem"
-          />
-        </li>
-      </ul>
-    </DropdownTransition>
-  </div>
+                <li class="dropdown-item"
+                    :class="subItem.grouping ? 'dropdown-grouping' : 'dropdown-sublist'"
+                    :key="subItem.link || index"
+                    v-for="(subItem, index) in item.items">
+
+                    <NavLink v-if="!subItem.items || !subItem.grouping"
+                             @focusout="isLastItemOfArray(subItem, item.items) && setOpen(false)"
+                             :item="subItem" />
+                    <h4 v-else>{{ subItem.text }}</h4>
+
+                    <ul class="dropdown-subitem-wrapper"
+                        v-if="subItem.items">
+                        <li class="dropdown-subitem"
+                            :key="childSubItem.link"
+                            v-for="childSubItem in subItem.items">
+                            <NavLink @focusout="
+                                      isLastItemOfArray(childSubItem, subItem.items) &&
+                                      isLastItemOfArray(subItem, item.items) &&
+                                      setOpen(false)
+                                    "
+                                     :item="childSubItem"/>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </component>
+    </div>
 </template>
 
 <script>
-import NavLink from '@theme/components/NavLink.vue'
-import DropdownTransition from '@theme/components/DropdownTransition.vue'
-import last from 'lodash/last'
+    import NavLink from '@theme/components/NavLink.vue'
+    import DropdownTransition from '@theme/components/DropdownTransition.vue'
+    import last from 'lodash/last'
 
-export default {
-  components: { NavLink, DropdownTransition },
+    export default {
+        components: {NavLink, DropdownTransition},
 
-  data () {
-    return {
-      open: false
+        data() {
+            return {
+                open: false
+            }
+        },
+
+        props: {
+            item: {
+                required: true
+            },
+            noCollapse: {
+                type: Boolean,
+                default: false
+            }
+        },
+
+        computed: {
+
+            dropdownAriaLabel() {
+                return this.item.ariaLabel || this.item.text
+            },
+            dropdownTag() {
+                return this.noCollapse ? 'div' : DropdownTransition
+            },
+            isOpen() {
+                if (this.noCollapse) {
+                    return true;
+                }
+                return this.open;
+            }
+        },
+
+        methods: {
+            setOpen(value) {
+                this.open = value
+            },
+
+            isLastItemOfArray(item, array) {
+                return last(array) === item
+            }
+        },
+
+        watch: {
+            $route() {
+                this.open = false
+            }
+        }
     }
-  },
-
-  props: {
-    item: {
-      required: true
-    }
-  },
-
-  computed: {
-
-    dropdownAriaLabel () {
-      return this.item.ariaLabel || this.item.text
-    }
-  },
-
-  methods: {
-    toggle () {
-      this.open = !this.open
-    },
-
-    isLastItemOfArray (item, array) {
-      return last(array) === item
-    }
-  },
-
-  watch: {
-    $route () {
-      this.open = false
-    }
-  }
-}
 </script>
 
 <style lang="scss">
-  @import '../styles/config';
+    @import '../styles/config';
 
-  .dropdown-wrapper {
-    cursor: pointer;
-    .dropdown-title {
-      display: block;
-      font-size: 0.9rem;
-      font-family: inherit;
-      cursor: inherit;
-      padding: inherit;
-      line-height: 1.4rem;
-      background: transparent;
-      border: none;
-      font-weight: 600;
-      color: $white;
-      &:hover {
-        border-color: transparent;
-      }
-      .arrow {
-        vertical-align: middle;
-        margin-top: -1px;
-        margin-left: 0.4rem;
-      }
-    }
-    .nav-dropdown {
-      color: $dark;
-      .dropdown-item {
-        color: inherit;
-        line-height: 1.7rem;
-        h4 {
-          margin: 0.45rem 0 0;
-          border-top: 1px solid #eee;
-          padding: 0.45rem 1.5rem 0 1.25rem;
-        }
-        .dropdown-subitem-wrapper {
-          padding: 0;
-          list-style: none;
-          .dropdown-subitem {
-            font-size: 0.9em;
-          }
-        }
-        a {
-          display: block;
-          line-height: 1.7rem;
-          position: relative;
-          border-bottom: none;
-          font-weight: 400;
-          margin-bottom: 0;
-          padding: 0 1.5rem 0 1.25rem;
-          &:hover {
-            color: $accentColor;
-          }
-          &.router-link-active {
-            color: $accentColor;
-            &::after {
-              content: "";
-              width: 0;
-              height: 0;
-              border-left: 5px solid $accentColor;
-              border-top: 3px solid transparent;
-              border-bottom: 3px solid transparent;
-              position: absolute;
-              top: calc(50% - 2px);
-              left: 9px;
+    .navbar {
+        .dropdown-wrapper {
+            cursor: pointer;
+
+            .dropdown-title {
+                display: block;
+                font-size: 0.9rem;
+                font-family: inherit;
+                cursor: inherit;
+                padding: inherit;
+                line-height: 1.4rem;
+                background: transparent;
+                border: none;
+                font-weight: 600;
+                color: $white;
+
+                &:hover {
+                    border-color: transparent;
+                }
+
+                .arrow {
+                    vertical-align: middle;
+                    margin-top: -1px;
+                    margin-left: 0.4rem;
+                }
             }
-          }
+
+            .nav-dropdown {
+                color: $dark;
+
+                .dropdown-item {
+                    color: inherit;
+                    line-height: 1.7rem;
+
+                    h4 {
+                        margin: 0.45rem 0 0;
+                        border-top: 1px solid #eee;
+                        padding: 0.45rem 1.5rem 0 1.25rem;
+                    }
+
+                    .dropdown-subitem-wrapper {
+                        padding: 0;
+                        list-style: none;
+
+                        .dropdown-subitem {
+                            font-size: 0.9em;
+                        }
+                    }
+
+                    a {
+                        display: block;
+                        line-height: 1.7rem;
+                        position: relative;
+                        border-bottom: none;
+                        font-weight: 400;
+                        margin-bottom: 0;
+                        padding: 0 1.5rem 0 1.25rem;
+
+                        &:hover {
+                            color: $accentColor;
+                        }
+
+                        &.router-link-exact-active {
+                            color: $accentColor;
+
+                            &::after {
+                                content: "";
+                                width: 0;
+                                height: 0;
+                                border-left: 5px solid $accentColor;
+                                border-top: 3px solid transparent;
+                                border-bottom: 3px solid transparent;
+                                position: absolute;
+                                top: calc(50% - 2px);
+                                left: 9px;
+                            }
+                        }
+                    }
+
+                    &:first-child h4 {
+                        margin-top: 0;
+                        padding-top: 0;
+                        border-top: 0;
+                    }
+                }
+            }
         }
-        &:first-child h4 {
-          margin-top: 0;
-          padding-top: 0;
-          border-top: 0;
-        }
-      }
     }
-  }
 
-  @media (max-width: $MQMobile) {
-    .dropdown-wrapper {
-      &.open .dropdown-title {
-        margin-bottom: 0.5rem;
-      }
-      .dropdown-title {
-        font-weight: 600;
-        font-size: inherit;
-        color: $dark;
-        &:hover {
-          color: $accentColor;
+    .sidebar {
+        .dropdown-wrapper {
+            &.isOpen .dropdown-title {
+                margin-bottom: 0.5rem;
+            }
+
+            .dropdown-title {
+                font-weight: 600;
+                font-size: inherit;
+                color: $dark;
+
+                &:hover {
+                    color: $accentColor;
+                }
+            }
+
         }
-      }
-      .nav-dropdown {
-        transition: height 0.1s ease-out;
-        overflow: hidden;
-        .dropdown-item {
-          h4 {
-            border-top: 0;
-            margin-top: 0;
-            padding-top: 0;
-          }
-          h4, & > a {
-            font-size: 15px;
-            line-height: 2rem;
-          }
-          .dropdown-subitem {
-            font-size: 14px;
-            padding-left: 1rem;
-          }
+    }
+
+    .navbar {
+        .dropdown-wrapper {
+            height: 1.8rem;
+
+            &:hover .nav-dropdown,
+            &.isOpen .nav-dropdown {
+
+                display: block !important;
+            }
+
+            &.isOpen:blur {
+                display: none;
+            }
+
+            .dropdown-title .arrow {
+
+                border-left: 4px solid transparent;
+                border-right: 4px solid transparent;
+                border-top: 6px solid $arrowBgColor;
+                border-bottom: 0;
+            }
+
+            .nav-dropdown {
+                display: none;
+
+                height: auto !important;
+                box-sizing: border-box;
+                max-height: calc(100vh - 2.7rem);
+                overflow-y: auto;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                background-color: #fff;
+                padding: 0.6rem 0;
+                border: 1px solid #ddd;
+                border-bottom-color: #ccc;
+                text-align: left;
+                border-radius: 0.25rem;
+                white-space: nowrap;
+                margin: 0;
+            }
         }
-      }
     }
-  }
-
-  @media (min-width: $MQMobile) {
-    .dropdown-wrapper {
-      height: 1.8rem;
-      &:hover .nav-dropdown,
-      &.open .nav-dropdown {
-
-        display: block !important;
-      }
-      &.open:blur {
-        display: none;
-      }
-      .dropdown-title .arrow {
-
-        border-left: 4px solid transparent;
-        border-right: 4px solid transparent;
-        border-top: 6px solid $arrowBgColor;
-        border-bottom: 0;
-      }
-      .nav-dropdown {
-        display: none;
-
-        height: auto !important;
-        box-sizing: border-box;
-        max-height: calc(100vh - 2.7rem);
-        overflow-y: auto;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        background-color: #fff;
-        padding: 0.6rem 0;
-        border: 1px solid #ddd;
-        border-bottom-color: #ccc;
-        text-align: left;
-        border-radius: 0.25rem;
-        white-space: nowrap;
-        margin: 0;
-      }
-    }
-  }
 
 </style>

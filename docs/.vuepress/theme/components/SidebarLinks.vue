@@ -86,6 +86,7 @@ function resolveOpenGroupIndex (route, items) {
 
 function descendantIsActive (route, item) {
   if (item.type === 'group') {
+    console.log(item);
     return item.children.some(child => {
       if (child.type === 'group') {
         return descendantIsActive(route, child)

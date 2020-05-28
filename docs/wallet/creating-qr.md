@@ -1,23 +1,26 @@
 ---
 title: Creating QR Codes
+autonav:
+    group: Guides
+    order: 5
 ---
 
 # Creating QR Codes
 
 ## Introduction
 
-The main feature of the Blockwell-QR system is the ability to create QR
+The main feature of the Blockwell Wallet system is the ability to create QR
 Codes to perform any transaction on the Ethereum blockchain. Anyone can
 then use them on any device with a web browser to interact with the
 blockchain.
 
 Creating QR Codes is currently free and unrestricted, you can simply go
-to the [QR Creator](https://qr.blockwell.ai/code) on the Blockwell-QR
+to the [QR Creator](https://qr.blockwell.ai/code) on the Blockwell Wallet
 website and make one.
 
 ## Regarding contracts
 
-Blockwell-QR needs some information on the contract itself before QR
+Blockwell Wallet needs some information on the contract itself before QR
 Codes can be created. At this time we don't have an automatic process
 in place for you to provide that information.
 

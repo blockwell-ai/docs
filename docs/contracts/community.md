@@ -1,6 +1,8 @@
 ---
 title: Community Token
 sidebarDepth: 2
+autonav:
+  group: ERC-20 Tokens
 ---
 
 # Community Token

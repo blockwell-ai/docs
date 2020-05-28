@@ -10,7 +10,7 @@ API Miner is a set of REST APIs for using the blockchain. Some of its features i
 
 - Create and manage blockchain wallets.
 - Create and manage separate users from your own system.
-- Deploy standard smart contracts like [Blockwell Prime](../contracts/prime.md) or basic ERC-20 tokens.
+- Deploy standard smart contracts like [Blockwell Prime](../../contracts/prime.md) or basic ERC-20 tokens.
 - Interact with any smart contract on the blockchain using a simple API.
 - Send arbitrary transactions on the blockchain.
 

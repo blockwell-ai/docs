@@ -1,6 +1,8 @@
 ---
 title: Ego Coin
 sidebarDepth: 2
+autonav:
+  group: ERC-20 Tokens
 ---
 
 # Ego Coin

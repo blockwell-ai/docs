@@ -1,6 +1,8 @@
 ---
 title: Suggestions
 sidebarDepth: 2
+autonav:
+  group: Contract Features
 ---
 
 # Suggestions

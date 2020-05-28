@@ -21,7 +21,7 @@ To see a list of global options and commands, you can run:
 ### Running a command
 
 To run a command, simply give the name of the command as the first argument. For
-example, to use the [private-key](./commands.md#private-key) command run:
+example, to use the [private-key](commands.md#private-key) command run:
 
 ```bash
 ./bw private-key
@@ -32,12 +32,12 @@ example, to use the [private-key](./commands.md#private-key) command run:
 This walkthrough will go over a few basic commands to get you started with bw.
 You should start by opening your terminal and connecting to the bw Server.
 
-There is also a [video walkthrough](./demo.md) available.
+There is also a [video walkthrough](demo.md) available.
 
 ### Reading token information
 
 Let's start with something simple: reading some token information from the
-blockchain using the [`contract-call`](./commands.md#contract-call) command.
+blockchain using the [`contract-call`](commands.md#contract-call) command.
 
 Run the following command:
 
@@ -93,7 +93,7 @@ This time, it's giving us `FC`, which is the symbol of the Food Coin token.
 
 ### Reading token balances
 
-We've read basic info on the token using [`contract-call`](./commands.md#contract-call).
+We've read basic info on the token using [`contract-call`](commands.md#contract-call).
 Those are simple and easy, because there's only one "name" in a contract.
 
 We'd also like to read token balances for wallets, which can be done using
@@ -101,7 +101,7 @@ the `balanceOf` function in ERC20 tokens. However,  we need to tell the
 command which wallet's balance we want to know.
 
 This can be provided by giving additional arguments to 
-[`contract-call`](./commands.md#contract-call). In this case, I want to know
+[`contract-call`](commands.md#contract-call). In this case, I want to know
 the balance of the wallet `0x96cfe56665be4e5819416b352c4c86c525a7cf7d`. I can
 do that by simply adding the address as an additional argument:
 
@@ -139,7 +139,7 @@ the `from-wei` conversion doesn't require connecting to Ethereum.
 
 ::: warning
 The above assumes the token you're working with has 18 decimals. If it has
-a different number of decimals, you can specify that with the [`from-wei`](./commands.md#from-wei)
+a different number of decimals, you can specify that with the [`from-wei`](commands.md#from-wei)
 command. For example, with 6 decimals:
 
 ```bash
