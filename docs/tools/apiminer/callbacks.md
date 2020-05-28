@@ -1,3 +1,7 @@
+---
+title: Callbacks
+
+---
 # Callbacks
 
 Some endpoints allow specifying callbacks that get called when the action completes.
