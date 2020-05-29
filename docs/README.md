@@ -3,7 +3,7 @@ home: true
 wide: true
 heroImage: /logo-banner.png
 heroText: Blockwell Docs
-tagline: Official documentation for Blockwell systems
+tagline: Official Documentation For Blockwell Systems
 featuresText: Select one of the systems below to learn more about each one, or use the main navigation.
 autonav:
   enable: false
