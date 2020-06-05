@@ -1,6 +1,7 @@
 ---
 title: Commands
-sidebarDepth: 2
+autonav:
+    order: 1
 ---
 
 # Commands
@@ -135,9 +136,9 @@ These are commands that perform a transaction on the blockchain.
 
 With all of these commands, you must provide exactly one of:
 
-- [`--account`](global-options.md#account-account-file)
-- [`--privatekey`](global-options.md#privatekey-key)
-- [`--keyfile`](global-options.md#keyfile-file)
+- [`--account`](#account-account-file)
+- [`--privatekey`](#privatekey-key)
+- [`--keyfile`](#keyfile-file)
 
 ### send
 
@@ -182,7 +183,7 @@ Deploys a smart contract on the blockchain.
 
 - `build-file` A [Truffle-style build file](build-file.md) of the contract.
 - `arguments...` The remaining arguments will all be given to the smart
-  contract's constructor as arguments.
+  contract's constructor as arguments. Supports [Argument Formats](./arguments.md).
   
 ::: warning
 At this time all arguments to this command must be provided in their raw 
@@ -211,7 +212,7 @@ Send a transaction with a smart contract function call.
 
 - `method` The name of the method (aka. function) to be called with the transaction.
 - `arguments...` The remaining arguments will all be given to the function as its
-  arguments.
+  arguments. Supports [Argument Formats](./arguments.md).
 
 ::: warning
 At this time all arguments to this command must be provided in their raw 
@@ -222,6 +223,7 @@ to specify 5 tokens, you would enter `5000000000000000000`.
 **Options**: 
 
 - `--ether <value>` Send ETH with the transaction. Enter in whole ETH, not Wei.
+- `--dry` Shows the function and arguments, but doesn't send the transaction.
 
 **Examples**:
 
@@ -230,7 +232,7 @@ to specify 5 tokens, you would enter `5000000000000000000`.
 ```
 
 You can always specify a different contract address using 
-[`--address`](./global-options.md#address-address):
+[`--address`](#address-address):
 
 ```bash
 ./bw -f keyfile --address 0xe8340FdfE79851e9E117b3033E147a654dbDb0Ae \
@@ -249,7 +251,7 @@ Makes a view (read-only) function call on a smart contract.
 
 - `method` The name of the method (aka. function) to be called.
 - `arguments...` The remaining arguments will all be given to the function as its
-  arguments.
+  arguments. Supports [Argument Formats](./arguments.md).
 
 **Examples**:
 
@@ -258,7 +260,7 @@ Makes a view (read-only) function call on a smart contract.
 ```
 
 You can always specify a different contract address using 
-[`--address`](./global-options.md#address-address):
+[`--address`](#address-address):
 
 ```bash
 ./bw --address 0xe8340FdfE79851e9E117b3033E147a654dbDb0Ae \
@@ -297,6 +299,7 @@ function multiple times with different arguments.
 - `method` The name of the method (aka. function) to be called for each set of arguments.
 - `arguments...` The arguments to be passed to the function. Different function
   arguments should be separated by spaces, and multiple values separated by commas.
+  Supports [Argument Formats](./arguments.md).
   
 **Options**:
 
@@ -339,7 +342,7 @@ allowance(0x5e3A41Ea023F84F6A75C2b2Db9eE3440c9B81d9F, 0x612d80530A47086e349F4A28
 Reads all token transfers from a contract and outputs them in CSV format.
 
 This command uses the contract address from [`config.yaml`](configuration.md),
-which you can override with [`--address`](./global-options.md#address-address)
+which you can override with [`--address`](#address-address)
 
 **Arguments**:
 
@@ -377,7 +380,7 @@ Reads all token transfers from a contract and calculates the token balance of ev
 account that holds any of the tokens.
 
 The default output is a spreadsheet in CSV format. You can optionally get JSON output
-using the [`--json`](./global-options.md#json) flag.
+using the [`--json`](#json) flag.
 
 **Arguments**:
 
@@ -485,7 +488,7 @@ is practically impossible to have 100% certainty.
   can be specified using its signature or 4 byte hash.
   
 Alternatively, you can omit `functions...` and specify a contract ABI instead
-with [`--abi`](./global-options.md#abi) instead, in which case all functions from
+with [`--abi`](#abi) instead, in which case all functions from
 the ABI will be looked for.
 
 **Examples**:
@@ -790,9 +793,8 @@ low-value situations.
 
 > shortcut `-f <file>`
 
-Reads the account private key from the given file. The last line of the file
-should be the private key. This private key is then used as the account to send
-transactions with.
+Reads the account private key from the given file. This private key is then 
+used as the account to send transactions with.
 
 **Note!** This is highly insecure, so it should only be used for testing and
 low-value situations.
@@ -903,7 +905,7 @@ after the transaction is sent and is pending on the node, bw will exit immediate
 > example `--fromblock 5000000`
 
 Sets the lower-bound block when using commands that search the blockchain. For
-example, if used with the [`transfers`](commands.html#transfers) command, it would
+example, if used with the [`transfers`](#transfers) command, it would
 only find transfers from that block onwards.
 
 

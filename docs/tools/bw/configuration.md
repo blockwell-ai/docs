@@ -1,5 +1,7 @@
 ---
 title: Configuration
+autonav:
+    order: 2
 ---
 
 # Configuration

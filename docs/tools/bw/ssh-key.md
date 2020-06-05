@@ -1,5 +1,7 @@
 ---
 title: SSH Key
+autonav:
+    order: 3
 ---
 
 # SSH Key For Server Access

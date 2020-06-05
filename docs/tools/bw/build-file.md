@@ -1,7 +1,7 @@
 ---
 title: Build File Format
 autonav:
-    order: 1
+    order: 10
 ---
 
 # Build File Format
