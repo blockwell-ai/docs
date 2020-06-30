@@ -47,7 +47,7 @@ or unknown apps on your phone.
 
 You can download the app by clicking the following on your phone:
 
-[<img src="./img/download-android.png" width="200">](https://qr.blockwell.ai/public/dist/blockwell-qr.apk)
+[<img src="./img/download-android.png" width="200">](https://app.blockwell.ai/public/dist/blockwell-qr.apk)
 
 Or by visiting [register.blockwell.ai](https://register.blockwell.ai) on your
 phone and scrolling down to the "Download for Android" button.
@@ -77,7 +77,7 @@ a minute of signing up.
 
 ::: tip
 Your account is the same for all Blockwell Wallet apps, so you can also log in
-to the [Web App](https://qr.blockwell.ai/app) with the same email and password.
+to the [Web App](https://app.blockwell.ai/app) with the same email and password.
 :::
 
 ## 3. Scan a QR Code

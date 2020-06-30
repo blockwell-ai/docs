@@ -101,6 +101,14 @@
             this.$router.afterEach(() => {
                 this.isSidebarOpen = false
             })
+
+            // Workaround for links not scrolling to anchors
+            const hash = document.location.hash;
+            if (hash.length > 1) {
+                const id = hash.substring(1)
+                const element = document.getElementById(id)
+                if (element) element.scrollIntoView()
+            }
         },
 
         methods: {

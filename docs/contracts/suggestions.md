@@ -33,7 +33,7 @@ Community Tokens, you can also configure [advanced Allocated Votes](community.md
 There are three ways to view suggestions and their votes on a contract:
 
 1. Read the data directly from the contract on the blockchain.
-2. Use the [Web Suggestion Viewer](https://qr.blockwell.ai/suggestions).
+2. Use the [Web Suggestion Viewer](https://app.blockwell.ai/suggestions).
 3. Use the Android Suggestion Viewer in the top-right menu of the Android app.
 
 ## Tagging
@@ -45,7 +45,7 @@ add the name of a tag and a colon at the beginning of the suggestion, like this:
 DESIGN: Plan a better UI for creating suggestions
 ```
 
-QR Codes and the [Web Suggestion Viewer](https://qr.blockwell.ai/suggestions)
+QR Codes and the [Web Suggestion Viewer](https://app.blockwell.ai/suggestions)
 will understand the tag and display it accordingly.
 
 ## Casting votes

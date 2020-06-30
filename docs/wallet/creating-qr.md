@@ -15,7 +15,7 @@ then use them on any device with a web browser to interact with the
 blockchain.
 
 Creating QR Codes is currently free and unrestricted, you can simply go
-to the [QR Creator](https://qr.blockwell.ai/code) on the Blockwell Wallet
+to the [QR Creator](https://app.blockwell.ai/code) on the Blockwell Wallet
 website and make one.
 
 ## Regarding contracts

@@ -21,7 +21,7 @@ tagline: Simple to use API for the blockchain
     
 <div class="buttons">
 
-- Want to get started? [Get API Key](https://qr.blockwell.ai/app/account/apiminer)
+- Want to get started? [Get API Key](https://app.blockwell.ai/app/account/apiminer)
 - Want to learn more? [Read Documentation](./introduction.md)
 - Want the API details? [OpenAPI 3.0 Spec](https://docs.blockwell.ai/apiminer/api)
 

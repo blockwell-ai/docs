@@ -18,7 +18,7 @@ In this quickstart you'll be interacting with
 You'll need an API Miner access token to go through the quickstarts. You can get a free
 Access Token if you sign up for Blockwell Wallet:
 
-[Get Access Token](https://qr.blockwell.ai/app/wallet/apiminer)
+[Get Access Token](https://app.blockwell.ai/app/wallet/apiminer)
 
 ## Using cURL
 

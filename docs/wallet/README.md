@@ -4,7 +4,7 @@ title: Blockwell Wallet
 
 # Blockwell Wallet
 
-[https://qr.blockwell.ai](https://qr.blockwell.ai)
+[https://app.blockwell.ai](https://app.blockwell.ai)
 
 ## Introduction
 
@@ -23,6 +23,6 @@ you can just scan the QR and it'll load up the right transaction.
 Blockwell Wallet is currently available as a native app for Android, and as a web app
 for other systems.
 
-[<img src="./img/download-android.png" width="200">](https://qr.blockwell.ai/public/dist/blockwell-qr.apk)
+[<img src="./img/download-android.png" width="200">](https://app.blockwell.ai/public/dist/blockwell-qr.apk)
 
-Or you can [use the Web App here](https://qr.blockwell.ai/app).
+Or you can [use the Web App here](https://app.blockwell.ai/app).

@@ -21,7 +21,7 @@
         },
         computed: {
             url() {
-                let url = `https://qr.blockwell.ai/${this.code}`;
+                let url = `https://app.blockwell.ai/${this.code}`;
                 if (this.query) {
                     url += `?${this.query}`;
                 }

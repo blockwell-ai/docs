@@ -41,7 +41,7 @@ using either the web app or the Android app.
 ## Web App
 
 Open the Wallet app in your browser:  
-[https://qr.blockwell.ai/app](https://qr.blockwell.ai/app)
+[https://app.blockwell.ai/app](https://app.blockwell.ai/app)
 
 <img src="./img/voting.png" width="350">
 
@@ -52,7 +52,7 @@ will be refreshed.
 ::: tip
 If you don't see a Voting box on the page, then your account isn't set up for it.
 You can still view suggestions for a contract using the 
-[Web Suggestions Viewer](https://qr.blockwell.ai/suggestions).
+[Web Suggestions Viewer](https://app.blockwell.ai/suggestions).
 :::
 
 Clicking the “View Suggestions and Vote” button will take you to the 

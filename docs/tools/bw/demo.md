@@ -1,9 +1,9 @@
 ---
-title: bw Demonstration
+title: bw Self-Auditing Demonstration
 autonav:
-    order: -1
+    order: 20
 ---
 
-# bw Video Demonstration
+# bw Self-Auditing Demonstration
 
 <Asciinema src="/asciinema/recorded-bw-runthrough.cast"></Asciinema>

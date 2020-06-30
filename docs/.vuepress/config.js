@@ -43,5 +43,13 @@ module.exports = {
     head: [
         ['script', {async: 'async', src: 'https://www.googletagmanager.com/gtag/js?id=UA-125261381-4'}],
         ['script', {}, `window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-125261381-4');`]
-    ]
+    ],
+    mounted() {
+        const hash = document.location.hash;
+        if (hash.length > 1) {
+            const id = hash.substring(1)
+            const element = document.getElementById(id)
+            if (element) element.scrollIntoView()
+        }
+    }
 };

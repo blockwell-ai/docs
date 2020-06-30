@@ -17,7 +17,7 @@ Currently API Miner is focused on Ethereum-compatible blockchains.
 
 <div class="buttons">
 
-- Want to get started? [Get API Key](https://qr.blockwell.ai/app/account/apiminer)
+- Want to get started? [Get API Key](https://app.blockwell.ai/app/account/apiminer)
 - Want to try it out? [Quickstart](./quickstart.md)
 
 </div>

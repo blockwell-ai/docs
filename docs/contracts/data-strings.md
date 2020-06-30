@@ -57,7 +57,7 @@ chose it for the following reasons:
 ## Using Data Strings
 
 [Blockwell Wallet](../qr) fully supports Data Strings, they can be used for any `string`
-value with the [Advanced QR Creator](https://qr.blockwell.ai/code/advanced). When
+value with the [Advanced QR Creator](https://app.blockwell.ai/code/advanced). When
 choosing the argument type for a `string`, there is an additional option called
 "Multiple". This uses Data Strings.
 

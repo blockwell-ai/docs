@@ -33,7 +33,7 @@ autonav:
     
 <div class="buttons">
 
-- Want to get started? [Go To Blockwell Wallet](https://qr.blockwell.ai)
+- Want to get started? [Go To Blockwell Wallet](https://app.blockwell.ai)
 - Want to learn more? [Read Documentation](wallet/README.md)
 
 </div>
@@ -57,7 +57,7 @@ autonav:
     
 <div class="buttons">
 
-- Want to get started? [Deploy a Token](https://qr.blockwell.ai/rks1rq)
+- Want to get started? [Deploy a Token](https://app.blockwell.ai/rks1rq)
 - Want to learn more? [Read Documentation](contracts/blockwell-contracts.md)
 - Interested in governance? [Shopin Governance](https://vote.blockwell.ai/shopin)
     *Shopin Token holders are using Suggestions and Voting to decide the project's future*

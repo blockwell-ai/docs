@@ -46,6 +46,10 @@ Below is a quick reference of the different commands available.
 | [is-contract](./commands.md#is-contract) [address...] | Detects which of the given addresses are contracts |
 | [vanity](./commands.md#vanity) [options] &lt;type&gt; &lt;text&gt; | Generate a vanity address. |
 | [help](./commands.md#help) [command] | Display help for a command. |
+| embed-config &lt;name&gt; | Generates a configuration file &lt;name&gt;.yaml for the ABI that can be used with show-features and build-blocks. |
+| show-features [config-file] | Loads all view functions (contract-call) in the ABI from the file or URL if given and generates embed snippets. |
+| build-blocks [config-file] | Loads all transaction functions (contract-call) in the ABI from the file or URL if given and generates embed snippets. |
+
 
 ## Options
 

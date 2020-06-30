@@ -35,14 +35,14 @@
         },
         computed: {
             url() {
-                let url = `https://qr.blockwell.ai/${this.code}`;
+                let url = `https://app.blockwell.ai/${this.code}`;
                 if (this.query) {
                     url += `?${this.query}`;
                 }
                 return url;
             },
             image() {
-                let url = `https://qr.blockwell.ai/${this.code}/image`;
+                let url = `https://app.blockwell.ai/${this.code}/image`;
                 if (this.query) {
                     url += `?${this.query}`;
                 }

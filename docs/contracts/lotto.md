@@ -36,14 +36,14 @@ Food Coins at signup, so all Blockwell users can play it for free:
 <Qr code="4beui3">Play Food Coin Lotto</Qr>
 
 You can see how the Food Coin Lotto is configured on the 
-[Lotto hybrid app](https://qr.blockwell.ai/lotto?contract=0x52683A6789b294Da993FD48636707047cc104485&net=4).
+[Lotto hybrid app](https://app.blockwell.ai/lotto?contract=0x52683A6789b294Da993FD48636707047cc104485&net=4).
 
 ## Configuration
 
 There are several configuration options that the contract has. You can use the
 Lotto dapp to view and make changes to configuration:
 
-https://qr.blockwell.ai/lotto
+https://app.blockwell.ai/lotto
 
 ## Price For Playing
 
@@ -73,7 +73,7 @@ That would mean the player has a 20% chance to win 1 token, a 10% chance to win
 ### Average Win and House Edge
 
 Based on the Win Rates and the Price to play, the profitability of the contract
-can be calculated. The [Lotto dapp](https://qr.blockwell.ai/lotto) calculates
+can be calculated. The [Lotto dapp](https://app.blockwell.ai/lotto) calculates
 these automatically, but here's how they work.
 
 #### Average Win
