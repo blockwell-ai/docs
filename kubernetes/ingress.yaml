@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: blockwell-docs-ingress
+  namespace: static
+  annotations:
+    cert-manager.io/cluster-issuer: "cert-manager-prod"
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  tls:
+    - hosts:
+        - "docs.blockwell.ai"
+      secretName: blockwell-docs-certs
+  rules:
+    - host: "docs.blockwell.ai"
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: blockwell-docs
+              servicePort: 80

@@ -1,0 +1,13 @@
+apiVersion: skaffold/v2beta5
+kind: Config
+metadata:
+  name: docs
+build:
+  artifacts:
+  - image: blockwell-docs
+deploy:
+  kubectl:
+    manifests:
+    - kubernetes/deployment.yaml
+    - kubernetes/ingress.yaml
+    - kubernetes/service.yaml
