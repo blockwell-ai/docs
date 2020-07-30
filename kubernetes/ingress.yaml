@@ -19,3 +19,7 @@ spec:
             backend:
               serviceName: blockwell-docs
               servicePort: 80
+          - path: /apiminer/api
+            backend:
+              serviceName: blockwell-apiminer-spec
+              servicePort: 80
