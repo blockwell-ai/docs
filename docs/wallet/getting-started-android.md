@@ -49,7 +49,7 @@ You can download the app by clicking the following on your phone:
 
 [<img src="./img/download-android.png" width="200">](https://app.blockwell.ai/public/dist/blockwell-qr.apk)
 
-Or by visiting [register.blockwell.ai](https://register.blockwell.ai) on your
+Or by visiting [app.blockwell.ai](https://app.blockwell.ai) on your
 phone and scrolling down to the "Download for Android" button.
 
 After the download finishes, click to Open the file, and tap "Install".

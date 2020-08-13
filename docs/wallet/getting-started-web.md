@@ -10,11 +10,11 @@ This guide will get you started using the Blockwell Wallet Web App.
 
 ## 1. Register for an account
 
-Go to [register.blockwell.ai](https://register.blockwell.ai) using your
+Go to [app.blockwell.ai](https://app.blockwell.ai) using your
 browser. You can use a desktop computer, or a mobile device such as an
 iPhone.
 
-Fill in your email address and a password and click **Register**.
+Fill in your email address and a password and click **Sign In**.
 
 After you register, you will be taken to the main wallet screen of the app:
 

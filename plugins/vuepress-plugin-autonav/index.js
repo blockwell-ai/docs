@@ -80,7 +80,6 @@ function sort_items(items) {
  */
 PLUGIN.get_auto_nav_items = async (pages, plugin_options) => {
     const items = [];
-    console.log(pages);
     for (const page of pages) {
         const page_options = PLUGIN.get_page_options(page, plugin_options);
 
@@ -107,8 +106,6 @@ PLUGIN.get_auto_nav_items = async (pages, plugin_options) => {
             items.push(item);
         }
     }
-
-    console.log(items);
 
     if (_.isEmpty(items)) {
         return;
@@ -154,8 +151,6 @@ PLUGIN.get_auto_nav_items = async (pages, plugin_options) => {
             parent.items = sort_items(parent.items);
         }
     }
-
-    console.dir(parents, {depth: 6});
 
     return parents;
 };

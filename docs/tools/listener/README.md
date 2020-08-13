@@ -24,7 +24,7 @@ Listens to anyone trading USDT on Kyber:
 ### Food Coin Lotto Winning
 
 Listens to someone winning Food Coin in Lotto 
-([https://lotto.blockwell.ai/food-coin-lotto](https://lotto.blockwell.ai/food-coin-lotto)):
+([https://app.blockwell.ai/lotto/food-coin-lotto](https://app.blockwell.ai/lotto/food-coin-lotto)):
 
 ![Lotto Win](./img/lotto.png)
 

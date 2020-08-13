@@ -21,7 +21,7 @@ tagline: Blockwell has a large library of Smart Contracts for various use cases
 
 - Want to get started? [Deploy a Token](https://app.blockwell.ai/rks1rq)
 - Want to learn more? [Read Documentation](./blockwell-contracts.md)
-- Interested in governance? [Shopin Governance](https://vote.blockwell.ai/shopin)
+- Interested in governance? [Shopin Governance](https://app.blockwell.ai/suggestions/shopin)
     *Shopin Token holders are using Suggestions and Voting to decide the project's future*
 
 </div>

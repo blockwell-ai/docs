@@ -10,7 +10,7 @@ The Blockwell Wallet system is built on top of [API Miner](../products/apiminer)
 user has their own wallet managed by Blockwell and the [API Miner](../products/apiminer) 
 system. We call this your **Blockwell Wallet**.
 
-When you first [register an account](https://register.blockwell.ai), a new wallet
+When you first [register an account](https://app.blockwell.ai), a new wallet
 will be created for you that you can use through the Blockwell Wallet apps. You will
 receive an email with your wallet address and some tips for using it.
 

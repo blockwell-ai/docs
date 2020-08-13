@@ -59,7 +59,7 @@ autonav:
 
 - Want to get started? [Deploy a Token](https://app.blockwell.ai/rks1rq)
 - Want to learn more? [Read Documentation](contracts/blockwell-contracts.md)
-- Interested in governance? [Shopin Governance](https://vote.blockwell.ai/shopin)
+- Interested in governance? [Shopin Governance](https://app.blockwell.ai/suggestions/shopin)
     *Shopin Token holders are using Suggestions and Voting to decide the project's future*
 
 </div>
