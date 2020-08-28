@@ -11,34 +11,13 @@ There are two options for quickstart:
 many systems.
 2. Using the Postman HTTP client.
 
-In this quickstart you'll be interacting with 
-
-## Access Token
-
-You'll need an API Miner access token to go through the quickstarts. You can get a free
-Access Token if you sign up for Blockwell Wallet:
-
-[Get Access Token](https://app.blockwell.ai/app/wallet/apiminer)
-
 ## Using cURL
 
 ### cURL Prerequisites
 
 `curl` is used in a terminal, so some familiarity with running a command line
 terminal is needed. All commands in this curl section are intended to be
-typed into a terminal. Most of them will also need some values inserted,
-and those are marked with `<value>`. For example, if you see:
-
-```
-    "<address>"
-```
-
-You should replace it with the proper address like this:
-
-```
-    "0x4a4f61b39873b96429a261ba04fd0d8c5368d2c7"
-```
-
+typed into a terminal.
 
 You'll need `curl` itself installed. You can test to see if it's already
 installed by running:
@@ -73,14 +52,10 @@ output easier to read. Simply add ` | jq` at the end of every command.
 You should've already received the address of your first Ethereum account on
 API Miner, but as the first step we'll go ahead and list all of our accounts.
 
-First, edit the following `curl` command:
-
-- replace `<token>` with your access token.
-
 ```bash
 curl -X GET \
-    https://test.apiminer.com/accounts \
-    -H 'Authorization: Bearer <token>'
+    https://apiminer.dev-site.us/accounts \
+    -H 'Authorization: Bearer apiminertestauth'
 ```
 
 As mentioned earlier, copy and paste the curl command to your terminal. Make
@@ -91,14 +66,14 @@ The response will look like this, except it will be unformatted if not using [jq
 
 ```json
 {
-    "data": [
-        {
-            "id": "9a5d68bd-84d7-4ec0-8b11-642de45b1d5d",
-            "address": "0x897a705d4ae51e66f9e64a0ff446e65b55c47385",
-            "owner": "df9dd7fc-9007-49f2-b92a-e7952d4d9ca3",
-            "defaultAccount": true
-        }
-    ]
+  "data": [
+    {
+      "id": "decd1dd0-4b24-4f1b-86fd-e0479d8ca3a6",
+      "address": "0xd684ea9d172552e28ca8dfe4d9d39b49180741e7",
+      "owner": "67fe8cbc-b165-4100-aa0c-03b029fabe77",
+      "defaultAccount": true
+    }
+  ]
 }
 ```
 
@@ -111,19 +86,16 @@ the quickstart steps.
 Next, call the `mint` function on the Pump token smart contract to get
 yourself some tokens.
 
-Use the following with:
-
-- `<token>` replaced with your access token.
-- `<address>` replaced with your account address.
+Use the following:
 
 ```bash
 curl -X POST \
-    https://test.apiminer.com/contracts/44740750-522f-46ae-a63c-fcd1a8f5e308/send/mint \
-    -H 'Authorization: Bearer <token>' \
+    https://apiminer.dev-site.us/contracts/54ccdb8a-8177-4bbf-8a3a-1af38be82a33/send/mint \
+    -H 'Authorization: Bearer apiminertestauth' \
     -H 'Content-Type: application/json' \
     -d '{
         "arg": [
-        "<address>",
+        "0xd684ea9d172552e28ca8dfe4d9d39b49180741e7",
         "100000000000000000000"
         ]
     }'
@@ -133,20 +105,20 @@ The response will look like this:
 
 ```json
 {
-    "data": {
-        "id": "491a20cd-43a6-42fc-a0e9-b8438ac7308b",
-        "type": "contract-method",
-        "contractId": "44740750-522f-46ae-a63c-fcd1a8f5e308",
-        "from": "0x6b377a6a5505896fdec4e72fb780b819e46169bb",
-        "method": "mint",
-        "parameters": [
-            "0x6b377a6a5505896fdec4e72fb780b819e46169bb",
-            "100000000000000000000"
-        ],
-        "status": "new",
-        "created": "2019-10-10T23:42:34.312Z",
-        "network": "libra"
-    }
+  "data": {
+    "id": "0d3a809f-f832-4de1-9839-7b8b767ee9b6",
+    "type": "contract-method",
+    "contractId": "54ccdb8a-8177-4bbf-8a3a-1af38be82a33",
+    "from": "0xd684ea9d172552e28ca8dfe4d9d39b49180741e7",
+    "method": "mint",
+    "parameters": [
+      "0xd684ea9d172552e28ca8dfe4d9d39b49180741e7",
+      "100000000000000000000"
+    ],
+    "status": "new",
+    "created": "2020-08-27T23:48:58.634Z",
+    "network": "rinkeby"
+  }
 }
 ```
 
@@ -160,12 +132,11 @@ To see what happened to the transaction from the previous step, use the followin
 with:
 
 - `<id>` replaced with the transaction ID you received in the previous step.
-- `<token>` replaced with your access token.
 
 ```bash
 curl -X GET \
-    https://test.apiminer.com/transactions/<id> \
-    -H 'Authorization: Bearer <token>'
+    https://apiminer.dev-site.us/transactions/<id> \
+    -H 'Authorization: Bearer apiminertestauth'
 ```
 
 The transfer should be completed within 15 seconds, after which you'll see
@@ -173,27 +144,25 @@ the following response:
 
 ```json
 {
-    "data": {
-        "id": "491a20cd-43a6-42fc-a0e9-b8438ac7308b",
-        "type": "contract-method",
-        "contractId": "44740750-522f-46ae-a63c-fcd1a8f5e308",
-        "from": "0x6b377a6a5505896fdec4e72fb780b819e46169bb",
-        "method": "mint",
-        "parameters": [
-            "0x6b377a6a5505896fdec4e72fb780b819e46169bb",
-            "100000000000000000000"
-        ],
-        "status": "completed",
-        "created": "2019-10-10T23:42:34.312Z",
-        "submitted": "2019-10-10T23:42:37.662Z",
-        "ended": "2019-10-10T23:42:46.712Z",
-        "transactionHash": "0x51088ae5bcd3ca0674f7cdb9d86d6898f5a0c82dd8699de7b446545381d0119e",
-        "blockNumber": 4050510,
-        "events": [
-            "..."
-        ],
-        "network": "libra"
-    }
+  "data": {
+    "id": "0d3a809f-f832-4de1-9839-7b8b767ee9b6",
+    "type": "contract-method",
+    "contractId": "54ccdb8a-8177-4bbf-8a3a-1af38be82a33",
+    "from": "0xd684ea9d172552e28ca8dfe4d9d39b49180741e7",
+    "method": "mint",
+    "parameters": [
+      "0xd684ea9d172552e28ca8dfe4d9d39b49180741e7",
+      "100000000000000000000"
+    ],
+    "status": "completed",
+    "created": "2020-08-27T23:48:58.634Z",
+    "submitted": "2020-08-27T23:49:10.112Z",
+    "ended": "2020-08-27T23:49:23.520Z",
+    "transactionHash": "0x0826cd738abd10fa815f488107c47e367349698a891eeabeb379ecaeac835662",
+    "blockNumber": 7094422,
+    "events": ["..."],
+    "network": "rinkeby"
+  }
 }
 ```
 
@@ -203,15 +172,13 @@ The status showing `completed` means the call was successful.
 
 To double check that you did actually get the Pump tokens, use:
 
-- `<token>` replaced with your access token.
-
 ```bash
 curl -X GET \
-    https://test.apiminer.com/tokens/44740750-522f-46ae-a63c-fcd1a8f5e308/balances/default \
-    -H 'Authorization: Bearer <token>'
+    https://apiminer.dev-site.us/tokens/54ccdb8a-8177-4bbf-8a3a-1af38be82a33/balances/default \
+    -H 'Authorization: Bearer apiminertestauth'
 ```
 
-This will get the token balance for token ID `44740750-522f-46ae-a63c-fcd1a8f5e308` -
+This will get the token balance for token ID `54ccdb8a-8177-4bbf-8a3a-1af38be82a33` -
 which is the Pump token - for your default account.
 
 The response is as follows:
@@ -222,26 +189,24 @@ The response is as follows:
 
 ### 5. Creating an Ethereum account
 
-To create a second Ethereum account, use:
-
-- `<token>` replaced with your access token.
+To create a new Ethereum account, use:
 
 ```bash
 curl -X POST \
-    https://test.apiminer.com/accounts \
-    -H 'Authorization: Bearer <token>'
+    https://apiminer.dev-site.us/accounts \
+    -H 'Authorization: Bearer apiminertestauth'
 ```
 
 The response is as follows:
 
 ```json
 {
-    "data": {
-        "id": "8afe086b-2cb8-4feb-bfbe-064a996e137a",
-        "address": "0x632777aeb73f955a660817d5f1ab1a36365485aa",
-        "owner": "36731315-1ec0-4ad2-99a9-c7c3e22dce9f",
-        "defaultAccount": false
-    }
+  "data": {
+    "id": "370fb7ab-f589-478f-aa1c-d59f775b1583",
+    "address": "0x5aabd741e0adc7915aa540d75fd49c7b4f953bfb",
+    "owner": "67fe8cbc-b165-4100-aa0c-03b029fabe77",
+    "defaultAccount": false
+  }
 }
 ```
 
@@ -252,13 +217,12 @@ if you specify it in the API calls. We'll look at how to do that below.
 
 To transfer 2 PMP tokens from your default account to the newly created one, use:
 
-- `<token>` replaced with your access token.
 - `<address>` replaced with the address of your second account you just created.
 
 ```bash
 curl -X POST \
-    https://test.apiminer.com/tokens/44740750-522f-46ae-a63c-fcd1a8f5e308/transfers \
-    -H 'Authorization: Bearer <token>' \
+    https://apiminer.dev-site.us/tokens/54ccdb8a-8177-4bbf-8a3a-1af38be82a33/transfers \
+    -H 'Authorization: Bearer apiminertestauth' \
     -H 'Content-Type: application/json' \
     -d '{
         "to": "<address>",
@@ -270,20 +234,20 @@ The response is as follows:
 
 ```json
 {
-    "data": {
-        "id": "f48913b3-1559-4c5b-8e03-bfe95bf6988b",
-        "type": "contract-method",
-        "contractId": "44740750-522f-46ae-a63c-fcd1a8f5e308",
-        "from": "0x6b377a6a5505896fdec4e72fb780b819e46169bb",
-        "method": "transfer",
-        "parameters": [
-            "0x24c8aea9c45953e6d54715dbe4964e9757f5a67a",
-            "2000000000000000000"
-        ],
-        "status": "new",
-        "created": "2019-10-10T23:52:23.728Z",
-        "network": "libra"
-    }
+  "data": {
+    "id": "e052bd11-d899-4444-814b-d179444e6b9d",
+    "type": "contract-method",
+    "contractId": "54ccdb8a-8177-4bbf-8a3a-1af38be82a33",
+    "from": "0xd684ea9d172552e28ca8dfe4d9d39b49180741e7",
+    "method": "transfer",
+    "parameters": [
+      "0x5aabd741e0adc7915aa540d75fd49c7b4f953bfb",
+      "2000000000000000000"
+    ],
+    "status": "new",
+    "created": "2020-08-27T23:51:54.964Z",
+    "network": "rinkeby"
+  }
 }
 ```
 
@@ -297,40 +261,37 @@ query the balance of any other account by their address.
 
 To check the balance of your second account, use:
 
-- `<token>` replaced with your access token.
 - `<address>` replaced with the address of your second account.
 
 ```bash
 curl -X GET \
-    https://test.apiminer.com/tokens/44740750-522f-46ae-a63c-fcd1a8f5e308/balances/<address> \
-    -H 'Authorization: Bearer <token>'
+    https://apiminer.dev-site.us/tokens/54ccdb8a-8177-4bbf-8a3a-1af38be82a33/balances/<address> \
+    -H 'Authorization: Bearer apiminertestauth'
 ```
 
 The response is as follows:
 
 ```json
 {
-    "data": "2000000000000000000"
+  "data": "2000000000000000000"
 }
 ```
 
 ### 8. Return half of the tokens
 
 To demonstrate sending tokens from a non-default account, we'll send half of the
-tokens back:
+tokens back. Use:
 
-- `<token>` replaced with your access token.
-- `<new-address>` replaced with the address of your second account.
-- `<default-address>` replaced with the address of your default account.
+- `<new-address>` replaced with the address of your new account.
 
 ```bash
 curl -X POST \
-    https://test.apiminer.com/tokens/44740750-522f-46ae-a63c-fcd1a8f5e308/transfers \
-    -H 'Authorization: Bearer <token>' \
+    https://apiminer.dev-site.us/tokens/54ccdb8a-8177-4bbf-8a3a-1af38be82a33/transfers \
+    -H 'Authorization: Bearer apiminertestauth' \
     -H 'Content-Type: application/json' \
     -d '{
         "from": "<new-address>",
-        "to": "<default-address>",
+        "to": "0xd684ea9d172552e28ca8dfe4d9d39b49180741e7",
         "value": "1000000000000000000"
     }'
 ```
@@ -339,20 +300,20 @@ The response is as follows:
 
 ```json
 {
-    "data": {
-        "id": "fcd358f9-efff-46ed-92c9-9b13c2540f48",
-        "type": "contract-method",
-        "contractId": "44740750-522f-46ae-a63c-fcd1a8f5e308",
-        "from": "0x24c8aea9c45953e6d54715dbe4964e9757f5a67a",
-        "method": "transfer",
-        "parameters": [
-            "0x6b377a6a5505896fdec4e72fb780b819e46169bb",
-            "1000000000000000000"
-        ],
-        "status": "new",
-        "created": "2019-10-10T23:53:50.487Z",
-        "network": "libra"
-    }
+  "data": {
+    "id": "611d145a-840a-425e-997b-196e57cae83c",
+    "type": "contract-method",
+    "contractId": "54ccdb8a-8177-4bbf-8a3a-1af38be82a33",
+    "from": "0x5aabd741e0adc7915aa540d75fd49c7b4f953bfb",
+    "method": "transfer",
+    "parameters": [
+      "0xd684ea9d172552e28ca8dfe4d9d39b49180741e7",
+      "1000000000000000000"
+    ],
+    "status": "new",
+    "created": "2020-08-27T23:56:08.531Z",
+    "network": "rinkeby"
+  }
 }
 ```
 
@@ -385,8 +346,8 @@ as follows:
 
 ![environment](img/environment.png)
 
-- token: Your access token
-- contractId: `44740750-522f-46ae-a63c-fcd1a8f5e308`
+- token: `apiminertestauth`
+- contractId: `54ccdb8a-8177-4bbf-8a3a-1af38be82a33`
 
 For the name you can enter anything you want, it's for your own reference.
 
@@ -394,7 +355,7 @@ You can now use the API Miner collection to make calls to the API.
 
 ::: tip
 If you want to use a different API Miner environment than the default
-`test.apiminer.com`, you can add another variable called `host` with
+`apiminer.dev-site.us`, you can add another variable called `host` with
 the hostname of the environment to use.
 :::
 
@@ -412,14 +373,14 @@ You'll see a response like this:
 
 ```json
 {
-    "data": [
-        {
-            "id": "3d48d487-de83-49ab-b5de-4bf8fcab3dbc",
-            "address": "0x8769a34484b038e96edb82a3f72e47a13d543459",
-            "owner": "89f6b915-71c8-4980-8650-c8d29d1791d0",
-            "defaultAccount": true
-        }
-    ]
+  "data": [
+    {
+      "id": "decd1dd0-4b24-4f1b-86fd-e0479d8ca3a6",
+      "address": "0xd684ea9d172552e28ca8dfe4d9d39b49180741e7",
+      "owner": "67fe8cbc-b165-4100-aa0c-03b029fabe77",
+      "defaultAccount": true
+    }
+  ]
 }
 ```
 
@@ -451,7 +412,7 @@ Use the following Body with:
 ```json
 {
     "arg": [
-        "<address>",
+        "0xd684ea9d172552e28ca8dfe4d9d39b49180741e7",
         "100000000000000000000"
     ]
 }
@@ -464,20 +425,20 @@ The response will look like this:
 
 ```json
 {
-    "data": {
-        "id": "aac997c4-1fe0-4d24-9d3a-430968dfa238",
-        "type": "contract-method",
-        "contractId": "44740750-522f-46ae-a63c-fcd1a8f5e308",
-        "from": "0x8769a34484b038e96edb82a3f72e47a13d543459",
-        "method": "mint",
-        "parameters": [
-            "0x8769a34484b038e96edb82a3f72e47a13d543459",
-            "1000000000000000000"
-        ],
-        "status": "new",
-        "created": "2019-10-22T20:10:21.120Z",
-        "network": "libra"
-    }
+  "data": {
+    "id": "0d3a809f-f832-4de1-9839-7b8b767ee9b6",
+    "type": "contract-method",
+    "contractId": "54ccdb8a-8177-4bbf-8a3a-1af38be82a33",
+    "from": "0xd684ea9d172552e28ca8dfe4d9d39b49180741e7",
+    "method": "mint",
+    "parameters": [
+      "0xd684ea9d172552e28ca8dfe4d9d39b49180741e7",
+      "100000000000000000000"
+    ],
+    "status": "new",
+    "created": "2020-08-27T23:48:58.634Z",
+    "network": "rinkeby"
+  }
 }
 ```
 
@@ -504,43 +465,25 @@ the following response:
 
 ```json
 {
-    "data": {
-        "id": "aac997c4-1fe0-4d24-9d3a-430968dfa238",
-        "type": "contract-method",
-        "contractId": "44740750-522f-46ae-a63c-fcd1a8f5e308",
-        "from": "0x8769a34484b038e96edb82a3f72e47a13d543459",
-        "method": "mint",
-        "parameters": [
-            "0x8769a34484b038e96edb82a3f72e47a13d543459",
-            "1000000000000000000"
-        ],
-        "status": "completed",
-        "created": "2019-10-22T20:10:21.120Z",
-        "submitted": "2019-10-22T20:10:26.157Z",
-        "ended": "2019-10-22T20:10:30.254Z",
-        "transactionHash": "0x5501d9565b75a5918ce6cbcf25eedf0b1f1ca71d14cb09acc07c331bae031666",
-        "blockNumber": 4178518,
-        "events": [
-            {
-                "event": "Mint",
-                "address": "0x4CfC7bF1e8eB43d27DE0a4e648D9Cf3b6198D0EC",
-                "returnValues": {
-                    "account": "0x8769a34484b038e96edb82a3f72e47a13d543459",
-                    "value": "1000000000000000000"
-                }
-            },
-            {
-                "event": "Transfer",
-                "address": "0x4CfC7bF1e8eB43d27DE0a4e648D9Cf3b6198D0EC",
-                "returnValues": {
-                    "from": "0x0000000000000000000000000000000000000000",
-                    "to": "0x8769a34484b038e96edb82a3f72e47a13d543459",
-                    "value": "1000000000000000000"
-                }
-            }
-        ],
-        "network": "libra"
-    }
+  "data": {
+    "id": "0d3a809f-f832-4de1-9839-7b8b767ee9b6",
+    "type": "contract-method",
+    "contractId": "54ccdb8a-8177-4bbf-8a3a-1af38be82a33",
+    "from": "0xd684ea9d172552e28ca8dfe4d9d39b49180741e7",
+    "method": "mint",
+    "parameters": [
+      "0xd684ea9d172552e28ca8dfe4d9d39b49180741e7",
+      "100000000000000000000"
+    ],
+    "status": "completed",
+    "created": "2020-08-27T23:48:58.634Z",
+    "submitted": "2020-08-27T23:49:10.112Z",
+    "ended": "2020-08-27T23:49:23.520Z",
+    "transactionHash": "0x0826cd738abd10fa815f488107c47e367349698a891eeabeb379ecaeac835662",
+    "blockNumber": 7094422,
+    "events": ["..."],
+    "network": "rinkeby"
+  }
 }
 ```
 
@@ -588,12 +531,12 @@ response like this:
 
 ```json
 {
-    "data": {
-        "id": "8afe086b-2cb8-4feb-bfbe-064a996e137a",
-        "address": "0x632777aeb73f955a660817d5f1ab1a36365485aa",
-        "owner": "36731315-1ec0-4ad2-99a9-c7c3e22dce9f",
-        "defaultAccount": false
-    }
+  "data": {
+    "id": "370fb7ab-f589-478f-aa1c-d59f775b1583",
+    "address": "0x5aabd741e0adc7915aa540d75fd49c7b4f953bfb",
+    "owner": "67fe8cbc-b165-4100-aa0c-03b029fabe77",
+    "defaultAccount": false
+  }
 }
 ```
 
@@ -620,20 +563,20 @@ Then hit Send. The response is as follows:
 
 ```json
 {
-    "data": {
-        "id": "024c9ea7-a8a8-42ca-8e4b-c233f6f4f4e1",
-        "type": "contract-method",
-        "contractId": "44740750-522f-46ae-a63c-fcd1a8f5e308",
-        "from": "0x8769a34484b038e96edb82a3f72e47a13d543459",
-        "method": "transfer",
-        "parameters": [
-            "0x632777aeb73f955a660817d5f1ab1a36365485aa",
-            "2000000000000000000"
-        ],
-        "status": "new",
-        "created": "2019-10-22T21:07:27.916Z",
-        "network": "libra"
-    }
+  "data": {
+    "id": "e052bd11-d899-4444-814b-d179444e6b9d",
+    "type": "contract-method",
+    "contractId": "54ccdb8a-8177-4bbf-8a3a-1af38be82a33",
+    "from": "0xd684ea9d172552e28ca8dfe4d9d39b49180741e7",
+    "method": "transfer",
+    "parameters": [
+      "0x5aabd741e0adc7915aa540d75fd49c7b4f953bfb",
+      "2000000000000000000"
+    ],
+    "status": "new",
+    "created": "2020-08-27T23:51:54.964Z",
+    "network": "rinkeby"
+  }
 }
 ```
 
@@ -671,12 +614,11 @@ tokens back, again using "POST Transfer tokens".
 This time, replace the Body with the following:
 
 - `<new-address>` replaced with the address of your second account.
-- `<default-address>` replaced with the address of your default account.
 
 ```json
 {
     "from": "<new-address>",
-    "to": "<default-address>",
+    "to": "0xd684ea9d172552e28ca8dfe4d9d39b49180741e7",
     "value": "1000000000000000000"
 }
 ```
