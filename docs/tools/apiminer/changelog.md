@@ -7,6 +7,8 @@ title: API Miner changelog
 ## 1.1.5
 
 * Added endpoint for retrieving all events for a contract at `GET /contracts/:contractId/events`.
+* Added endpoints for getting block information `GET /contracts/network/:network/block/latest`
+  and `GET /contracts/network/:network/block/:number`.
 
 ## 1.1.4
 
