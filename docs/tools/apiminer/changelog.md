@@ -4,6 +4,10 @@ title: API Miner changelog
 
 # Changelog
 
+## 1.1.5
+
+* Added endpoint for retrieving all events for a contract at `GET /contracts/:contractId/events`.
+
 ## 1.1.4
 
 * Added batch contract call endpoint at `POST /contracts/call`.
