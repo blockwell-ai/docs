@@ -4,6 +4,14 @@ title: API Miner changelog
 
 # Changelog
 
+## 1.1.9
+
+* Added `GET /contracts` text search support with `text` parameter.
+
+## 1.1.8
+
+* Endpoint to retrieve gas prices.
+
 ## 1.1.7
 
 * Contract methods accept `value` in body to include an Ether value in the transaction.
