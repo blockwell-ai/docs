@@ -21,15 +21,7 @@ website and make one.
 ## Regarding contracts
 
 Blockwell Wallet needs some information on the contract itself before QR
-Codes can be created. At this time we don't have an automatic process
-in place for you to provide that information.
-
-A contract will work in the QR Creator automatically if:
-
-1. The contract is created by a 
-  [Blockwell Deployer](../contracts/blockwell-contracts.md#what-are-deployers)
-2. OR; the contract is verified on [Etherscan](https://etherscan.io).
-
-In other cases, you can contact us at <blockwell@blockwell.ai> and we
-can get your contract added to the system. We are working on adding
-more automated methods for adding contracts.
+Codes can be created. Most contracts will be added automatically, but
+if you run into issues with a contract not being found, contact us
+[on Telegram](http://t.me/Blockwell)
+and we can get your contract added to the system.

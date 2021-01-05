@@ -54,7 +54,7 @@ API Miner, but as the first step we'll go ahead and list all of our accounts.
 
 ```bash
 curl -X GET \
-    https://apiminer.dev-site.us/accounts \
+    https://apiminer.blockwell.ai/accounts \
     -H 'Authorization: Bearer apiminertestauth'
 ```
 
@@ -90,7 +90,7 @@ Use the following:
 
 ```bash
 curl -X POST \
-    https://apiminer.dev-site.us/contracts/54ccdb8a-8177-4bbf-8a3a-1af38be82a33/send/mint \
+    https://apiminer.blockwell.ai/contracts/54ccdb8a-8177-4bbf-8a3a-1af38be82a33/send/mint \
     -H 'Authorization: Bearer apiminertestauth' \
     -H 'Content-Type: application/json' \
     -d '{
@@ -135,7 +135,7 @@ with:
 
 ```bash
 curl -X GET \
-    https://apiminer.dev-site.us/transactions/<id> \
+    https://apiminer.blockwell.ai/transactions/<id> \
     -H 'Authorization: Bearer apiminertestauth'
 ```
 
@@ -174,7 +174,7 @@ To double check that you did actually get the Pump tokens, use:
 
 ```bash
 curl -X GET \
-    https://apiminer.dev-site.us/tokens/54ccdb8a-8177-4bbf-8a3a-1af38be82a33/balances/default \
+    https://apiminer.blockwell.ai/tokens/54ccdb8a-8177-4bbf-8a3a-1af38be82a33/balances/default \
     -H 'Authorization: Bearer apiminertestauth'
 ```
 
@@ -193,7 +193,7 @@ To create a new Ethereum account, use:
 
 ```bash
 curl -X POST \
-    https://apiminer.dev-site.us/accounts \
+    https://apiminer.blockwell.ai/accounts \
     -H 'Authorization: Bearer apiminertestauth'
 ```
 
@@ -221,7 +221,7 @@ To transfer 2 PMP tokens from your default account to the newly created one, use
 
 ```bash
 curl -X POST \
-    https://apiminer.dev-site.us/tokens/54ccdb8a-8177-4bbf-8a3a-1af38be82a33/transfers \
+    https://apiminer.blockwell.ai/tokens/54ccdb8a-8177-4bbf-8a3a-1af38be82a33/transfers \
     -H 'Authorization: Bearer apiminertestauth' \
     -H 'Content-Type: application/json' \
     -d '{
@@ -265,7 +265,7 @@ To check the balance of your second account, use:
 
 ```bash
 curl -X GET \
-    https://apiminer.dev-site.us/tokens/54ccdb8a-8177-4bbf-8a3a-1af38be82a33/balances/<address> \
+    https://apiminer.blockwell.ai/tokens/54ccdb8a-8177-4bbf-8a3a-1af38be82a33/balances/<address> \
     -H 'Authorization: Bearer apiminertestauth'
 ```
 
@@ -286,7 +286,7 @@ tokens back. Use:
 
 ```bash
 curl -X POST \
-    https://apiminer.dev-site.us/tokens/54ccdb8a-8177-4bbf-8a3a-1af38be82a33/transfers \
+    https://apiminer.blockwell.ai/tokens/54ccdb8a-8177-4bbf-8a3a-1af38be82a33/transfers \
     -H 'Authorization: Bearer apiminertestauth' \
     -H 'Content-Type: application/json' \
     -d '{
@@ -332,19 +332,19 @@ Download the Postman collection for API Miner:
 
 After installing, import the collection:
 
-![import](img/import.png)
+![import](./img/import.png)
 
 Under Import File click Choose Files and find the `apiminer-collection.json` 
 file you downloaded, or drag and drop it to where it says "Drop files here".
 
 Next, create a new Postman environment by clicking the gear icon:
 
-![gear](img/gear.png)
+![gear](./img/gear.png)
 
 In the top-right corner. Click the Add button, and configure the new environment
 as follows:
 
-![environment](img/environment.png)
+![environment](./img/environment.png)
 
 - token: `apiminertestauth`
 - contractId: `54ccdb8a-8177-4bbf-8a3a-1af38be82a33`
@@ -355,7 +355,7 @@ You can now use the API Miner collection to make calls to the API.
 
 ::: tip
 If you want to use a different API Miner environment than the default
-`apiminer.dev-site.us`, you can add another variable called `host` with
+`apiminer.blockwell.ai`, you can add another variable called `host` with
 the hostname of the environment to use.
 :::
 
@@ -364,7 +364,7 @@ the hostname of the environment to use.
 You should've already received the address of your first Ethereum account on
 API Miner, but as the first step we'll go ahead and list all of our accounts.
 
-![list accounts](img/list-accounts.png)
+![list accounts](./img/list-accounts.png)
 
 Find the "GET List accounts" endpoint, and click Send 
 <img class="inline" src="./img/send.png" height="35">.
@@ -396,14 +396,14 @@ used by default when submitting transactions without specifying an account.
 
 ### 2. Getting Pump tokens
 
-![contract send picture](img/contract-send.png)
+![contract send picture](./img/contract-send.png)
 
 Next, use the "POST Contract send call" endpoint to call the token contract with
 the token minting function.
 
 Under *Params* find the `method` Path Variable, and give it the value `mint`.
 
-![method mint picture](img/method-mint.png)
+![method mint picture](./img/method-mint.png)
 
 Use the following Body with:
 
@@ -454,7 +454,7 @@ down to the Responses and click `data` to show the fields.
 
 ### 3. Getting the status of a transaction
 
-![get a transaction](img/get-transaction.png)
+![get a transaction](./img/get-transaction.png)
 
 To see what happened to the transaction from the previous step, use the
 "POST Get a transaction" endpoint. Under Params, Path Variables, set the value
@@ -494,7 +494,7 @@ The status showing `completed` means the call was successful.
 To double check that you did actually get the Pump tokens, use the "GET Default
 account balance" endpoint.
 
-![default account balance](img/default-account-balance.png)
+![default account balance](./img/default-account-balance.png)
 
 No parameter changes are needed, just hit Send 
 <img class="inline" src="./img/send.png" height="35">.
@@ -521,7 +521,7 @@ That means we just minted 100 tokens to ourselves.
 
 ### 5. Creating an Ethereum account
 
-![create account](img/create-account.png)
+![create account](./img/create-account.png)
 
 To create a second Ethereum account, use the "POST Create account" endpoint.
 
@@ -548,16 +548,16 @@ if you specify it in the API calls. We'll look at how to do that below.
 To transfer 2 PMP tokens from your default account to the newly created one, use
 the "POST Transfer tokens" endpoint.
 
-![transfer tokens](img/transfer-tokens.png)
+![transfer tokens](./img/transfer-tokens.png)
 
 In Body, change the `to` address to match the second account's address you
 created in the previous step:
 
-![transfer body](img/transfer-body.png)
+![transfer body](./img/transfer-body.png)
 
 Then change `value` to `2000000000000000000`:
 
-![change value](img/change-value.png)
+![change value](./img/change-value.png)
 
 Then hit Send. The response is as follows:
 
@@ -592,7 +592,7 @@ query the balance of any other account by their address.
 To check the balance of your second account, use the "GET Token balance"
 endpoint.
 
-![token balance](img/token-balance.png)
+![token balance](./img/token-balance.png)
 
 In Params, set the `address` value to match your second account's address.
 
@@ -609,7 +609,7 @@ Hit Send. The response is as follows:
 To demonstrate sending tokens from a non-default account, we'll send half of the
 tokens back, again using "POST Transfer tokens".
 
-![transfer tokens](img/transfer-tokens.png)
+![transfer tokens](./img/transfer-tokens.png)
 
 This time, replace the Body with the following:
 
@@ -625,7 +625,7 @@ This time, replace the Body with the following:
 
 Like this:
 
-![transfer from body](img/transfer-from-body.png)
+![transfer from body](./img/transfer-from-body.png)
 
 Hit Send. The response is as follows:
 

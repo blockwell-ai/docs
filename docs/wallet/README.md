@@ -23,6 +23,6 @@ you can just scan the QR and it'll load up the right transaction.
 Blockwell Wallet is currently available as a native app for Android, and as a web app
 for other systems.
 
-[<img src="./img/download-android.png" width="200">](https://app.blockwell.ai/public/dist/blockwell-qr.apk)
+[<img src="./img/download-android.png" width="200">](https://cdn.blockwell.ai/public/dist/apk/blockwell--v1.11.1-release.apk)
 
 Or you can [use the Web App here](https://app.blockwell.ai/app).

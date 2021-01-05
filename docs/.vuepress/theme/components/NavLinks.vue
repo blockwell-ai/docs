@@ -97,7 +97,6 @@ export default {
 
     userLinks () {
       let list = JSON.parse(JSON.stringify(this.nav || []));
-      console.log('path', this.$page.path);
 
       // Mobile sidebar
       if (this.mobile) {
@@ -125,8 +124,6 @@ export default {
           }
         }
       }
-
-      console.log('userLinks', this.mobile, this.noCollapse, list);
 
       return list;
     },

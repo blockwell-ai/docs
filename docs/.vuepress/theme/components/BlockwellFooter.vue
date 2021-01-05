@@ -19,9 +19,6 @@
                 <a href="https://medium.com/@blockwell.marketing" target="_blank"><img
                         src="/social-medium.png" alt="Medium"></a>
             </div>
-            <div>
-                Email: <a href="mailto:blockwell@blockwell.ai" target="_blank">blockwell@blockwell.ai</a>
-            </div>
         </div>
         <div class="footer-newsletter">
             <h4>SUBSCRIBE TO THE BLOCKWELL NEWSLETTER TO RECEIVE UPDATES AND VALUABLE RESOURCES</h4>

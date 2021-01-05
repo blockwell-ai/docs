@@ -6,8 +6,8 @@ autonav:
 
 # Using Blockwell Wallet
 
-The Blockwell Wallet system is built on top of [API Miner](../products/apiminer), and each
-user has their own wallet managed by Blockwell and the [API Miner](../products/apiminer) 
+The Blockwell Wallet system is built on top of [API Miner](../tools/apiminer), and each
+user has their own wallet managed by Blockwell and the [API Miner](../tools/apiminer) 
 system. We call this your **Blockwell Wallet**.
 
 When you first [register an account](https://app.blockwell.ai), a new wallet

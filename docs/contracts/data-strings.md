@@ -56,7 +56,7 @@ chose it for the following reasons:
   
 ## Using Data Strings
 
-[Blockwell Wallet](../qr) fully supports Data Strings, they can be used for any `string`
+[Blockwell Wallet](../wallet) fully supports Data Strings, they can be used for any `string`
 value with the [Advanced QR Creator](https://app.blockwell.ai/code/advanced). When
 choosing the argument type for a `string`, there is an additional option called
 "Multiple". This uses Data Strings.
@@ -88,7 +88,7 @@ they would set it to this new value:
 
 If this new `userConfig` is now saved, the notification configuration will be forgotten.
 
-This problem can be avoided using [Blockwell Wallet](../qr) by setting the data to be
+This problem can be avoided using [Blockwell Wallet](../wallet) by setting the data to be
 combined, in which case the new data will be added to the existing values, which will
 produce what we want:
 

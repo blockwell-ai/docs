@@ -80,7 +80,6 @@
                     this.$site,
                     this.$localePath
                 );
-                console.log(items);
                 return items;
             },
 

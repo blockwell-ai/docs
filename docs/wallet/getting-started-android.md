@@ -47,7 +47,7 @@ or unknown apps on your phone.
 
 You can download the app by clicking the following on your phone:
 
-[<img src="./img/download-android.png" width="200">](https://app.blockwell.ai/public/dist/blockwell-qr.apk)
+[<img src="./img/download-android.png" width="200">](https://cdn.blockwell.ai/public/dist/apk/blockwell--v1.11.1-release.apk)
 
 Or by visiting [app.blockwell.ai](https://app.blockwell.ai) on your
 phone and scrolling down to the "Download for Android" button.

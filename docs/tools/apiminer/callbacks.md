@@ -65,7 +65,9 @@ to ensure they are not tampered with.
 
 ### Public keys
 
-The public keys can be [retrieved from the API](#operation/PublicKey), but it's not
+The public keys can be 
+[retrieved from the API](https://docs.blockwell.ai/apiminer/api/#operation/PublicKey), 
+but it's not
 recommended to do this automatically in production applications. The default key
 should be fetched manually.
 
@@ -90,7 +92,7 @@ but they all have the same basic format:
 Since it is signed data, it can be used as additional verification.
 - `owner` is the ID of the account that initiated the work leading to the callback.
 - `payload` is the actual data of the event, typically a
-[transaction](#operation/TransactionById).
+[transaction](https://docs.blockwell.ai/apiminer/api/#operation/TransactionById).
 - `callbackData` contains the data given to API Miner in the original API call that
 initiated the action.
 

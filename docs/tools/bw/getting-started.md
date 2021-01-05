@@ -9,7 +9,7 @@ autonav:
 bw is a command-line application, so you'll first need the files to run it. We have
 not released the tool openly at this point.
 
-If you'd like access to the tool, contact us at blockwell@blockwell.ai.
+If you'd like access to the tool, contact us [on Telegram](http://t.me/Blockwell).
 
 ## Basic Usage
 
@@ -180,7 +180,7 @@ contract_address: "0xe8340FdfE79851e9E117b3033E147a654dbDb0Ae"
 You can change it to any contract address you want.
 
 Instead of editing `config.yaml`, you can also use a different contract
-address with the [`--address`](./global-options.md#address-address) option.
+address with the [`--address`](./commands.md#address-address) option.
 For example:
 
 ```bash
@@ -214,7 +214,7 @@ network: rinkeby
 If you change `rinkeby` to `mainnet` and save the file, bw will use the Main
 Network.
 
-Alternatively, you can use the [`-n`](./global-options.md#network-name) option
+Alternatively, you can use the [`-n`](./commands.md#network-name) option
 and specify a network. Try running this command:
 
 ```bash

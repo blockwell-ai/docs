@@ -48,4 +48,4 @@ You use a Deployer by calling its `deploy` function and provide the configuratio
 for the contract you want to deploy. After deployment, you will be made the
 owner and admin of the new contract.
 
-These Docs include [Blockwell Wallet Codes](../qr) to make using Deployers easy.
+These Docs include [Blockwell Wallet QR Codes](../wallet) to make using Deployers easy.

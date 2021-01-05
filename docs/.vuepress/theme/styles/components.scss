@@ -18,6 +18,8 @@
 
 .code-copy {
   height: 0;
+  position: relative;
+  bottom: 2px;
 }
 
 #{$contentClass} img.inline {

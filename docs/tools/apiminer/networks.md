@@ -15,10 +15,6 @@ main Ethereum network, you'd specify either `"main"` or `1` - the two are equiva
 ## Current networks
 The following networks are currently known to API Miner.
 
-### `libra`
-
-API Miner sidechain using Geth Clique Proof of Authority. All gas prices are 0.
-
 ### `main`
 
 The Main Ethereum network.
@@ -26,3 +22,15 @@ The Main Ethereum network.
 ### `rinkeby`
 
 The Rinkeby Ethereum testnet.
+
+### `ropsten`
+
+The Ropsten test network.
+
+### `kovan`
+
+The Kovan test network.
+
+### `goerli`
+
+The Görli test network.
