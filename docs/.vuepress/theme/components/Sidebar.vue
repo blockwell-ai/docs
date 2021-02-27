@@ -120,6 +120,18 @@
                 font-size: 13px;
             }
 
+            .dropdown-subsubitem a {
+                padding-left: 4rem;
+                font-size: 13px;
+                font-weight: normal;
+                color: #333;
+                &.router-link-active {
+                    font-weight: 600;
+                    color: $accentColor;
+                    border-left-color: $accentColor;
+                }
+            }
+
             .nav-item > .external {
                 padding-left: 1.25rem;
             }

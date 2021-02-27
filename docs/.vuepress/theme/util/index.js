@@ -117,6 +117,21 @@ function resolvePath(relative, base, append) {
     return stack.join('/')
 }
 
+function mapChildren(items) {
+    if (!items || items.length === 0) {
+        return [];
+    }
+
+    return items.map(it => {
+        return {
+            type: 'link',
+            title: it.text,
+            path: it.link,
+            children: mapChildren(it.items)
+        }
+    });
+}
+
 /**
  * @param { Page } page
  * @param { string } regularPath
@@ -137,13 +152,7 @@ export function resolveSidebarItems(page, regularPath, site, localePath) {
             type: 'group',
             title: item.text,
             path: item.link,
-            children: (item.items || []).map(subitem => {
-                return {
-                    type: 'link',
-                    title: subitem.text,
-                    path: subitem.link
-                }
-            })
+            children: mapChildren(item.items)
         }
     });
 
@@ -229,6 +238,16 @@ export function findSubNav(nav, page) {
                                 return [navitem];
                             }
                             return [subitem];
+                        }
+                        if (item.items) {
+                            for (let subsubitem of item.items) {
+                                if (subsubitem.link === page.path) {
+                                    if (subsubitem.grouping) {
+                                        return [navitem];
+                                    }
+                                    return [item];
+                                }
+                            }
                         }
                     }
                 }

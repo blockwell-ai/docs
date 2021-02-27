@@ -38,6 +38,20 @@
                                       setOpen(false)
                                     "
                                      :item="childSubItem"/>
+                            <ul class="dropdown-subsubitem-wrapper"
+                                v-if="childSubItem.items">
+                                <li class="dropdown-subsubitem"
+                                    v-for="subSubItem in childSubItem.items"
+                                    :key="subSubItem.link">
+                                    <NavLink @focusout="
+                                      isLastItemOfArray(subSubItem, childSubItem.items) &&
+                                      isLastItemOfArray(childSubItem, subItem.items) &&
+                                      isLastItemOfArray(subItem, item.items) &&
+                                      setOpen(false)
+                                    "
+                                             :item="subSubItem"/>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                 </li>
@@ -183,6 +197,16 @@
                                 top: calc(50% - 2px);
                                 left: 9px;
                             }
+                        }
+                    }
+
+                    .dropdown-subsubitem-wrapper {
+                        margin-bottom: 10px;
+                    }
+
+                    .dropdown-subsubitem {
+                        a {
+                            color: #555;
                         }
                     }
 
