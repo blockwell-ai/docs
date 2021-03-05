@@ -7,7 +7,7 @@ autonav:
 
 # Prime
 
-<Deployer code="rks1rq">Prime Token</Deployer>
+<Deployer code="primed">Prime Token</Deployer>
 
 ## Introduction
 
