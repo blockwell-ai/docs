@@ -7,7 +7,7 @@ autonav:
 
 # Forum Token
 
-<Deployer code="t5mkx5">Forum Token</Deployer>
+<Deployer code="forums">Forum Token</Deployer>
 
 ## Introduction
 
