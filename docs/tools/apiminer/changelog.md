@@ -4,6 +4,16 @@ title: API Miner changelog
 
 # Changelog
 
+## 1.2.0
+
+* Added `GET /tokens/:network/:address/circulating` to get the circulating
+  supply for a token. The circulating supply is calculated by subtracting
+  wallets holding System NFTs. The response is in the format specified by
+  CoinMarketCap.
+* Added `GET /tokens/:network/:address/supply` to get the total
+  supply for a token. The response is in the format specified by
+  CoinMarketCap.
+
 ## 1.1.9
 
 * Added `GET /contracts` text search support with `text` parameter.
