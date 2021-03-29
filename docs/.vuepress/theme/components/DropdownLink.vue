@@ -205,6 +205,7 @@
                     }
 
                     .dropdown-subsubitem {
+                        list-style-type: none;
                         a {
                             color: #555;
                         }

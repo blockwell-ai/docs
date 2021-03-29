@@ -1,6 +1,5 @@
 ---
 title: Lotto
-sidebarDepth: 2
 autonav:
   group: Other Contracts
 ---

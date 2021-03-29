@@ -7,4 +7,11 @@ export default ({ Vue, options, router, siteData }) => {
     Vue.config.ignoredElements = [
         'asciinema-player'
     ];
+
+    router.addRoutes([
+        {
+            path: '/contracts/lotto.html',
+            redirect: '/contracts/lotto/'
+        }
+    ])
 }
