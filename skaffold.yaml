@@ -4,7 +4,7 @@ metadata:
   name: docs
 build:
   artifacts:
-    - image: blockwell-docs
+    - image: docker.blockwell.ai/blockwell-docs
 deploy:
   kubectl:
     manifests:

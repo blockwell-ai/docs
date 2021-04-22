@@ -4,6 +4,10 @@ title: API Miner changelog
 
 # Changelog
 
+## 1.2.1
+
+* Added `toBlock` option to limit event queries up to a specific block.
+
 ## 1.2.0
 
 * Added `GET /tokens/:network/:address/circulating` to get the circulating

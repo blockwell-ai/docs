@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
         - name: public
-          image: blockwell-docs
+          image: docker.blockwell.ai/blockwell-docs
           ports:
             - name: http
               containerPort: 80
