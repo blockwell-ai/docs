@@ -39,8 +39,8 @@
     @import "~@material/elevation/mdc-elevation";
 
     .deployer-block {
-        margin: 24px;
-        padding: 25px;
+        margin: 12px;
+        padding: 20px 25px 15px;
         @include mdc-elevation(4, #666);
         font-size: 0.9em;
 
@@ -52,7 +52,7 @@
 
 
         @media (max-width: $MQMobile) {
-            margin: 24px 0;
+            margin: 12px 0;
         }
     }
 </style>

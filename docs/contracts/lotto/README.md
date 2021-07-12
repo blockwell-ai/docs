@@ -8,6 +8,8 @@ autonav:
 
 <Deployer code="fg6vws">Lotto Contract</Deployer>
 
+<Dapp url="https://app.blockwell.ai/lotto">Lotto</Dapp>
+
 ## Introduction
 
 Lotto, also known as Item Drops, is a contract that lets users play games of

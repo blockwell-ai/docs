@@ -9,6 +9,8 @@ autonav:
 
 <Deployer code="ro9nd9">Community Token</Deployer>
 
+<Dapp url="https://app.blockwell.ai/suggestions">Voting</Dapp>
+
 ## Introduction
 
 A Community Token is similar to [Prime](./prime.md) and has mostly the same features.

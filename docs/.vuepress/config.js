@@ -28,6 +28,48 @@ module.exports = {
     markdown: {
         extendMarkdown: md => {
             md.use(require('../../plugins/markdown-it-responsive-video'));
+
+            const pattern = /!([a-z][a-z0-9]*)$/i;
+            md.use((md) => {
+                const defaultRender = md.renderer.rules.link_open || function (tokens, idx, options, env, self) {
+                    return self.renderToken(tokens, idx, options);
+                };
+
+                md.renderer.rules.link_open = function (tokens, idx, options, env, self) {
+                    let link = tokens[idx];
+                    let href;
+                    let hrefIndex = link.attrIndex('href')
+                    if (hrefIndex >= 0) {
+                        href = link.attrs[hrefIndex][1];
+
+                        let match = pattern.exec(href);
+                        if (match) {
+                            let type = match[1].toLowerCase();
+                            let addClass;
+                            switch (type) {
+                                case 'button':
+                                    addClass = ' btn btn-sm btn-primary';
+                                    break;
+                            }
+
+                            if (addClass) {
+                                link.attrs[hrefIndex][1] = href.replace(pattern, '');
+
+                                let classIndex = link.attrIndex('class');
+
+                                if (classIndex < 0) { // attr doesn't exist, add new attribute
+                                    link.attrPush(['class', addClass])
+                                } else {
+                                    link.attrs[classIndex][1] += addClass;
+                                }
+                            }
+                        }
+                    }
+
+                    // pass token to default renderer.
+                    return defaultRender(tokens, idx, options, env, self)
+                }
+            })
         }
     },
     themeConfig: {

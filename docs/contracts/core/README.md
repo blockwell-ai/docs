@@ -6,7 +6,7 @@ autonav:
 
 # Core
 
-[https://app.blockwell.ai/core](https://app.blockwell.ai/core)
+<Dapp url="https://app.blockwell.ai/core">Core</Dapp>
 
 ## Introduction
 

@@ -9,6 +9,8 @@ autonav:
 
 <Deployer code="forums">Forum Token</Deployer>
 
+<Dapp url="https://app.blockwell.ai/nft">NFT</Dapp>
+
 ## Introduction
 
 A Forum Token is a [non-fungible token](https://en.wikipedia.org/wiki/Non-fungible_token)

@@ -7,6 +7,10 @@ autonav:
 
 # Book
 
+<Deployer code="rmqe1l">Book</Deployer>
+
+<Dapp url="https://app.blockwell.ai/book">Book</Dapp>
+
 ## Introduction
 
 Book is a way to store information on the blockchain in an organized fashion. It has
