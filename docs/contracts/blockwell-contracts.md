@@ -25,6 +25,9 @@ A Non-Fungible Token with Community Token's advanced voting.
 
 ### Governance
 
+[**Core**](./core/README.md)  
+Core manages projects and tasks on-chain with decentralized governance.
+
 [**Daico**](./daico.md)  
 The Daico contract lets you govern funds and their use.
 
@@ -32,6 +35,13 @@ The Daico contract lets you govern funds and their use.
 Community Token's advanced [Suggestions](./suggestions.md) and 
 [Proposals](./community.md#proposals) allow for group governance.
 
+### Others
+
+[**Book**](./book.md)  
+Store and manage content or data on-chain with access control and encryption.
+
+[**Lotto**](./lotto/README.md)  
+Games of chance on the blockchain.
 
 ## What are Deployers?
 
