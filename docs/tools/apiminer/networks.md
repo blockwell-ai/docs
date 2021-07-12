@@ -23,6 +23,14 @@ The Main Ethereum network.
 
 The Rinkeby Ethereum testnet.
 
+### `leprichain`
+
+[Lepricon's](https://lepricon.io) Leprichain sidechain.
+
+### `firechain`
+
+A gas-free sidechain managed by Blockwell.
+
 ### `ropsten`
 
 The Ropsten test network.
@@ -34,3 +42,4 @@ The Kovan test network.
 ### `goerli`
 
 The Görli test network.
+
