@@ -104,7 +104,6 @@ export default {
           if (item.items) {
             for (let subitem of item.items) {
               if (subitem.items && !subitem.grouping && !this.$page.path.startsWith(subitem.link)) {
-                subitem.items = null;
               }
             }
           }
