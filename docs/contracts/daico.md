@@ -7,7 +7,7 @@ autonav:
 
 # Daico
 
-<Deployer code="iekryy">Daico Contract</Deployer>
+<Deployer code="i8h439">Daico Contract</Deployer>
 
 <Dapp url="https://app.blockwell.ai/daico">Daico</Dapp>
 

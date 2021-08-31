@@ -7,7 +7,7 @@ autonav:
 
 # Community Token
 
-<Deployer code="ro9nd9">Community Token</Deployer>
+<Deployer code="sqmbcd">Community Token</Deployer>
 
 <Dapp url="https://app.blockwell.ai/suggestions">Voting</Dapp>
 
