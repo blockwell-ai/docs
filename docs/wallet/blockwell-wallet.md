@@ -2,6 +2,7 @@
 title: Using Blockwell Wallet
 autonav:
     group: Guides
+    groupOrder: 2
 ---
 
 # Using Blockwell Wallet

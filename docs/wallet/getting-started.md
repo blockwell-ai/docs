@@ -2,6 +2,7 @@
 title: Platforms
 autonav:
     group: Getting Started
+    groupOrder: 1
     order: -1
 ---
 

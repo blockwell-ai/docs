@@ -25,7 +25,7 @@ autonav:
 <div class="features">
 
 - ![Wallet](/icons/wallet.svg) **Wallet** Flexible Wallet for the blockchain
-- ![QR](/icons/qr.svg) **Dumbapps** Use dumbapps with links or QR Codes to make transactions
+- ![QR](/icons/qr.svg) **bApps** Use bApps with links or QR Codes to make transactions
 - ![Hybrid Apps](/icons/embed-code.svg) **Happs** Happs (hybrid apps) combine the power of dapps with the 
     ease of use of centralized apps
     

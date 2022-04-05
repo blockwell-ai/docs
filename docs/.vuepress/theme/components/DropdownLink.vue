@@ -52,6 +52,17 @@
                                              :item="subSubItem"/>
                                 </li>
                             </ul>
+                            <ul class="dropdown-subsubitem-wrapper"
+                                v-else-if="childSubItem.headers && isActive($route, childSubItem.link)">
+                                <li class="dropdown-subsubitem"
+                                    v-for="header in childSubItem.headers"
+                                    v-if="header.level === 2"
+                                    :key="header.slug">
+                                    <NavLink
+                                             :item="{link: childSubItem.link + '#' + header.slug, text: header.title}"/>
+
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                 </li>
@@ -63,6 +74,7 @@
 <script>
     import NavLink from '@theme/components/NavLink.vue'
     import DropdownTransition from '@theme/components/DropdownTransition.vue'
+    import {isActive} from "@theme/util/index";
     import last from 'lodash/last'
 
     export default {
@@ -107,7 +119,8 @@
 
             isLastItemOfArray(item, array) {
                 return last(array) === item
-            }
+            },
+            isActive
         },
 
         watch: {

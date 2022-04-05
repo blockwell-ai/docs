@@ -7,7 +7,7 @@ autonav:
 
 # Book
 
-<Deployer code="hgi5ke">Book</Deployer>
+<Deployer code="booked">Book</Deployer>
 
 <Dapp url="https://app.blockwell.ai/book">Book</Dapp>
 

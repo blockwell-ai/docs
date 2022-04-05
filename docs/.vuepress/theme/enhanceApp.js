@@ -14,4 +14,29 @@ export default ({ Vue, options, router, siteData }) => {
             redirect: '/contracts/lotto/'
         }
     ])
+
+    router.options.scrollBehavior = (to, from, savedPosition) => {
+        if (savedPosition) {
+            return window.scrollTo({
+                top: savedPosition.y,
+                behavior: 'smooth',
+            });
+        }
+        else if (to.hash) {
+            const targetElement = document.querySelector(to.hash);
+            if (targetElement) {
+                const y = targetElement.getBoundingClientRect().top + window.scrollY - 80;
+                return window.scrollTo({
+                    top: y,
+                    behavior: 'smooth',
+                });
+            }
+        }
+        else {
+            return window.scrollTo({
+                top: 0,
+                behavior: 'smooth',
+            });
+        }
+    };
 }

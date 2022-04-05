@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import { isExternal, isMailto, isTel, ensureExt } from '../util';
+import {isExternal, isMailto, isTel, ensureExt, isActive} from '../util';
 
 export default {
   props: {
@@ -39,7 +39,11 @@ export default {
         return Object.keys(this.$site.locales).some(rootLink => rootLink === this.link)
       }
       return this.link === '/'
-    }
+    },
+
+      active() {
+        return isActive(this.$route, this.item.link)
+      }
   },
 
   methods: {

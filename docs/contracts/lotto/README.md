@@ -6,7 +6,7 @@ autonav:
 
 # Lotto
 
-<Deployer code="nue2y8">Lotto Contract</Deployer>
+<Deployer code="lottod">Lotto Contract</Deployer>
 
 <Dapp url="https://app.blockwell.ai/lotto">Lotto</Dapp>
 

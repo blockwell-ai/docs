@@ -106,7 +106,10 @@
             if (hash.length > 1) {
                 const id = hash.substring(1)
                 const element = document.getElementById(id)
-                if (element) element.scrollIntoView()
+                if (element) {
+                    const y = element.getBoundingClientRect().top + window.scrollY - 80;
+                    window.scrollTo({top: y, behavior: 'smooth'});
+                }
             }
         },
 

@@ -98,11 +98,12 @@ PLUGIN.get_auto_nav_items = async (pages, plugin_options) => {
         const order = page_options.order || 0;
         const group = page_options.group;
         const groupOrder = page_options.groupOrder;
+        const headers = page.headers;
 
         if (text && link) {
             const parse_path = PATH.parse(path);
             const parent = (parse_path.root === parse_path.dir) ? false : parse_path.dir;
-            const item = {text, link, order, parent, group, groupOrder, level: link.split('/').filter(it => it).length};
+            const item = {text, link, order, parent, headers, group, groupOrder, level: link.split('/').filter(it => it).length};
             items.push(item);
         }
     }

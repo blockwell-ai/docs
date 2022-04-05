@@ -178,6 +178,7 @@ h2 {
   font-size: 1.65rem;
   padding-bottom: 0.3rem;
   border-bottom: 1px solid $borderColor;
+  scroll-margin-top: 80px;
 }
 
 main.page #{$contentClass} > h3 {

@@ -26,7 +26,6 @@
     "vuepress-plugin-code-copy": "1.0.6",
     "vuepress-plugin-container": "2.1.4",
     "vuepress-plugin-mathjax": "1.2.8",
-    "vuepress-plugin-smooth-scroll": "0.0.9",
     "lodash.defaultsdeep": "4.6.1",
     "lodash.isempty": "4.4.0",
     "lodash.orderby": "4.6.0",
