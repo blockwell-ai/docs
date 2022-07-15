@@ -28,22 +28,22 @@ Clicking it opens a dialog that shows you the code you can copy and paste to a p
 The code will look something like this:
 
 ```html
-<div class="bappembed-container"
+<div class="dumbappembed-container"
      data-label="Sample bApp"
      data-shortcode="izfd2j"
      data-args="value=1"></div>
-<script src="https://cdn.blockwell.ai/bappembed/bundle.js"/>
-<link rel="stylesheet" type="text/css" href="https://cdn.blockwell.ai/bappembed/main.css"/>
+<script src="https://cdn.blockwell.ai/dumbappembed/bundle.js"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.blockwell.ai/dumbappembed/main.css"/>
 ```
 
 And here is that code on this page, fully working:
 
-<div class="bappembed-container"
+<div class="dumbappembed-container"
     data-label="Sample bApp"
     data-shortcode="izfd2j"
     data-args="value=1"></div>
-<script src="https://cdn.blockwell.ai/bappembed/bundle.js" />
-<link rel="stylesheet" type="text/css" href="https://cdn.blockwell.ai/bappembed/main.css" />
+<script src="https://cdn.blockwell.ai/dumbappembed/bundle.js" />
+<link rel="stylesheet" type="text/css" href="https://cdn.blockwell.ai/dumbappembed/main.css" />
 
 **Note** that you only need to include the `<script` and `<link` lines once in your application, they will automatically
 process all embeds on the page.
@@ -104,7 +104,7 @@ Here's a quick example demonstrating how that might be done with plain JavaScrip
 
 ```javascript
 function updateButton(tokenValue) {
-    let element = document.querySelector(".bappembed-container");
+    let element = document.querySelector(".dumbappembed-container");
     let query = new URLSearchParams({value: tokenValue});
     element.setAttribute("data-args", query.toString());
 }
@@ -113,7 +113,7 @@ function updateButton(tokenValue) {
 In Vue.js it might look like this:
 
 ```vue
-<div class="bappembed-container"
+<div class="dumbappembed-container"
      data-label="Sample bApp"
      data-shortcode="izfd2j"
      :data-args="new URLSearchParams({value: tokenValue}).toString()"></div>
@@ -127,7 +127,7 @@ render()
     const {tokenValue} = this.props;
     let query = new URLSearchParams({value: tokenValue});
     return (
-        <div class="bappembed-container"
+        <div class="dumbappembed-container"
              data-label="Sample bApp"
              data-shortcode="izfd2j"
              data-args={query.toString()}
@@ -148,7 +148,7 @@ means you can also encode data into it. For example in React:
 render()
 {
     return (
-        <div class="bappembed-container"
+        <div class="dumbappembed-container"
              data-label="Sample bApp"
              data-shortcode="izfd2j"
              data-args="value=1"
@@ -166,7 +166,7 @@ original data.
 The embed code includes the addition of a base style sheet with a neutral theme:
 
 ```html
-<link rel="stylesheet" type="text/css" href="https://cdn.blockwell.ai/bappembed/main.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.blockwell.ai/dumbappembed/main.css"/>
 ```
 
 There are two options for customizing the styling:
@@ -180,7 +180,7 @@ If you set the variables in the inner element, those will be prioritized. For ex
 
 ```html
 <style>
-    .bappembed-inner {
+    .dumbappembed-inner {
         --button-text: #ffffff;
         --button-color: #6d358f;
         --button-border: #6d358f;
@@ -199,15 +199,15 @@ If you set the variables in the inner element, those will be prioritized. For ex
 Here's what that looks like:
 
 
-<div class="bappembed-container bappembed-theme1"
+<div class="dumbappembed-container dumbappembed-theme1"
     data-label="Sample bApp"
     data-shortcode="izfd2j"
     data-args="value=1"></div>
-<script src="https://cdn.blockwell.ai/bappembed/bundle.js" />
-<link rel="stylesheet" type="text/css" href="https://cdn.blockwell.ai/bappembed/main.css" />
+<script src="https://cdn.blockwell.ai/dumbappembed/bundle.js" />
+<link rel="stylesheet" type="text/css" href="https://cdn.blockwell.ai/dumbappembed/main.css" />
 
 <style>
-.bappembed-theme1 .bappembed-inner {
+.dumbappembed-theme1 .dumbappembed-inner {
   --button-text: #ffffff;
   --button-color: #6d358f;
   --button-border: #6d358f;
@@ -230,7 +230,7 @@ And here's another alternative:
 
 ```html
 <style>
-    .bappembed-inner {
+    .dumbappembed-inner {
         --button-text: #02806e;
         --button-color: transparent;
         --button-border: #02806e;
@@ -242,14 +242,14 @@ And here's another alternative:
 
 And again here's what that looks like:
 
-<div class="bappembed-container bappembed-theme2"
+<div class="dumbappembed-container dumbappembed-theme2"
     data-label="Sample bApp"
     data-shortcode="izfd2j"
     data-args="value=1"></div>
-<script src="https://cdn.blockwell.ai/bappembed/bundle.js" />
-<link rel="stylesheet" type="text/css" href="https://cdn.blockwell.ai/bappembed/main.css" />
+<script src="https://cdn.blockwell.ai/dumbappembed/bundle.js" />
+<link rel="stylesheet" type="text/css" href="https://cdn.blockwell.ai/dumbappembed/main.css" />
 <style>
-.bappembed-theme2 .bappembed-inner {
+.dumbappembed-theme2 .dumbappembed-inner {
   --button-text: #02806e;
   --button-color: transparent;
   --button-border: #02806e;
@@ -264,34 +264,34 @@ Sometimes you want your user to just connect to the page with their wallet, and 
 connect" embed:
 
 ```html
-<div class="bappembed-container"
+<div class="dumbappembed-container"
      data-label="Connect Wallet"
      data-component="connect"></div>
 ```
 
 Which looks like this:
 
-<div class="bappembed-container"
+<div class="dumbappembed-container"
      data-label="Connect Wallet"
      data-component="connect"></div>
 
 If a wallet is loaded, it will display the wallet address below the button like so:
 
 ```html
-<div class="bappembed-inner bappembed-connect bappembed-connected">
+<div class="dumbappembed-inner dumbappembed-connect dumbappembed-connected">
     <button class="btn btn-primary btn-connect" disabled="disabled">Connect Wallet</button>
-    <div class="bappembed-account">0x1234567890123456789012345678901234567890</div>
+    <div class="dumbappembed-account">0x1234567890123456789012345678901234567890</div>
     ...
 ```
 
-The `bappembed-connect` div will have a `bappembed-connected` class added to it, so you could hide the button and just
+The `dumbappembed-connect` div will have a `dumbappembed-connected` class added to it, so you could hide the button and just
 show the wallet address using CSS.
 
 The connect embed has one additional parameter called `data-auto`. If provided non-empty, the embed will ask the user to
 connect their wallet as soon as the page finishes loading. For example:
 
 ```html
-<div class="bappembed-container"
+<div class="dumbappembed-container"
      data-component="connect"
      data-auto="yes"></div>
 ```
@@ -302,7 +302,7 @@ The embed has a number of events dispatched through the browser window object, a
 standard `addEventListener` function. For example:
 
 ```javascript
-window.addEventListener("bapp-complete", (ev) => {
+window.addEventListener("dumbapp-complete", (ev) => {
     console.log("Complete!", ev.detail);
 });
 ```
@@ -338,51 +338,64 @@ type SubmissionStepStatus =
     | "error" // Transaction failed in an error
 ```
 
-### `bapp-connection`
+### Approval
+
+All events, with the exception of `dumbapp-connection`, may also contain a boolean property named `approval`.
+
+Some transactions require an approval to be submitted for a token before it can be executed. For ERC-20 tokens this
+allows the contract being executed to use tokens from the user's account. For ERC-721, it allows the contract to transfer
+NFTs from the user, for example to list them on a market.
+
+When approval is needed, a separate transaction will be processed first for the approval. That transaction behaves
+exactly the same as the standard bApp transaction, including emitting the same events. The only difference is that
+if the transaction is for approval, it has the `approval` boolean set to true.
+
+### `dumbapp-connection`
 
 ```javascript
-window.addEventListener("bapp-connection", (ev) => {
+window.addEventListener("dumbapp-connection", (ev) => {
     console.log("Connection event in state:", ev.detail.state);
 });
 ```
 
-- `ev` is `CustomEvent<BappConnectionEvent>` where BappConnectionEvent is defined as:
+- `ev` is `CustomEvent<WalletConnectionEvent>` where WalletConnectionEvent is defined as:
 
 ```typescript
-interface BappConnectionEvent {
-    state: MetamaskState;
+interface WalletConnectionEvent {
+    state: WalletState;
     account?: string;
     chainId?: number;
 }
 ```
 
-The `bapp-connection` event is fired every time the state of the MetaMask connection to the application changes. This
+The `dumbapp-connection` event is fired every time the state of the MetaMask connection to the application changes. This
 typically happens when the user is connecting MetaMask to the app, when they change their wallet, or their selected
 network.
 
 The latest known account address and the current chain ID is always included, and they're only missing if the user
 has not connected.
 
-### `bapp-submit`
+### `dumbapp-submit`
 
 ```javascript
-window.addEventListener("bapp-submit", (ev) => {
+window.addEventListener("dumbapp-submit", (ev) => {
     console.log("User submitted shortcode:", ev.detail.shortcode);
 });
 ```
 
-- `ev` is `CustomEvent<BappSubmitEvent>` where BappSubmitEvent is defined as:
+- `ev` is `CustomEvent<DumbappSubmitEvent>` where DumbappSubmitEvent is defined as:
 
 ```typescript
-interface BappSubmitEvent {
+interface DumbappSubmitEvent {
     id: string;
     shortcode: string;
     status: SubmissionStepStatus;
     type?: string;
+    approval?: boolean;
 }
 ```
 
-The `bapp-submit` event happens when a user presses the submit button, after a connection to MetaMask has been
+The `dumbapp-submit` event happens when a user presses the submit button, after a connection to MetaMask has been
 established. In practical terms, this event fires right before MetaMask asks the user to confirm the transaction.
 
 #### Event `id`
@@ -391,22 +404,23 @@ bApp events also include an `id` property. This is a unique identifier assigned 
 to make sure a single user press is only ever processed once. The generated ID is a UUID v5 constructed from the
 shortcode, wallet address, submission timestamp and arguments.
 
-### `bapp-update`
+### `dumbapp-update`
 
 ```javascript
-window.addEventListener("bapp-update", (ev) => {
+window.addEventListener("dumbapp-update", (ev) => {
     console.log("Submission update:", ev.detail.transactionHash);
 });
 ```
 
-- `ev` is `CustomEvent<BappUpdateEvent>` where BappUpdateEvent is defined as:
+- `ev` is `CustomEvent<DumbappUpdateEvent>` where DumbappUpdateEvent is defined as:
 
 ```typescript
-interface BappUpdateEvent {
+interface DumbappUpdateEvent {
     id: string;
     shortcode: string;
     status: SubmissionStepStatus;
     type?: string;
+    approval?: boolean;
     stepNumber: number;
     stepId: string;
     previousStatus: SubmissionStepStatus;
@@ -414,57 +428,59 @@ interface BappUpdateEvent {
 }
 ```
 
-The `bapp-update` event is fired every time, after the initial `bapp-submit` event, a change happens in any of 
+The `dumbapp-update` event is fired every time, after the initial `dumbapp-submit` event, a change happens in any of 
 submission process. This is typically an update to the status of the transaction.
 
 Because bApps can have multiple steps (for example approving before making a trade), the update also has the
 properties for which step is being updated, `stepNumber` and `stepId`.
 
-### `bapp-complete`
+### `dumbapp-complete`
 
 ```javascript
-window.addEventListener("bapp-complete", (ev) => {
+window.addEventListener("dumbapp-complete", (ev) => {
     console.log("Completed!", ev.detail.transactionHash);
 });
 ```
 
-- `ev` is `CustomEvent<BappCompleteEvent>` where BappCompleteEvent is defined as:
+- `ev` is `CustomEvent<DumbappCompleteEvent>` where DumbappCompleteEvent is defined as:
 
 ```typescript
-interface BappCompleteEvent {
+interface DumbappCompleteEvent {
     id: string;
     shortcode: string;
     status: SubmissionStepStatus;
     type?: string;
+    approval?: boolean;
     transactionHash: string;
 }
 ```
 
-The `bapp-complete` event is fired when the entire bApp process is finished, which means all steps have been
+The `dumbapp-complete` event is fired when the entire bApp process is finished, which means all steps have been
 included in a block on the blockchain. The included `transactionHash` is for the last step in the bApp.
 
-### `bapp-error`
+### `dumbapp-error`
 
 ```javascript
-window.addEventListener("bapp-error", (ev) => {
+window.addEventListener("dumbapp-error", (ev) => {
     console.log("Error!", ev.detail);
 });
 ```
 
-- `ev` is `CustomEvent<BappErrorEvent>` where BappErrorEvent is defined as:
+- `ev` is `CustomEvent<DumbappErrorEvent>` where DumbappErrorEvent is defined as:
 
 ```typescript
-interface BappErrorEvent {
+interface DumbappErrorEvent {
     id: string;
     shortcode: string;
     status: SubmissionStepStatus;
     type?: string;
+    approval?: boolean;
     code?: string;
     message?: string;
 }
 ```
 
-The `bapp-error` event is fired when a bApp submission fails and cannot be continued, and the `code` property
+The `dumbapp-error` event is fired when a bApp submission fails and cannot be continued, and the `code` property
 will contain the reason if available. The `message` property has a human-friendly error message.
 
 There are a variety of codes from different sources, but some of the more common ones are:
@@ -480,17 +496,17 @@ Finally, here are the complete TypeScript definitions for the events.
 ```typescript
 declare global {
     interface WindowEventMap {
-        "bapp-submit": CustomEvent<BappSubmitEvent>;
-        "bapp-update": CustomEvent<BappUpdateEvent>;
-        "bapp-complete": CustomEvent<BappCompleteEvent>;
-        "bapp-error": CustomEvent<BappErrorEvent>;
-        "bapp-connection": CustomEvent<BappConnectionEvent>;
+        "dumbapp-submit": CustomEvent<DumbappSubmitEvent>;
+        "dumbapp-update": CustomEvent<DumbappUpdateEvent>;
+        "dumbapp-complete": CustomEvent<DumbappCompleteEvent>;
+        "dumbapp-error": CustomEvent<DumbappErrorEvent>;
+        "dumbapp-connection": CustomEvent<WalletConnectionEvent>;
     }
 }
 
-export type MetamaskState =
+export type WalletState =
     | "ready"
-    | "no-metamask"
+    | "not-installed"
     | "loading-accounts"
     | "accounts-loaded"
     | "accounts-rejected"
@@ -506,33 +522,35 @@ export type SubmissionStepStatus =
         | "unknown"
         | "error";
 
-export interface BappConnectionEvent {
-    state: MetamaskState;
+export interface WalletConnectionEvent {
+    type: string;
+    state: WalletState;
     account?: string;
     chainId?: number;
 }
 
-export interface BappEventBase {
+export interface DumbappEventBase {
     id: string;
     shortcode: string;
     status: SubmissionStepStatus;
     type?: string;
+    approval?: boolean;
 }
 
-export interface BappSubmitEvent extends BappEventBase {}
+export interface DumbappSubmitEvent extends DumbappEventBase {}
 
-export interface BappUpdateEvent extends BappEventBase {
+export interface DumbappUpdateEvent extends DumbappEventBase {
     stepNumber: number;
     stepId: string;
     previousStatus: SubmissionStepStatus;
     transactionHash?: string;
 }
 
-export interface BappCompleteEvent extends BappEventBase {
+export interface DumbappCompleteEvent extends DumbappEventBase {
     transactionHash: string;
 }
 
-export interface BappErrorEvent extends BappEventBase {
+export interface DumbappErrorEvent extends DumbappEventBase {
     code?: string;
     message?: string;
 }

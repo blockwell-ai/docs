@@ -1,4 +1,4 @@
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: blockwell-docs-ingress
@@ -16,10 +16,16 @@ spec:
       http:
         paths:
           - path: /
+            pathType: Prefix
             backend:
-              serviceName: blockwell-docs
-              servicePort: 80
+              service:
+                name: blockwell-docs
+                port:
+                  number: 80
           - path: /apiminer/api
+            pathType: Prefix
             backend:
-              serviceName: blockwell-apiminer-spec
-              servicePort: 80
+              service:
+                name: blockwell-apiminer-spec
+                port:
+                  number: 80
