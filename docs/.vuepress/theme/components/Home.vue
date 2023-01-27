@@ -97,7 +97,7 @@ export default {
         }
 
         .logo-image {
-            max-height: 140px;
+          height: 140px;
         }
 
         h1 {

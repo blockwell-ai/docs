@@ -25,3 +25,8 @@
 #{$contentClass} img.inline {
   vertical-align: middle;
 }
+
+#{$contentClass} img.centered {
+  display: block;
+  margin: 0 auto;
+}

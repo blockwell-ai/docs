@@ -14,9 +14,7 @@
                         src="/social-facebook.png" alt="Facebook"></a>
                 <a href="https://www.youtube.com/channel/UCk5mQ46_8VCKSzxoAZlNMjg" target="_blank"><img
                         src="/social-youtube.png" alt="YouTube"></a>
-                <a href="https://www.instagram.com/blockwell_hq/" target="_blank"><img
-                        src="/social-instagram.png" alt="Instagram"></a>
-                <a href="https://medium.com/@blockwell.marketing" target="_blank"><img
+                <a href="https://blockwell.medium.com/" target="_blank"><img
                         src="/social-medium.png" alt="Medium"></a>
             </div>
         </div>

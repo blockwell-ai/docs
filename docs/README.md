@@ -12,6 +12,36 @@ autonav:
 <div class="home-section">
 <div class="home-section-inner">
 
+# Blockwell Palette
+
+<div class="screenshot">
+
+![Blockwell Palette](./palette/img/palette-editor-screenshot.png)
+
+</div>
+
+### Drag-and-drop builder for dapps
+
+<div class="features">
+
+- ![Style](/icons/brush.svg) **Style** Full control over styling
+- ![Blocks](/icons/blocks.svg) **Create** Create your UI by dragging and dropping configurable blocks
+- ![bApps](/icons/qr.svg) **bApps** Integrates with Blockwell bApps
+    
+</div>
+    
+<div class="buttons">
+
+- Want to get started? [Go To Palette](https://app.blockwell.ai/palette2)
+- Want to learn more? [Read Documentation](./palette/introduction.md)
+
+</div>
+
+</div></div>
+
+<div class="home-section">
+<div class="home-section-inner">
+
 # Blockwell Wallet
 
 <div class="screenshot">
@@ -35,6 +65,30 @@ autonav:
 
 - Want to get started? [Go To Blockwell Wallet](https://app.blockwell.ai)
 - Want to learn more? [Read Documentation](wallet/README.md)
+
+</div>
+
+</div></div>
+
+<div class="home-section">
+<div class="home-section-inner">
+
+# bApps
+
+### bApps make it easy to use the blockchain
+
+<div class="features">
+
+- ![Create bApps](/icons/qr.svg) **Create** Create bApps for your own smart contracts
+- ![Deployers](/icons/embed-code.svg) **Any Contract** Works with any smart contract 
+- ![Governance](/icons/smart-donation.svg) **Portable** Use links or embeds as needed
+    
+</div>
+    
+<div class="buttons">
+
+- Want to get started? [Go To Creator](https://app.blockwell.ai/creator)
+- Want to learn more? [Read Documentation](./wallet/bapps.md)
 
 </div>
 
