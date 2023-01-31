@@ -188,9 +188,7 @@ Lastly, we'll add the balance variable to our template:
 ## Next Up
 
 - [Read the guide for how to style Palettes](./styling.md).
-
-<!--
+- [How to allow users to submit transactions](./bapps.md) through Blockwell bApp integration.
 - [Read about all the different types of blocks](./blocks.md) you can add to a Palette.
 - [List of variables types and what they all do](./variable-types.md).
 - [In-depth details on how variables work](./variables.md) in Palettes.
--->

@@ -114,18 +114,12 @@ The last configuration in a bApp is the name of the variable to store data in wh
 
 The submission variable has all the available details of both the bApp submission and the corresponding transaction
 on the blockchain. Use the auto-complete features of the Palette editor to explore all the different values available,
-but here's a partial list for reference:
+but there is also a list in [the block reference](./blocks.md#submission-variables).
 
-- `submission.args` contains all the final arguments passed to the blockchain.
-- `submission.created` has the time when the user submitted the transaction.
-- `submission.done` shows if the transaction is considered done.
-- `submission.events` has a list of all event logs from the blockchain. This is only available after the transaction is
-    complete.
-- `submission.explorer` contains a link to a block explorer for the transaction once it's available.
-- `submission.extras` has extra data added by the Blockwell system, which depends on the smart contract being used.
-- `submission.from` has the sender wallet address.
-- `submission.id` is the Blockwell system ID of the transaction.
-- `submission.pending` shows if the transaction is still pending.
-- `submission.shortcode` has the bApp shortcode that was used.
-- `submission.status` has the name of the current status of the transaction.
+
+## Next Up
+
+- [Read about all the different types of blocks](./blocks.md) you can add to a Palette.
+- [List of variables types and what they all do](./variable-types.md).
+- [In-depth details on how variables work](./variables.md) in Palettes.
 

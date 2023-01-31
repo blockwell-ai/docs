@@ -140,3 +140,8 @@ The `var()` part of the value means it's a "variable" reference, and the actual 
 two dashes are a requirement for CSS, as they are technically known as custom properties. You can
 [read more about them on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties).
 :::
+
+## Next Up
+
+- [Read about Palette basics](./basics.md) in the getting started guide.
+- [How to allow users to submit transactions](./bapps.md) through Blockwell bApp integration.
