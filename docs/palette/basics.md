@@ -9,6 +9,8 @@ autonav:
 
 <Dapp url="https://app.blockwell.ai/suggestions" text="The Palette editor can be used without an account, so feel free to experiment!" type="Palettes"></Dapp>
 
+@[youtube](suig7ShvfB4)
+
 Right now Palettes are free to be created, copied and used, so jump right in by clicking the button above. You can
 follow the guide below for the basics.
 

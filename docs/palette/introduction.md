@@ -5,6 +5,9 @@ autonav:
 
 # Introduction
 
+
+@[youtube](0p3FARGpflA)
+
 Blockwell Palette is a special interface-builder geared for blockchain data and dapps. It lets you **create dapp
 UIs by drag-and-drop** and design and style them **without coding**.
 
