@@ -245,7 +245,7 @@ export function findSubNav(nav, page) {
                                     if (subsubitem.grouping) {
                                         return [navitem];
                                     }
-                                    return [item];
+                                    return [subitem];
                                 }
                             }
                         }

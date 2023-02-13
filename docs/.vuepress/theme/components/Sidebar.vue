@@ -121,16 +121,39 @@
             }
 
             .dropdown-subsubitem a {
-                padding-left: 4rem;
-                font-size: 13px;
-                font-weight: normal;
-                color: #333;
-                &.router-link-active {
-                    font-weight: 600;
-                    color: $accentColor;
-                    border-left-color: $accentColor;
-                }
+              padding-left: 3.25rem;
+              font-size: 13px;
+              border-left: 4px solid transparent;
+              font-weight: normal;
+              &:hover {
+                color: $accentColor;
+              }
+
+              &.router-link-active {
+                font-weight: 600;
+                color: $accentColor;
+                border-left-color: $accentColor;
+              }
             }
+
+          .dropdown-subsubitem-wrapper.l2 {
+            .dropdown-subsubitem a {
+              padding-left: 4rem;
+              font-size: 13px;
+              font-weight: normal;
+              color: #333;
+              border-left: none;
+                &:hover {
+                    color: $accentColor;
+                }
+
+              &.router-link-active {
+                font-weight: 600;
+                color: $accentColor;
+                border-left-color: $accentColor;
+              }
+            }
+          }
 
             .nav-item > .external {
                 padding-left: 1.25rem;

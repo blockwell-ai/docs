@@ -38,7 +38,7 @@
                                       setOpen(false)
                                     "
                                      :item="childSubItem"/>
-                            <ul class="dropdown-subsubitem-wrapper"
+                            <ul class="dropdown-subsubitem-wrapper l1"
                                 v-if="childSubItem.items">
                                 <li class="dropdown-subsubitem"
                                     v-for="subSubItem in childSubItem.items"
@@ -52,7 +52,7 @@
                                              :item="subSubItem"/>
                                 </li>
                             </ul>
-                            <ul class="dropdown-subsubitem-wrapper"
+                            <ul class="dropdown-subsubitem-wrapper l2"
                                 v-else-if="childSubItem.headers && isActive($route, childSubItem.link)">
                                 <li class="dropdown-subsubitem"
                                     v-for="header in childSubItem.headers"
@@ -64,6 +64,19 @@
                                 </li>
                             </ul>
                         </li>
+                    </ul>
+                    <ul v-else-if="subItem.headers && isActive($route, subItem.link)" class="dropdown-subitem-wrapper">
+
+                        <ul class="dropdown-subsubitem-wrapper l2">
+                            <li class="dropdown-subsubitem"
+                                v-for="header in subItem.headers"
+                                v-if="header.level === 2"
+                                :key="header.slug">
+                                <NavLink
+                                    :item="{link: subItem.link + '#' + header.slug, text: header.title}"/>
+
+                            </li>
+                        </ul>
                     </ul>
                 </li>
             </ul>
@@ -217,12 +230,19 @@
                         margin-bottom: 10px;
                     }
 
+                  .dropdown-subsubitem-wrapper.l2 {
                     .dropdown-subsubitem {
-                        list-style-type: none;
-                        a {
-                            color: #555;
-                        }
+                      list-style-type: none;
+
+                      a {
+                        color: #555;
+
+                          &:hover {
+                              color: $accentColor;
+                          }
+                      }
                     }
+                  }
 
                     &:first-child h4 {
                         margin-top: 0;
