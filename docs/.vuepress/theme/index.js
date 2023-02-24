@@ -27,6 +27,13 @@ module.exports = (options, ctx) => {
           '/': 'WARNING',
           '/zh/': '警告'
         }
+      }],
+      ['container', {
+        type: 'example',
+        defaultTitle: {
+          '/': 'EXAMPLE',
+          '/zh/': '警告'
+        }
       }]
     ]
   }

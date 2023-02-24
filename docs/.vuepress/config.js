@@ -17,6 +17,13 @@ module.exports = {
                 '/zh/': '提示'
             }
         }],
+        ['vuepress-plugin-container', {
+            type: 'example',
+            defaultTitle: {
+                '/': "EXAMPLE",
+                '/zh/': '提示'
+            }
+        }],
         [
             'vuepress-plugin-mathjax',
             {

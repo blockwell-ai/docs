@@ -17,9 +17,15 @@
 }
 
 .code-copy {
-  height: 0;
-  position: relative;
-  bottom: 2px;
+  position: absolute;
+  top: 12px;
+  right: 2px;
+  z-index: 99;
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
 }
 
 #{$contentClass} img.inline {
