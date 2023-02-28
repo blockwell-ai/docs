@@ -31,6 +31,9 @@ export default {
 
   computed: {
     link () {
+        if (!this.item.link) {
+            return "";
+        }
       return ensureExt(this.item.link)
     },
 

@@ -314,6 +314,14 @@
                 white-space: nowrap;
                 margin: 0;
             }
+
+            .dropdown-subsubitem {
+                list-style: none;
+                font-size: 0.9em;
+                a.nav-link {
+                    line-height: 1.3rem;
+                }
+            }
         }
     }
 
